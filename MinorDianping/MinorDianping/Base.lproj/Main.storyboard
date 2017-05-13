@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="73o-zp-noq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--餐厅-->
+        <scene sceneID="y92-S6-ZuA">
+            <objects>
+                <viewController id="SPX-f8-JLR" customClass="ShopViewController" customModule="MinorDianping" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="clX-I3-MCj"/>
+                        <viewControllerLayoutGuide type="bottom" id="B5d-3d-qaf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z98-L7-7E9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="餐厅" id="cZX-Vk-B0w">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="19U-nt-7g2">
+                            <connections>
+                                <segue destination="wek-n3-U7v" kind="unwind" unwindAction="exitToMainWithSegue:" id="AA6-sV-it7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="地图" id="gWu-CF-aAU">
+                            <connections>
+                                <segue destination="d0w-GM-75i" kind="presentation" id="QTi-z8-3fo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o55-8E-a2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="98"/>
+        </scene>
+        <!--地图-->
+        <scene sceneID="YLt-Eo-5Qa">
+            <objects>
+                <viewController id="x9b-M0-teD" customClass="MapViewController" customModule="MinorDianping" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qVi-05-Wxc"/>
+                        <viewControllerLayoutGuide type="bottom" id="bFw-03-cBa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M6b-lw-ZTw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-Wd-WOe"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N7n-Wd-WOe" firstAttribute="leading" secondItem="M6b-lw-ZTw" secondAttribute="leading" id="7CT-Bg-Vy0"/>
+                            <constraint firstItem="N7n-Wd-WOe" firstAttribute="bottom" secondItem="bFw-03-cBa" secondAttribute="top" id="B0k-eZ-FP9"/>
+                            <constraint firstItem="N7n-Wd-WOe" firstAttribute="top" secondItem="qVi-05-Wxc" secondAttribute="bottom" id="FUU-rA-8uT"/>
+                            <constraint firstAttribute="trailing" secondItem="N7n-Wd-WOe" secondAttribute="trailing" id="KCM-Hd-3yb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="地图" id="OjY-AI-UWd">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="aIc-lR-O6x">
+                            <connections>
+                                <segue destination="upD-TN-ISg" kind="unwind" unwindAction="exitToShopWithSegue:" id="w4G-Qo-y3c"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="分享" id="sbg-Du-hjG"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="N7n-Wd-WOe" id="eEd-UE-KeI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23z-dk-swS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="upD-TN-ISg" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2002" y="98"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rgi-OK-8Yi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d0w-GM-75i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ebg-Ia-Hry"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pEF-29-2uK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x9b-M0-teD" kind="relationship" relationship="rootViewController" id="KeV-9u-8vQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yvF-c9-zc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1265" y="98"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="F4u-qz-Pj8">
+            <objects>
+                <viewController id="73o-zp-noq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hjo-og-3rs"/>
+                        <viewControllerLayoutGuide type="bottom" id="0QL-YJ-RKc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OjT-pW-gqb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TpI-5b-Hc8">
+                                <frame key="frameInset" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Item" id="ljO-NK-RNW"/>
+                                    <tabBarItem systemItem="favorites" id="Itj-m9-5Xg"/>
+                                    <tabBarItem systemItem="more" id="IYe-gR-4Q2"/>
+                                </items>
+                            </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-Ge-hYr">
+                                <frame key="frameInset" minX="108" minY="153" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="餐厅"/>
+                                <connections>
+                                    <segue destination="tnJ-HT-OLz" kind="presentation" id="YGt-Is-hOJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1f-WD-NBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wek-n3-U7v" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1767" y="98"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Fa-Sa-MaZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tnJ-HT-OLz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wRL-F8-DYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SPX-f8-JLR" kind="relationship" relationship="rootViewController" id="BGU-C3-ecr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxx-tR-Nny" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-172" y="98"/>
+        </scene>
+    </scenes>
+</document>
