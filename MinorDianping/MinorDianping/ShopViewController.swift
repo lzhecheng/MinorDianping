@@ -9,10 +9,6 @@
 import UIKit
 
 class ShopViewController: UIViewController {
-
-    @IBAction func exitToShop(segue:UIStoryboardSegue){
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="73o-zp-noq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0Mc-pL-ejD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,21 +21,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="餐厅" id="cZX-Vk-B0w">
-                        <barButtonItem key="leftBarButtonItem" title="返回" id="19U-nt-7g2">
-                            <connections>
-                                <segue destination="wek-n3-U7v" kind="unwind" unwindAction="exitToMainWithSegue:" id="AA6-sV-it7"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="地图" id="gWu-CF-aAU">
                             <connections>
-                                <segue destination="d0w-GM-75i" kind="presentation" id="QTi-z8-3fo"/>
+                                <segue destination="x9b-M0-teD" kind="show" id="yNS-6G-1R1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o55-8E-a2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="553" y="98"/>
+            <point key="canvasLocation" x="2431.1999999999998" y="97.601199400299862"/>
         </scene>
         <!--地图-->
         <scene sceneID="YLt-Eo-5Qa">
@@ -48,32 +44,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-Wd-WOe"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mjl-u5-Hfl"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="N7n-Wd-WOe" firstAttribute="leading" secondItem="M6b-lw-ZTw" secondAttribute="leading" id="7CT-Bg-Vy0"/>
-                            <constraint firstItem="N7n-Wd-WOe" firstAttribute="bottom" secondItem="bFw-03-cBa" secondAttribute="top" id="B0k-eZ-FP9"/>
-                            <constraint firstItem="N7n-Wd-WOe" firstAttribute="top" secondItem="qVi-05-Wxc" secondAttribute="bottom" id="FUU-rA-8uT"/>
-                            <constraint firstAttribute="trailing" secondItem="N7n-Wd-WOe" secondAttribute="trailing" id="KCM-Hd-3yb"/>
+                            <constraint firstItem="mjl-u5-Hfl" firstAttribute="top" secondItem="M6b-lw-ZTw" secondAttribute="topMargin" constant="54" id="BoF-WV-LWC"/>
+                            <constraint firstItem="mjl-u5-Hfl" firstAttribute="bottom" secondItem="bFw-03-cBa" secondAttribute="top" id="HVt-uK-491"/>
+                            <constraint firstAttribute="trailing" secondItem="mjl-u5-Hfl" secondAttribute="trailing" id="kBP-cZ-Dj3"/>
+                            <constraint firstItem="mjl-u5-Hfl" firstAttribute="leading" secondItem="M6b-lw-ZTw" secondAttribute="leading" id="u2C-pd-3Dm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="地图" id="OjY-AI-UWd">
-                        <barButtonItem key="leftBarButtonItem" title="返回" id="aIc-lR-O6x">
-                            <connections>
-                                <segue destination="upD-TN-ISg" kind="unwind" unwindAction="exitToShopWithSegue:" id="w4G-Qo-y3c"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="分享" id="sbg-Du-hjG"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="mapView" destination="N7n-Wd-WOe" id="eEd-UE-KeI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23z-dk-swS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="upD-TN-ISg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2002" y="98"/>
+            <point key="canvasLocation" x="3129" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rgi-OK-8Yi">
@@ -92,12 +79,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvF-c9-zc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="98"/>
+            <point key="canvasLocation" x="3130" y="-625"/>
         </scene>
-        <!--View Controller-->
+        <!--主页-->
         <scene sceneID="F4u-qz-Pj8">
             <objects>
-                <viewController id="73o-zp-noq" sceneMemberID="viewController">
+                <viewController id="73o-zp-noq" customClass="ViewController" customModule="MinorDianping" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hjo-og-3rs"/>
                         <viewControllerLayoutGuide type="bottom" id="0QL-YJ-RKc"/>
@@ -106,9 +93,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TpI-5b-Hc8">
-                                <frame key="frameInset" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpI-5b-Hc8">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem title="Item" id="ljO-NK-RNW"/>
@@ -116,22 +101,42 @@
                                     <tabBarItem systemItem="more" id="IYe-gR-4Q2"/>
                                 </items>
                             </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-Ge-hYr">
-                                <frame key="frameInset" minX="108" minY="153" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="餐厅"/>
-                                <connections>
-                                    <segue destination="tnJ-HT-OLz" kind="presentation" id="YGt-Is-hOJ"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eb0-0r-Qbx">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShopTableViewCell" rowHeight="90" id="RhB-4s-eqe">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RhB-4s-eqe" id="ol0-mY-DM5">
+                                            <frame key="frameInset" width="375" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TpI-5b-Hc8" firstAttribute="bottom" secondItem="0QL-YJ-RKc" secondAttribute="top" id="76o-EL-12z"/>
+                            <constraint firstItem="eb0-0r-Qbx" firstAttribute="top" secondItem="Hjo-og-3rs" secondAttribute="bottom" id="E68-Hu-dEj"/>
+                            <constraint firstItem="eb0-0r-Qbx" firstAttribute="trailing" secondItem="TpI-5b-Hc8" secondAttribute="trailing" id="EBu-Kr-mX1"/>
+                            <constraint firstItem="eb0-0r-Qbx" firstAttribute="leading" secondItem="OjT-pW-gqb" secondAttribute="leading" id="Eoq-GG-9H1"/>
+                            <constraint firstItem="eb0-0r-Qbx" firstAttribute="leading" secondItem="TpI-5b-Hc8" secondAttribute="leading" id="KSz-ly-ZZ7"/>
+                            <constraint firstAttribute="trailing" secondItem="eb0-0r-Qbx" secondAttribute="trailing" id="Lg9-ao-25R"/>
+                            <constraint firstItem="TpI-5b-Hc8" firstAttribute="top" secondItem="eb0-0r-Qbx" secondAttribute="bottom" id="drb-l3-zNh"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="主页" id="yd1-1h-vS7">
+                        <barButtonItem key="rightBarButtonItem" title="餐厅" id="XKs-Tj-gte">
+                            <connections>
+                                <segue destination="SPX-f8-JLR" kind="show" id="pED-oQ-DvL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1f-WD-NBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="wek-n3-U7v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1767" y="98"/>
+            <point key="canvasLocation" x="888.79999999999995" y="97.601199400299862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Fa-Sa-MaZ">
@@ -149,7 +154,29 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxx-tR-Nny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-172" y="98"/>
+            <point key="canvasLocation" x="2431" y="-627"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r9g-3f-4C9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Mc-pL-ejD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pOW-gu-l4c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="73o-zp-noq" kind="relationship" relationship="rootViewController" id="HLo-kJ-XLP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbM-Pq-7z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="889" y="-626"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yNS-6G-1R1"/>
+        <segue reference="BGU-C3-ecr"/>
+    </inferredMetricsTieBreakers>
 </document>

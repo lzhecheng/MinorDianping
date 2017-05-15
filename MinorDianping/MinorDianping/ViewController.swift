@@ -9,10 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBAction func exitToMain(segue:UIStoryboardSegue){
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +19,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
