@@ -9,7 +9,10 @@
 import UIKit
 
 class ShopTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +23,4 @@ class ShopTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

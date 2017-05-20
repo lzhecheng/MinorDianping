@@ -14,11 +14,15 @@ class MapViewController: UIViewController {
     
     var mainMapView: MKMapView!
     
+    var shop: Shop?
+    
     //定位管理器
     let locationManager:CLLocationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = shop?.name
         
         //使用代码创建
         self.mainMapView = MKMapView(frame:self.view.frame)
@@ -49,7 +53,7 @@ class MapViewController: UIViewController {
         objectAnnotation.coordinate = CLLocation(latitude: 32.029171,
                                                  longitude: 118.788231).coordinate
         //设置点击大头针之后显示的标题
-        objectAnnotation.title = "南京夫子庙"
+        objectAnnotation.title = shop?.name
         //设置点击大头针之后显示的描述
         objectAnnotation.subtitle = "南京市秦淮区秦淮河北岸中华路"
         //添加大头针
