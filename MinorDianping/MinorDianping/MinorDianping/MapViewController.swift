@@ -24,6 +24,11 @@ class MapViewController: UIViewController {
         
         navigationItem.title = shop?.name
         
+        //经纬度+comment
+        let localLatitude = shop?.latitude
+        let localLongitude = shop?.longitude
+        let localComment = shop?.comment
+        
         //使用代码创建
         self.mainMapView = MKMapView(frame:self.view.frame)
         self.view.addSubview(self.mainMapView)
@@ -40,7 +45,7 @@ class MapViewController: UIViewController {
         //使用当前位置
         //var center:CLLocation = locationManager.location.coordinate
         //使用自定义位置
-        let center:CLLocation = CLLocation(latitude: 32.029171, longitude: 118.788231)
+        let center:CLLocation = CLLocation(latitude: localLatitude!, longitude: localLongitude!)
         let currentRegion:MKCoordinateRegion = MKCoordinateRegion(center: center.coordinate,
                                                                   span: currentLocationSpan)
         
@@ -50,12 +55,12 @@ class MapViewController: UIViewController {
         //创建一个大头针对象
         let objectAnnotation = MKPointAnnotation()
         //设置大头针的显示位置
-        objectAnnotation.coordinate = CLLocation(latitude: 32.029171,
-                                                 longitude: 118.788231).coordinate
+        objectAnnotation.coordinate = CLLocation(latitude: localLatitude!,
+                                                 longitude: localLongitude!).coordinate
         //设置点击大头针之后显示的标题
         objectAnnotation.title = shop?.name
         //设置点击大头针之后显示的描述
-        objectAnnotation.subtitle = "南京市秦淮区秦淮河北岸中华路"
+        objectAnnotation.subtitle = localComment
         //添加大头针
         self.mainMapView.addAnnotation(objectAnnotation)
     }

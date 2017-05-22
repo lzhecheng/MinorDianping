@@ -12,6 +12,7 @@ class ShopViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var commentLabel: UILabel!
     
     var shop: Shop?
     
@@ -24,6 +25,7 @@ class ShopViewController: UIViewController {
             navigationItem.title = shop.name
             photoImageView.image = shop.photo
             nameLabel.text=shop.name
+            commentLabel.text = shop.comment
         }
     }
 
@@ -40,23 +42,6 @@ class ShopViewController: UIViewController {
         switch(segue.identifier ?? "") {
                 
             case "ShopChosen2":
-                /*
-                guard let shopDetailViewController = segue.destination as? ShopViewController else {
-                    fatalError("Unexpected destination: \(segue.destination)")
-                }
-                
-                guard let selectedShopCell = sender as? ShopTableViewCell else {
-                    fatalError("Unexpected sender: \(sender)")
-                }
-                
-                guard let indexPath = tableView.indexPath(for: selectedShopCell) else {
-                    fatalError("The selected cell is not being displayed by the table")
-                }
-                
-                let selectedShop = shops[indexPath.row]
-                shopDetailViewController.shop = selectedShop
-                */
-
                 guard let MapDetailViewController = segue.destination as? MapViewController else {
                     fatalError("Unexpected destination")
                 }
