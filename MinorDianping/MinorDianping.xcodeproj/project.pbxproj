@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1835B3B31ED45B1D0059DA36 /* CSVHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B21ED45B1D0059DA36 /* CSVHelper.swift */; };
+		1835B3BC1ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B41ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift */; };
+		1835B3BD1ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B51ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift */; };
+		1835B3BE1ED46BCD0059DA36 /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B61ED46BCD0059DA36 /* State+CoreDataClass.swift */; };
+		1835B3BF1ED46BCD0059DA36 /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B71ED46BCD0059DA36 /* State+CoreDataProperties.swift */; };
+		1835B3C21ED46BCD0059DA36 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3BA1ED46BCD0059DA36 /* City+CoreDataClass.swift */; };
+		1835B3C31ED46BCD0059DA36 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3BB1ED46BCD0059DA36 /* City+CoreDataProperties.swift */; };
+		1835B3C91ED47A420059DA36 /* mexico.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1835B3C81ED47A420059DA36 /* mexico.csv */; };
 		184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */; };
 		184CFCD41EAE1F0E002EC798 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD31EAE1F0E002EC798 /* ViewController.swift */; };
 		184CFCD71EAE1F0E002EC798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184CFCD51EAE1F0E002EC798 /* Main.storyboard */; };
@@ -18,10 +26,6 @@
 		185E06561EC342670027929F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E06551EC342670027929F /* MapViewController.swift */; };
 		185E06581EC348060027929F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E06571EC348060027929F /* ShopViewController.swift */; };
 		1875D6E51ECB3BC00019A065 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875D6E41ECB3BC00019A065 /* DatabaseController.swift */; };
-		1893F0191ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F0161ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift */; };
-		1893F01D1ECDD513003993D6 /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F01C1ECDD513003993D6 /* Restaurant+CoreDataClass.swift */; };
-		1893F0201ECDD763003993D6 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F01E1ECDD763003993D6 /* City+CoreDataClass.swift */; };
-		1893F0211ECDD763003993D6 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F01F1ECDD763003993D6 /* City+CoreDataProperties.swift */; };
 		18A183C71ED0471E00A3ED55 /* Nanjing.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18A183C61ED0471E00A3ED55 /* Nanjing.csv */; };
 		18B82E4E1EC9E5250086A531 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1835B3B21ED45B1D0059DA36 /* CSVHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVHelper.swift; sourceTree = "<group>"; };
+		1835B3B41ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1835B3B51ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1835B3B61ED46BCD0059DA36 /* State+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1835B3B71ED46BCD0059DA36 /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1835B3BA1ED46BCD0059DA36 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1835B3BB1ED46BCD0059DA36 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1835B3C81ED47A420059DA36 /* mexico.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mexico.csv; sourceTree = "<group>"; };
 		184CFCCE1EAE1F0E002EC798 /* MinorDianping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinorDianping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		184CFCD31EAE1F0E002EC798 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,10 +73,6 @@
 		185E06551EC342670027929F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		185E06571EC348060027929F /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		1875D6E41ECB3BC00019A065 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
-		1893F0161ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1893F01C1ECDD513003993D6 /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1893F01E1ECDD763003993D6 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1893F01F1ECDD763003993D6 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		18A183C61ED0471E00A3ED55 /* Nanjing.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nanjing.csv; sourceTree = "<group>"; };
 		18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				18A183C51ECFF8A200A3ED55 /* Data */,
+				1835B3B21ED45B1D0059DA36 /* CSVHelper.swift */,
 				1875D6E41ECB3BC00019A065 /* DatabaseController.swift */,
 				184CFCD31EAE1F0E002EC798 /* ViewController.swift */,
 				1875D6EE1ECB3EBB0019A065 /* Models */,
@@ -153,10 +162,12 @@
 		1875D6EE1ECB3EBB0019A065 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1893F01E1ECDD763003993D6 /* City+CoreDataClass.swift */,
-				1893F01F1ECDD763003993D6 /* City+CoreDataProperties.swift */,
-				1893F01C1ECDD513003993D6 /* Restaurant+CoreDataClass.swift */,
-				1893F0161ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift */,
+				1835B3B41ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift */,
+				1835B3B51ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift */,
+				1835B3B61ED46BCD0059DA36 /* State+CoreDataClass.swift */,
+				1835B3B71ED46BCD0059DA36 /* State+CoreDataProperties.swift */,
+				1835B3BA1ED46BCD0059DA36 /* City+CoreDataClass.swift */,
+				1835B3BB1ED46BCD0059DA36 /* City+CoreDataProperties.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 		18A183C51ECFF8A200A3ED55 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1835B3C81ED47A420059DA36 /* mexico.csv */,
 				18A183C61ED0471E00A3ED55 /* Nanjing.csv */,
 			);
 			name = Data;
@@ -286,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1835B3C91ED47A420059DA36 /* mexico.csv in Resources */,
 				184CFCDF1EAE1F0E002EC798 /* LaunchScreen.storyboard in Resources */,
 				184CFCDC1EAE1F0E002EC798 /* Assets.xcassets in Resources */,
 				18A183C71ED0471E00A3ED55 /* Nanjing.csv in Resources */,
@@ -315,16 +328,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				1875D6E51ECB3BC00019A065 /* DatabaseController.swift in Sources */,
-				1893F01D1ECDD513003993D6 /* Restaurant+CoreDataClass.swift in Sources */,
+				1835B3BE1ED46BCD0059DA36 /* State+CoreDataClass.swift in Sources */,
 				184CFCD41EAE1F0E002EC798 /* ViewController.swift in Sources */,
 				184CFCDA1EAE1F0E002EC798 /* MinorDianping.xcdatamodeld in Sources */,
-				1893F0201ECDD763003993D6 /* City+CoreDataClass.swift in Sources */,
 				185E06581EC348060027929F /* ShopViewController.swift in Sources */,
-				1893F0211ECDD763003993D6 /* City+CoreDataProperties.swift in Sources */,
-				1893F0191ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift in Sources */,
+				1835B3BF1ED46BCD0059DA36 /* State+CoreDataProperties.swift in Sources */,
+				1835B3BD1ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift in Sources */,
+				1835B3C21ED46BCD0059DA36 /* City+CoreDataClass.swift in Sources */,
 				18B82E4E1EC9E5250086A531 /* ShopTableViewCell.swift in Sources */,
 				184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */,
+				1835B3C31ED46BCD0059DA36 /* City+CoreDataProperties.swift in Sources */,
+				1835B3B31ED45B1D0059DA36 /* CSVHelper.swift in Sources */,
 				185E06561EC342670027929F /* MapViewController.swift in Sources */,
+				1835B3BC1ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

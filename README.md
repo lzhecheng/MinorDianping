@@ -33,6 +33,9 @@ func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
     }
 ```
 
+#### Core Data 删除操作
+* [Swift 3 Core Data Delete Object](ttps://stackoverflow.com/questions/38017449/swift-3-core-data-delete-object)
+
 #### 错误处理
 
 #### if let和guard语法糖
@@ -57,6 +60,7 @@ for i in 0 ..< 5
 
 ### 各种报错信息
 * [Cannot explicitly specialize a generic function](http://stackoverflow.com/questions/27965439/cannot-explicitly-specialize-a-generic-function)
+* [Ambiguous use of 'fetchRequest()'](https://stackoverflow.com/questions/39495199/subclass-fetchrequest-swift-3-0-extension-not-really-helping-100)
 
 ## 其他笔记
 ### Git

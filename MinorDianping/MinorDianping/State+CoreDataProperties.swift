@@ -1,5 +1,5 @@
 //
-//  City+CoreDataProperties.swift
+//  State+CoreDataProperties.swift
 //  MinorDianping
 //
 //  Created by Apple on 2017/5/23.
@@ -10,19 +10,19 @@ import Foundation
 import CoreData
 
 
-extension City {
+extension State {
 
-    @nonobjc public class func cityFetchRequest() -> NSFetchRequest<City> {
-        return NSFetchRequest<City>(entityName: "City");
+    @nonobjc public class func stateFetchRequest() -> NSFetchRequest<State> {
+        return NSFetchRequest<State>(entityName: "State");
     }
 
-    @NSManaged public var cityName: String?
+    @NSManaged public var stateName: String?
     @NSManaged public var restaurants: NSSet?
 
 }
 
 // MARK: Generated accessors for restaurants
-extension City {
+extension State {
 
     @objc(addRestaurantsObject:)
     @NSManaged public func addToRestaurants(_ value: Restaurant)

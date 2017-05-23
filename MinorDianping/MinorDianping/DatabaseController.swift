@@ -12,7 +12,7 @@ import CoreData
 class DatabaseController{
     // MARK: - Core Data stack
     
-    private init(){
+    public init(){
     
     }
     
@@ -62,5 +62,70 @@ class DatabaseController{
             }
         }
     }
+    
+    // MARK: Core Data Fetch Functions
+    
+    func fetchOneRestaurantFromCoreData(index: Int) -> Restaurant?{
+        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.restaurantFetchRequest()
+        do{
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            return searchResults[index]
+        }
+        catch{
+            print("Error: \(error)")
+            
+        }
+        return nil
+    }
+    
+    func fetchOneRestaurantFromCoreData<T: NSManagedObject>(index: Int) -> T?{
+        let fetchRequest:NSFetchRequest<T> = NSFetchRequest<T>(entityName: String(describing: T.self))
+        do{
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            return searchResults[index]
+        }
+        catch{
+            print("Error: \(error)")
+            
+        }
+        return nil
+    }
 
+    func fetchAllRestaurantsFromCoreData() -> [Restaurant]?{
+        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.restaurantFetchRequest()
+        do{
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            return searchResults
+        }
+        catch{
+            print("Error: \(error)")
+            
+        }
+        return nil
+    }
+    
+    // MARK: Core Data Deletion Functions
+    func deleteOneObjectInCoreData(index: Int) -> Bool{
+        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.restaurantFetchRequest()
+        let context = DatabaseController.getContext()
+        if let results = try? context.fetch(fetchRequest){
+            context.delete(results[index])
+            return true
+        }
+        return false
+    }
+    
+    func deleteAllObjectsInCoreData() -> Bool{
+        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.restaurantFetchRequest()
+        let context = DatabaseController.getContext()
+        if let results = try? context.fetch(fetchRequest){
+            for result in results{
+                // print(result.name!)
+                context.delete(result)
+            }
+            DatabaseController.saveContext()
+            return true
+        }
+        return false
+    }
 }
