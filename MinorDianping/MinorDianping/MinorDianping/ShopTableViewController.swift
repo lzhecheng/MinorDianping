@@ -98,9 +98,9 @@ class ShopTableViewController: UITableViewController {
         
         switch(segue.identifier ?? "") {
             
-            //case "AddItem":
-                //os_log("Adding a new meal.", log: OSLog.default, type: .debug)
-                
+//            case "AddShop":
+//                os_log("Adding a new shop.", log: OSLog.default, type: .debug)
+            
             case "ShopChosen":
                 guard let shopDetailViewController = segue.destination as? ShopViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
@@ -116,7 +116,7 @@ class ShopTableViewController: UITableViewController {
                 
                 let selectedShop = shops[indexPath.row]
                 shopDetailViewController.shop = selectedShop
-                
+            
             default:
                 fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }

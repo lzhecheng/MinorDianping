@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class ShopViewController: UIViewController {
     
@@ -47,6 +48,13 @@ class ShopViewController: UIViewController {
                 }
                 
                 MapDetailViewController.shop = shop
+            
+            case "AddComment":
+                guard let commentShopViewController = segue.destination as? CommentShopViewController else {
+                    fatalError("Unexpected destination")
+                }
+                commentShopViewController.shop = shop
+//                os_log("Comment on a shop.", log: OSLog.default, type: .debug)
             
             default:
                 fatalError("Unexpected Segue Identifier; \(segue.identifier)")
