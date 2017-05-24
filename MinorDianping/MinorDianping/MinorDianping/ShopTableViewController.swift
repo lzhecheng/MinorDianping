@@ -8,8 +8,10 @@
 
 import UIKit
 import os.log
+import CoreData
 
 class ShopTableViewController: UITableViewController {
+
 
     
     //MARK: Properties
@@ -17,6 +19,7 @@ class ShopTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Load the sample data.
 
@@ -123,6 +126,8 @@ class ShopTableViewController: UITableViewController {
     }
 
     private func loadSampleShops() {
+        
+        //sameple shops
         //shop1: KFC
         let photo1 = UIImage(named: "shop1")
         let latitude1 = 32.1025600000
@@ -154,6 +159,17 @@ class ShopTableViewController: UITableViewController {
         }
         
         shops += [shop1,shop2,shop3]
+        
+        //core data
+        let cdPhoto = UIImage(named: "defaultphoto_2x.png")
+        let databaseController = DatabaseController()
+        let res = databaseController.fetchAllRestaurantsFromCoreData()!
+        //var cdShop : [Shop] = [Shop]()
+        for i in 0..<10 {
+            //cdShop[i] =
+            let shop = Shop(name: res[i].name!, photo: cdPhoto, latitude: res[i].latitude, longitude: res[i].longitude, comment: "")!
+            shops += [shop]
+        }
     }
     /*
     private func saveShops() {
