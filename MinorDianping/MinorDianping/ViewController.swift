@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        let databaseController = DatabaseController(filename: "mexico")
+        let databaseController = DatabaseController()
         
         let restaurants = databaseController.fetchAllRestaurantsFromCoreData()!
         for restaurant in restaurants{

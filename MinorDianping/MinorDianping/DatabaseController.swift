@@ -55,6 +55,9 @@ class DatabaseController{
         print("Database init: Save database successfully")
     }
     
+    convenience init(){
+        self.init(filename: "mexico")
+    }
     
     class func getContext() -> NSManagedObjectContext{
         return DatabaseController.persistentContainer.viewContext
