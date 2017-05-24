@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1835B3B31ED45B1D0059DA36 /* CSVHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B21ED45B1D0059DA36 /* CSVHelper.swift */; };
-		1835B3BC1ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B41ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift */; };
-		1835B3BD1ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B51ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift */; };
 		1835B3BE1ED46BCD0059DA36 /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B61ED46BCD0059DA36 /* State+CoreDataClass.swift */; };
 		1835B3BF1ED46BCD0059DA36 /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3B71ED46BCD0059DA36 /* State+CoreDataProperties.swift */; };
 		1835B3C21ED46BCD0059DA36 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835B3BA1ED46BCD0059DA36 /* City+CoreDataClass.swift */; };
@@ -25,6 +23,8 @@
 		184CFCF51EAE1F0F002EC798 /* MinorDianpingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCF41EAE1F0F002EC798 /* MinorDianpingUITests.swift */; };
 		185E06561EC342670027929F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E06551EC342670027929F /* MapViewController.swift */; };
 		185E06581EC348060027929F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E06571EC348060027929F /* ShopViewController.swift */; };
+		1870BCD41ED5BCB1009B83EC /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870BCD21ED5BCB1009B83EC /* Restaurant+CoreDataClass.swift */; };
+		1870BCD51ED5BCB1009B83EC /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870BCD31ED5BCB1009B83EC /* Restaurant+CoreDataProperties.swift */; };
 		1875D6E51ECB3BC00019A065 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875D6E41ECB3BC00019A065 /* DatabaseController.swift */; };
 		18A183C71ED0471E00A3ED55 /* Nanjing.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18A183C61ED0471E00A3ED55 /* Nanjing.csv */; };
 		18B82E4E1EC9E5250086A531 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */; };
@@ -49,8 +49,6 @@
 
 /* Begin PBXFileReference section */
 		1835B3B21ED45B1D0059DA36 /* CSVHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVHelper.swift; sourceTree = "<group>"; };
-		1835B3B41ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1835B3B51ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1835B3B61ED46BCD0059DA36 /* State+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1835B3B71ED46BCD0059DA36 /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1835B3BA1ED46BCD0059DA36 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -72,6 +70,8 @@
 		184CFCF61EAE1F0F002EC798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185E06551EC342670027929F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		185E06571EC348060027929F /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		1870BCD21ED5BCB1009B83EC /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1870BCD31ED5BCB1009B83EC /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1875D6E41ECB3BC00019A065 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		18A183C61ED0471E00A3ED55 /* Nanjing.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nanjing.csv; sourceTree = "<group>"; };
 		18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 		1875D6EE1ECB3EBB0019A065 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1835B3B41ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift */,
-				1835B3B51ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift */,
+				1870BCD21ED5BCB1009B83EC /* Restaurant+CoreDataClass.swift */,
+				1870BCD31ED5BCB1009B83EC /* Restaurant+CoreDataProperties.swift */,
 				1835B3B61ED46BCD0059DA36 /* State+CoreDataClass.swift */,
 				1835B3B71ED46BCD0059DA36 /* State+CoreDataProperties.swift */,
 				1835B3BA1ED46BCD0059DA36 /* City+CoreDataClass.swift */,
@@ -331,16 +331,16 @@
 				1835B3BE1ED46BCD0059DA36 /* State+CoreDataClass.swift in Sources */,
 				184CFCD41EAE1F0E002EC798 /* ViewController.swift in Sources */,
 				184CFCDA1EAE1F0E002EC798 /* MinorDianping.xcdatamodeld in Sources */,
+				1870BCD51ED5BCB1009B83EC /* Restaurant+CoreDataProperties.swift in Sources */,
 				185E06581EC348060027929F /* ShopViewController.swift in Sources */,
 				1835B3BF1ED46BCD0059DA36 /* State+CoreDataProperties.swift in Sources */,
-				1835B3BD1ED46BCD0059DA36 /* Restaurant+CoreDataProperties.swift in Sources */,
 				1835B3C21ED46BCD0059DA36 /* City+CoreDataClass.swift in Sources */,
 				18B82E4E1EC9E5250086A531 /* ShopTableViewCell.swift in Sources */,
 				184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */,
 				1835B3C31ED46BCD0059DA36 /* City+CoreDataProperties.swift in Sources */,
 				1835B3B31ED45B1D0059DA36 /* CSVHelper.swift in Sources */,
+				1870BCD41ED5BCB1009B83EC /* Restaurant+CoreDataClass.swift in Sources */,
 				185E06561EC342670027929F /* MapViewController.swift in Sources */,
-				1835B3BC1ED46BCD0059DA36 /* Restaurant+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,50 +13,56 @@ class DatabaseController{
     // MARK: - Core Data stack
     
     init(filename: String){
-        self.deleteAllObjectsInCoreData()
-        print("Database init: Delete past database successfully")
-        
-        // MARK: CSV File Operations
-        let csvHelper = CSVHelper()
-        let file:String = csvHelper.readDataFromFile(file: filename, type: "csv")
-        
-        guard let contents:[[String:String]] = csvHelper.convertCSV(file: file)else {
-            print("Database init: Failed to parse successfully")
+        let WHETHER_INIT = true
+        guard self.deleteAllObjectsInCoreData() else{
+            print("Database init: Failed to delete past database")
             return
         }
-        
-        let numOfRestaurants = contents.count
-        
-        // MARK: - Core Data Operations
-        let cityClassName:String = String(describing: City.self)
-        let restaurantClassName:String = String(describing: Restaurant.self)
-        let stateClassName:String = String(describing: State.self)
-        
-        //            let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
-        //            var cityNames:Set<String> = Set()
-        //            for i in 0 ..< numOfRestaurants{
-        //                cityNames.insert(contents[i]["city"]!)
-        //            }
-        //            for cityName in cityNames{
-        //                city.cityName = cityName
-        //            }
-        
-        for i in 1 ..< numOfRestaurants{
-            let restaurant:Restaurant = NSEntityDescription.insertNewObject(forEntityName: restaurantClassName, into: DatabaseController.getContext()) as! Restaurant
-            restaurant.name = contents[i]["name"]
-            restaurant.address = contents[i]["address"]
-            restaurant.latitude = Double(contents[i]["latitude"]!)!
-            restaurant.longitude = Double(contents[i]["longitude"]!)!
-            //restaurant.placeID = contents[i]["placeID"]! as! Int16
-            //city.addToRestaurants(restaurant)
+        if(WHETHER_INIT){
+            // MARK: CSV File Operations
+            let csvHelper = CSVHelper()
+            let file:String = csvHelper.readDataFromFile(file: filename, type: "csv")
+            
+            guard let contents:[[String:String]] = csvHelper.convertCSV(file: file)else {
+                print("Database init: Failed to parse successfully")
+                return
+            }
+            
+            let numOfRestaurants = contents.count
+            
+            // MARK: - Core Data Operations
+            let cityClassName:String = String(describing: City.self)
+            let restaurantClassName:String = String(describing: Restaurant.self)
+            let stateClassName:String = String(describing: State.self)
+            
+            //            let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
+            //            var cityNames:Set<String> = Set()
+            //            for i in 0 ..< numOfRestaurants{
+            //                cityNames.insert(contents[i]["city"]!)
+            //            }
+            //            for cityName in cityNames{
+            //                city.cityName = cityName
+            //            }
+            
+            for i in 1 ..< numOfRestaurants{
+                let restaurant:Restaurant = NSEntityDescription.insertNewObject(forEntityName: restaurantClassName, into: DatabaseController.getContext()) as! Restaurant
+                restaurant.name = contents[i]["name"]
+                restaurant.address = contents[i]["address"]
+                restaurant.latitude = Double(contents[i]["latitude"]!)!
+                restaurant.longitude = Double(contents[i]["longitude"]!)!
+                //restaurant.placeID = contents[i]["placeID"]
+                //city.addToRestaurants(restaurant)
+            }
         }
-        
         DatabaseController.saveContext()
         print("Database init: Save database successfully")
     }
     
     convenience init(){
         self.init(filename: "mexico")
+    }
+    
+    func deconstruct(){
     }
     
     class func getContext() -> NSManagedObjectContext{
@@ -107,35 +113,8 @@ class DatabaseController{
     }
     
     // MARK: Core Data Fetch Functions
-    
-    func fetchOneRestaurantFromCoreData(index: Int) -> Restaurant?{
-        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.restaurantFetchRequest()
-        do{
-            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
-            return searchResults[index]
-        }
-        catch{
-            print("Error: \(error)")
-            
-        }
-        return nil
-    }
-    
-    func fetchOneRestaurantFromCoreData<T: NSManagedObject>(index: Int) -> T?{
+    func fetchAllObjectsFromCoreData<T: NSManagedObject>() -> [T]?{
         let fetchRequest:NSFetchRequest<T> = NSFetchRequest<T>(entityName: String(describing: T.self))
-        do{
-            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
-            return searchResults[index]
-        }
-        catch{
-            print("Error: \(error)")
-            
-        }
-        return nil
-    }
-
-    func fetchAllRestaurantsFromCoreData() -> [Restaurant]?{
-        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.restaurantFetchRequest()
         do{
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
             return searchResults
@@ -146,6 +125,7 @@ class DatabaseController{
         }
         return nil
     }
+
     
     // MARK: Core Data Deletion Functions
     func deleteOneObjectInCoreData(index: Int) -> Bool{
@@ -163,7 +143,6 @@ class DatabaseController{
         let context = DatabaseController.getContext()
         if let results = try? context.fetch(fetchRequest){
             for result in results{
-                // print(result.name!)
                 context.delete(result)
             }
             DatabaseController.saveContext()

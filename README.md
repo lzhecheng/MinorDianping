@@ -61,6 +61,11 @@ for i in 0 ..< 5
 ### 各种报错信息
 * [Cannot explicitly specialize a generic function](http://stackoverflow.com/questions/27965439/cannot-explicitly-specialize-a-generic-function)
 * [Ambiguous use of 'fetchRequest()'](https://stackoverflow.com/questions/39495199/subclass-fetchrequest-swift-3-0-extension-not-really-helping-100)
+* [Cannot explicitly specialize a generic function](https://www.iphonelife.com/blog/31369/swift-programming-101-generics-practical-guide)
+    * Swift中，泛型的调用方式是在变量声明的时候，如
+    ```
+    var personEntity: PersonEntity = p.createEntity()
+    ```
 
 ## 其他笔记
 ### Git
