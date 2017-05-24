@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g0g-dG-Q94" id="Kqs-wF-cTs">
-                                    <frame key="frameInset" width="375" height="87.5"/>
+                                    <frame key="frameInset" width="375" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64t-6j-eL2">
@@ -92,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="2337" y="925"/>
         </scene>
-        <!--Comment Shop View Controller-->
+        <!--新点评-->
         <scene sceneID="5HY-k0-v2Y">
             <objects>
                 <viewController id="Vy1-a0-MFw" customClass="CommentShopViewController" customModule="MinorDianping" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,8 +135,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5tH-zC-nrZ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BhO-Ac-ddi"/>
+                    <navigationItem key="navigationItem" title="新点评" id="5tH-zC-nrZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BhO-Ac-ddi">
+                            <connections>
+                                <action selector="cancel:" destination="Vy1-a0-MFw" id="Ad8-M8-scm"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZsB-uW-dJi"/>
                     </navigationItem>
                     <connections>
