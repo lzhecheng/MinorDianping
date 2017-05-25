@@ -10,19 +10,15 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
-    let WHETHER_INIT_DB = false
-    let WHETHER_CLEAR = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        let databaseController = DatabaseController()
+        let restaurantDatabaseController = RestaurantDatabaseController()
         
-        let restaurants:[Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
-        print(restaurants[0].name!)
+        let restaurants:[Restaurant] = restaurantDatabaseController.fetchAllObjectsFromCoreData()!
         for restaurant in restaurants{
-            print("\(restaurant.name!) is in \(restaurant.latitude), \(restaurant.longitude)")
+            print("No.\(restaurant.placeID!) \(restaurant.name!) is in \(restaurant.latitude), \(restaurant.longitude)")
         }
     }
 

@@ -66,6 +66,10 @@ for i in 0 ..< 5
     ```
     var personEntity: PersonEntity = p.createEntity()
     ```
+* Error Domain=NSCocoaErrorDomain Code=134140
+    * 修改core data中attribute的数据类型时，先删除该attribute，再添加就可以避免此错误。
+* [Generic Parameter 'G' is not used in function signature](https://stackoverflow.com/questions/32407661/how-to-use-a-generic-inside-of-a-function-but-not-in-the-signature-swift-2)
+* ['***' is ambiguous for type lookup in this context](https://forums.raywenderlich.com/t/dog-is-ambiguous-for-type-lookup-in-this-context/22280)
 
 ## 其他笔记
 ### Git

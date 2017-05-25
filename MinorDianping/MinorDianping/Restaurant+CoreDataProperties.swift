@@ -21,7 +21,8 @@ extension Restaurant {
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
     @NSManaged public var name: String?
-    @NSManaged public var placeID: Int16
+    @NSManaged public var placeID: String?
+    //@NSManaged public var placeID: Int16
     @NSManaged public var comments: String?
     @NSManaged public var images: NSData?
     @NSManaged public var city: City?
