@@ -21,7 +21,6 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
         
         navigationItem.title = shop?.name
         shopNameLabel.text = shop?.name
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

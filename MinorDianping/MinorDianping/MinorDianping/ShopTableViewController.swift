@@ -11,17 +11,20 @@ import os.log
 import CoreData
 
 class ShopTableViewController: UITableViewController {
-
-
     
     //MARK: Properties
     var shops = [Shop]()
+    var target: String = "#nothing"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Load the sample data.
-        loadSampleShops()
+        // Load sample data or load search results
+        if target == "#nothing"{
+            loadSampleShops()
+        }else {
+            loadSeachedShops()
+        }
     }
 
     // MARK: - Table view data source
@@ -35,7 +38,6 @@ class ShopTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return shops.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
@@ -90,18 +92,12 @@ class ShopTableViewController: UITableViewController {
     }
     */
 
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
-            
-//            case "AddShop":
-//                os_log("Adding a new shop.", log: OSLog.default, type: .debug)
-            
             case "ShopChosen":
                 guard let shopDetailViewController = segue.destination as? ShopViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
@@ -124,8 +120,8 @@ class ShopTableViewController: UITableViewController {
     }
 
     private func loadSampleShops() {
-        
         //sameple shops
+        
         //shop1: KFC
         let photo1 = UIImage(named: "shop1")
         let latitude1 = 32.1025600000
@@ -157,19 +153,13 @@ class ShopTableViewController: UITableViewController {
         }
         
         shops += [shop1,shop2,shop3]
-        
-        //core data
-        let cdPhoto = UIImage(named: "defaultphoto_2x.png")
-        let databaseController0 = DatabaseController()
-        let res: [Restaurant] = databaseController0.fetchAllObjectsFromCoreData()!
-        
+    }
+    
+    private func loadSeachedShops() {
+        //data from core data
         let search = searchBrain()
-        let results: [Shop] = search.searchWords(words: "la")
+        let results: [Shop] = search.searchWords(words: target)
         
-//        for i in results {
-//            let shop = Shop(name: res[i].name!, photo: cdPhoto, latitude: res[i].latitude, longitude: res[i].longitude, comment: "")!
-//            shops += [shop]
-//        }
         shops += results
     }
 }

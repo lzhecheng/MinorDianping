@@ -25,6 +25,7 @@ class searchBrain{
         for i in 0..<restaurants.count{
             let nameSplited: [String] = restaurants[i].name!.components(separatedBy: " ")
             for divider in nameSplited{
+                divider
                 if var val = restaurantDictionary[divider] {
                     val += [i]
                     restaurantDictionary[divider] = val
@@ -47,7 +48,7 @@ class searchBrain{
         }
 
         let finalResults = Array(results)
-        let cdPhoto = UIImage(named: "defaultphoto_2x.png")
+        let cdPhoto = UIImage(named: "defaultPhoto")
         var shops = [Shop]()
         for i in finalResults {
             let shop = Shop(name: restaurants[i].name!, photo: cdPhoto, latitude: restaurants[i].latitude, longitude: restaurants[i].longitude, comment: "")!

@@ -49,9 +49,7 @@
                             <outlet property="delegate" destination="B4c-BS-wTG" id="Qu0-Qh-Gup"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="小众点评" id="6D5-b1-LGE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="etX-vN-RHY"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="小众点评" id="6D5-b1-LGE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ze-Ea-gqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,7 +58,7 @@
         <!--搜索-->
         <scene sceneID="6xg-oh-tgg">
             <objects>
-                <viewController title="搜索" id="8uy-Fy-oFA" sceneMemberID="viewController">
+                <viewController title="搜索" id="8uy-Fy-oFA" customClass="SearchViewController" customModule="MinorDianping" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YNK-pS-ucI"/>
                         <viewControllerLayoutGuide type="bottom" id="CNk-SV-1G5"/>
@@ -69,15 +67,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQs-R0-8vv">
-                                <frame key="frameInset" minX="55" minY="28" width="52" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q17-Kz-CdK">
+                                <frame key="frameInset" minX="118" minY="132" width="138" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gll-Xh-OT7">
-                                <frame key="frameInset" minX="55" minY="57" width="290" height="30"/>
+                                <state key="normal" title="Search!"/>
+                                <connections>
+                                    <segue destination="B4c-BS-wTG" kind="show" identifier="Searching" id="H2t-iM-z8S"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shop name of place" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gll-Xh-OT7">
+                                <frame key="frameInset" minX="42" minY="85" width="290" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -86,11 +85,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="H4r-em-8Mo"/>
+                    <navigationItem key="navigationItem" title="搜索" id="d8J-32-kkc"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="Gll-Xh-OT7" id="XNl-E4-1Wi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFm-dA-XuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="923"/>
+            <point key="canvasLocation" x="2028" y="922"/>
         </scene>
         <!--新点评-->
         <scene sceneID="5HY-k0-v2Y">
@@ -157,7 +159,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3722" y="924"/>
+            <point key="canvasLocation" x="3999" y="988"/>
         </scene>
         <!--餐厅-->
         <scene sceneID="y92-S6-ZuA">
@@ -306,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfe-92-tGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="1734"/>
+            <point key="canvasLocation" x="332" y="1749"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YBu-Nj-tqp">
@@ -319,13 +321,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="nmd-JM-R9C" kind="relationship" relationship="viewControllers" id="1kZ-Qv-lCs"/>
-                        <segue destination="8uy-Fy-oFA" kind="relationship" relationship="viewControllers" id="PAg-Wm-wy0"/>
+                        <segue destination="8J9-9I-DZY" kind="relationship" relationship="viewControllers" id="PAg-Wm-wy0"/>
                         <segue destination="SlZ-I5-zoS" kind="relationship" relationship="viewControllers" id="gtq-eo-csa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Heo-zN-iyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1711" y="82"/>
+            <point key="canvasLocation" x="1354" y="83"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Fa-Sa-MaZ">
@@ -381,7 +383,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRr-SK-maZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="923"/>
+            <point key="canvasLocation" x="332" y="922"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mAH-GG-QMI">
@@ -399,15 +401,35 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5U-Nn-66P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3017" y="923"/>
+            <point key="canvasLocation" x="3241" y="987"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IOR-mn-hEy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8J9-9I-DZY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="H4r-em-8Mo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AiF-1S-zno">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8uy-Fy-oFA" kind="relationship" relationship="rootViewController" id="qdg-Lg-FfP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QjX-zS-i7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1353" y="922"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5l6-fh-nxH"/>
         <segue reference="40j-Ft-rVb"/>
+        <segue reference="5l6-fh-nxH"/>
+        <segue reference="juk-6U-rOg"/>
         <segue reference="Jgt-EC-wCG"/>
     </inferredMetricsTieBreakers>
 </document>

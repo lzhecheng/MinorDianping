@@ -19,6 +19,7 @@
 		185F35581ED670BB007F94A8 /* MinorDianping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185F35561ED670BB007F94A8 /* MinorDianping.xcdatamodeld */; };
 		185F355A1ED670F4007F94A8 /* searchBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F35591ED670F4007F94A8 /* searchBrain.swift */; };
 		18767B461ED0634500C8D6C2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18767B451ED0634500C8D6C2 /* ShopViewController.swift */; };
+		1877A5E51ED6F1E3007A4561 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */; };
 		1893F01D1ECDD513003993D6 /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F01C1ECDD513003993D6 /* Restaurant+CoreDataClass.swift */; };
 		1893F0201ECDD763003993D6 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F01E1ECDD763003993D6 /* City+CoreDataClass.swift */; };
 		1893F0211ECDD763003993D6 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F01F1ECDD763003993D6 /* City+CoreDataProperties.swift */; };
@@ -71,6 +72,7 @@
 		185F35571ED670BB007F94A8 /* MinorDianping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MinorDianping.xcdatamodel; sourceTree = "<group>"; };
 		185F35591ED670F4007F94A8 /* searchBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchBrain.swift; sourceTree = "<group>"; };
 		18767B451ED0634500C8D6C2 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1893F01C1ECDD513003993D6 /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1893F01E1ECDD763003993D6 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1893F01F1ECDD763003993D6 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				18767B451ED0634500C8D6C2 /* ShopViewController.swift */,
 				185E06551EC342670027929F /* MapViewController.swift */,
 				183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */,
+				1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */,
 			);
 			name = ViewContorllers;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				18B2F71B1ECF201200086EC6 /* ShopTableViewController.swift in Sources */,
 				1893F01D1ECDD513003993D6 /* Restaurant+CoreDataClass.swift in Sources */,
 				18767B461ED0634500C8D6C2 /* ShopViewController.swift in Sources */,
+				1877A5E51ED6F1E3007A4561 /* SearchViewController.swift in Sources */,
 				185F355A1ED670F4007F94A8 /* searchBrain.swift in Sources */,
 				18967CD41ED5A04900687541 /* CSVHelper.swift in Sources */,
 				18967CDD1ED5A2C800687541 /* Restaurant+CoreDataProperties.swift in Sources */,

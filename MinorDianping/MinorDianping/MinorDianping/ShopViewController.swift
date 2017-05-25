@@ -35,7 +35,6 @@ class ShopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
@@ -53,8 +52,8 @@ class ShopViewController: UIViewController {
                 guard let commentShopViewController = segue.destination as? CommentShopViewController else {
                     fatalError("Unexpected destination")
                 }
+                
                 commentShopViewController.shop = shop
-//                os_log("Comment on a shop.", log: OSLog.default, type: .debug)
             
             default:
                 fatalError("Unexpected Segue Identifier; \(segue.identifier)")
