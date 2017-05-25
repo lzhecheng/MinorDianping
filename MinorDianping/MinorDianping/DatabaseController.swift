@@ -9,11 +9,17 @@
 import Foundation
 import CoreData
 
-class DatabaseController{
+class DatabaseController: NSObject{
     // MARK: - Core Data stack
-    init(){
-
-    }
+//    init(completionClosure: @escaping () -> ()) {
+//        persistentContainer = NSPersistentContainer(name: "DataModel")
+//        persistentContainer.loadPersistentStores() { (description, error) in
+//            if let error = error {
+//                fatalError("Failed to load Core Data stack: \(error)")
+//            }
+//            completionClosure()
+//        }
+//    }
 
     class func getContext() -> NSManagedObjectContext{
         return DatabaseController.persistentContainer.viewContext
@@ -68,14 +74,12 @@ class DatabaseController{
         do{
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
             return searchResults
-        }
-        catch{
+        }catch{
             print("Error: \(error)")
             
         }
         return nil
     }
-
     
     // MARK: Core Data Deletion Functions
     internal func deleteAllObjectsInCoreData<T: NSManagedObject>(type: T.Type) -> Bool{

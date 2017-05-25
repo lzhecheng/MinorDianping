@@ -33,9 +33,9 @@ class RestaurantDatabaseController : DatabaseController{
             let numOfRestaurants = contents.count
             
             // MARK: - Core Data Operations
-            let cityClassName:String = String(describing: City.self)
+            //let cityClassName:String = String(describing: City.self)
             let restaurantClassName:String = String(describing: Restaurant.self)
-            let stateClassName:String = String(describing: State.self)
+            //let stateClassName:String = String(describing: State.self)
             
             //            let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
             //            var cityNames:Set<String> = Set()
@@ -55,8 +55,8 @@ class RestaurantDatabaseController : DatabaseController{
                 restaurant.placeID = contents[i]["placeID"]
                 //city.addToRestaurants(restaurant)
             }
+            DatabaseController.saveContext()
         }
-        DatabaseController.saveContext()
         print("Database init: Save database successfully")
     }
     
@@ -70,4 +70,15 @@ class RestaurantDatabaseController : DatabaseController{
             return
         }
     }
+
+//    func fetchOneCityFromCoreData<ChengShi>(name: String) -> ChengShi?{
+//        let fetchRequest = City.cityFetchRequest()
+//        do{
+//            let cities = try DatabaseController.getContext().fetch(fetchRequest)
+//            return cities[0]
+//        }catch{
+//            print("Error: \(error)")
+//        }
+//        return nil
+//    }
 }
