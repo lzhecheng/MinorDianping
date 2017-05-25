@@ -15,6 +15,10 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set naviation bar color
+        self.navigationController?.navigationBar.barTintColor =
+            UIColor(red: 255/255, green: 250/255, blue: 250/255, alpha: 1)
+        
         navigationItem.title = "Shop Searching"
     }
 

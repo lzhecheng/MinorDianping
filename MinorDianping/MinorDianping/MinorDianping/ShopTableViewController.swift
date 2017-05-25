@@ -18,6 +18,13 @@ class ShopTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set naviation bar color & word color & word color in button
+        self.navigationController?.navigationBar.barTintColor =
+            UIColor(red: 135/255, green: 206/255, blue: 250/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
 
         // Load sample data or load search results
         if target == "#nothing"{
@@ -151,8 +158,15 @@ class ShopTableViewController: UITableViewController {
         guard let shop3 = Shop(name: "Burger King", photo: photo3, latitude: latitude3, longitude: longitude3, comment: comment3) else {
             fatalError("Unable to instantiate meal3")
         }
-        
         shops += [shop1,shop2,shop3]
+        
+        let cdPhoto = UIImage(named: "defaultPhoto")
+        let databaseController = DatabaseController()
+        let restaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
+        for i in 0..<restaurants.count {
+            let shop = Shop(name: restaurants[i].name!, photo: cdPhoto, latitude: restaurants[i].latitude, longitude: restaurants[i].longitude, comment: "")!
+            shops += [shop]
+        }
     }
     
     private func loadSeachedShops() {

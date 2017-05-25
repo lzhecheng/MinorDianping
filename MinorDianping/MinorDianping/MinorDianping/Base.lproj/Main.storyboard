@@ -270,7 +270,7 @@
         <!--My Account-->
         <scene sceneID="zKW-Pq-eHB">
             <objects>
-                <viewController id="mNg-Na-6r5" sceneMemberID="viewController">
+                <viewController id="mNg-Na-6r5" customClass="AccountViewController" customModule="MinorDianping" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YUh-Pl-nBr"/>
                         <viewControllerLayoutGuide type="bottom" id="bmD-e1-nOH"/>
@@ -429,7 +429,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="40j-Ft-rVb"/>
         <segue reference="5l6-fh-nxH"/>
-        <segue reference="juk-6U-rOg"/>
+        <segue reference="H2t-iM-z8S"/>
         <segue reference="Jgt-EC-wCG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class searchBrain{
+    //restaurant dictionary & restaurants from core data
     var restaurantDictionary: Dictionary<String, [Int]>
     let restaurants: [Restaurant]
     
