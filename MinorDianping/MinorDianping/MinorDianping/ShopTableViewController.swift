@@ -158,8 +158,7 @@ class ShopTableViewController: UITableViewController {
     private func loadSeachedShops() {
         //data from core data
         let search = searchBrain()
-        let results: [Shop] = search.searchWords(words: target)
-        
+        let results = search.searchWords(words: target)
         shops += results
     }
 }
