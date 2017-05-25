@@ -12,7 +12,7 @@ import CoreData
 
 extension City {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<City> {
+    @nonobjc public class func cityFetchRequest() -> NSFetchRequest<City> {
         return NSFetchRequest<City>(entityName: "City");
     }
 

@@ -33,18 +33,9 @@ class RestaurantDatabaseController : DatabaseController{
             let numOfRestaurants = contents.count
             
             // MARK: - Core Data Operations
-            //let cityClassName:String = String(describing: City.self)
+            let cityClassName:String = String(describing: City.self)
             let restaurantClassName:String = String(describing: Restaurant.self)
             //let stateClassName:String = String(describing: State.self)
-            
-            //            let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
-            //            var cityNames:Set<String> = Set()
-            //            for i in 0 ..< numOfRestaurants{
-            //                cityNames.insert(contents[i]["city"]!)
-            //            }
-            //            for cityName in cityNames{
-            //                city.cityName = cityName
-            //            }
             
             for i in 1 ..< numOfRestaurants{
                 let restaurant:Restaurant = NSEntityDescription.insertNewObject(forEntityName: restaurantClassName, into: DatabaseController.getContext()) as! Restaurant
@@ -53,7 +44,14 @@ class RestaurantDatabaseController : DatabaseController{
                 restaurant.latitude = Double(contents[i]["latitude"]!)!
                 restaurant.longitude = Double(contents[i]["longitude"]!)!
                 restaurant.placeID = contents[i]["placeID"]
-                //city.addToRestaurants(restaurant)
+                if let city = self.fetchOneCityFromCoreData(name: contents[i]["city"]!){
+                    city.addToRestaurants(restaurant)
+                }
+                else{
+                    let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
+                    city.cityName = contents[i]["city"]!
+                    city.addToRestaurants(restaurant)
+                }
             }
             DatabaseController.saveContext()
         }
@@ -69,16 +67,24 @@ class RestaurantDatabaseController : DatabaseController{
             print("Failed to delete")
             return
         }
+        guard self.deleteAllObjectsInCoreData(type: City.self) else{
+            print("Failed to delete")
+            return
+        }
     }
 
-//    func fetchOneCityFromCoreData<ChengShi>(name: String) -> ChengShi?{
-//        let fetchRequest = City.cityFetchRequest()
-//        do{
-//            let cities = try DatabaseController.getContext().fetch(fetchRequest)
-//            return cities[0]
-//        }catch{
-//            print("Error: \(error)")
-//        }
-//        return nil
-//    }
+    func fetchOneCityFromCoreData(name: String) -> City?{
+        let fetchRequest = NSFetchRequest<City>(entityName: "City");
+        do{
+            let cities = try DatabaseController.getContext().fetch(fetchRequest)
+            for city in cities{
+                if city.cityName == name{
+                    return city
+                }
+            }
+        }catch{
+            print("Error: \(error)")
+        }
+        return nil
+    }
 }

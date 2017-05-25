@@ -16,10 +16,16 @@ class ViewController: UIViewController {
 
         let restaurantDatabaseController = RestaurantDatabaseController()
         
+        let cities: [City] = restaurantDatabaseController.fetchAllObjectsFromCoreData()!
+        for city in cities{
+            print("City \(city.cityName!)")
+        }
+        
         let restaurants:[Restaurant] = restaurantDatabaseController.fetchAllObjectsFromCoreData()!
         for restaurant in restaurants{
-            print("No.\(restaurant.placeID!) \(restaurant.name!) is in \(restaurant.latitude), \(restaurant.longitude)")
+            print("No.\(restaurant.placeID!) \(restaurant.name!) is in \(restaurant.city!.cityName!) \(restaurant.latitude), \(restaurant.longitude)")
         }
+        print("Restaurant Num is \(restaurants.count)")
     }
 
     override func didReceiveMemoryWarning() {
