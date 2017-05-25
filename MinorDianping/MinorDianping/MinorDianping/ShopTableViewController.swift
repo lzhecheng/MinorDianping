@@ -20,9 +20,7 @@ class ShopTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         // Load the sample data.
-
         loadSampleShops()
     }
 
@@ -162,28 +160,16 @@ class ShopTableViewController: UITableViewController {
         
         //core data
         let cdPhoto = UIImage(named: "defaultphoto_2x.png")
-        let databaseController = DatabaseController()
-        let res = databaseController.fetchAllRestaurantsFromCoreData()!
-        //var cdShop : [Shop] = [Shop]()
-        for i in 0..<10 {
-            //cdShop[i] =
-            let shop = Shop(name: res[i].name!, photo: cdPhoto, latitude: res[i].latitude, longitude: res[i].longitude, comment: "")!
-            shops += [shop]
-        }
+        let databaseController0 = DatabaseController()
+        let res: [Restaurant] = databaseController0.fetchAllObjectsFromCoreData()!
+        
+        let search = searchBrain()
+        let results: [Shop] = search.searchWords(words: "la")
+        
+//        for i in results {
+//            let shop = Shop(name: res[i].name!, photo: cdPhoto, latitude: res[i].latitude, longitude: res[i].longitude, comment: "")!
+//            shops += [shop]
+//        }
+        shops += results
     }
-    /*
-    private func saveShops() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Shop.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("Shops successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save shops...", log: OSLog.default, type: .error)
-        }
-    }
-    
-    private func loadShops() -> [Shop]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Shop.ArchiveURL.path) as? [Shop]
-    }
- */
-    
 }
