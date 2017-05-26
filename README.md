@@ -6,6 +6,7 @@ This the final project of NJU Mobile Application 2017 Spring by Zhijian Jiang an
 * Swift中用于读取工程目录信息的类。
 ### 一些关键词
 * guard：可以暂时理解为类似于if关键词，必须有else。
+* inout：意味着传入函数的参数是[被引用的](https://swiftcafe.io/2016/05/05/swift3-var/)。
 
 ### 泛型
 #### 类型约束
@@ -33,8 +34,9 @@ func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
     }
 ```
 
-#### Core Data 删除操作
+#### Core Data
 * [Swift 3 Core Data Delete Object](ttps://stackoverflow.com/questions/38017449/swift-3-core-data-delete-object)
+* [Core Data: Relationship 总结](http://www.jianshu.com/p/8e3b64f16fc3)
 
 #### 错误处理
 

@@ -32,7 +32,7 @@ class DatabaseController: NSObject{
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "MinorDianping")
+        let container = NSPersistentContainer(name: "MinorDianping") // 声明了core data的存放文件名
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -95,15 +95,7 @@ class DatabaseController: NSObject{
         return false
     }
     
-//    func deleteOneObjectInCoreData(index: Int) -> Bool{
-//        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.restaurantFetchRequest()
-//        let context = DatabaseController.getContext()
-//        if let results = try? context.fetch(fetchRequest){
-//            context.delete(results[index])
-//            return true
-//        }
-//        return false
-//    }
-    
+    // MARK: Modification Functions
 
+    
 }

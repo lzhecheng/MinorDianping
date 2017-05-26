@@ -33,25 +33,21 @@ class RestaurantDatabaseController : DatabaseController{
             let numOfRestaurants = contents.count
             
             // MARK: - Core Data Operations
-            let cityClassName:String = String(describing: City.self)
-            let restaurantClassName:String = String(describing: Restaurant.self)
-            //let stateClassName:String = String(describing: State.self)
             
             for i in 1 ..< numOfRestaurants{
-                let restaurant:Restaurant = NSEntityDescription.insertNewObject(forEntityName: restaurantClassName, into: DatabaseController.getContext()) as! Restaurant
-                restaurant.name = contents[i]["name"]
-                restaurant.address = contents[i]["address"]
-                restaurant.latitude = Double(contents[i]["latitude"]!)!
-                restaurant.longitude = Double(contents[i]["longitude"]!)!
-                restaurant.placeID = contents[i]["placeID"]
-                if let city = self.fetchOneCityFromCoreData(name: contents[i]["city"]!){
-                    city.addToRestaurants(restaurant)
-                }
-                else{
-                    let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
-                    city.cityName = contents[i]["city"]!
-                    city.addToRestaurants(restaurant)
-                }
+                let restaurant = createNewRestaurant(name: contents[i]["name"]!, address: contents[i]["address"]!, cityName: contents[i]["city"]!, latitude: Double(contents[i]["latitude"]!)!, longitude: Double(contents[i]["longitude"]!)!, is_save: false)
+                // impprt city data
+//                if let city = CityDatabaseController.fetchOneCityFromCoreData(name: contents[i]["city"]!){
+//                    city.addToRestaurants(restaurant)
+//                }
+//                else{
+//                    let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
+//                    city.cityName = contents[i]["city"]!
+//                    city.addToRestaurants(restaurant)
+//                }
+            
+                // import user data
+                
             }
             DatabaseController.saveContext()
         }
@@ -63,28 +59,46 @@ class RestaurantDatabaseController : DatabaseController{
     }
 
     deinit{
-        guard self.deleteAllObjectsInCoreData(type: Restaurant.self) else{
-            print("Failed to delete")
-            return
-        }
-        guard self.deleteAllObjectsInCoreData(type: City.self) else{
-            print("Failed to delete")
+        guard self.deleteAllObjectsInCoreData(type: Restaurant.self) && self.deleteAllObjectsInCoreData(type: City.self) else{
+            print("Failed to delete database")
             return
         }
     }
-
-    func fetchOneCityFromCoreData(name: String) -> City?{
-        let fetchRequest = NSFetchRequest<City>(entityName: "City");
-        do{
-            let cities = try DatabaseController.getContext().fetch(fetchRequest)
-            for city in cities{
-                if city.cityName == name{
-                    return city
-                }
-            }
-        }catch{
-            print("Error: \(error)")
+    
+    // MARK: Attribute Modification Functions
+    func createNewRestaurant(name: String, address: String, cityName: String, latitude: Double, longitude: Double, is_save: Bool) -> Restaurant{
+        let restaurant:Restaurant = NSEntityDescription.insertNewObject(forEntityName: String(describing: Restaurant.self), into: DatabaseController.getContext()) as! Restaurant
+        restaurant.name = name
+        restaurant.address = address
+        restaurant.latitude = latitude
+        restaurant.longitude = longitude
+        if let city = CityDatabaseController.fetchOneCityFromCoreData(name: cityName){
+            city.addToRestaurants(restaurant)
         }
-        return nil
+        else{
+            let city = createNewCity(cityName: cityName, is_save: false)
+            city.addToRestaurants(restaurant)
+        }
+        if(is_save){
+            DatabaseController.saveContext()
+        }
+        return restaurant
+    }
+    
+    func createNewCity(cityName: String, is_save: Bool) -> City{
+        let city:City = NSEntityDescription.insertNewObject(forEntityName: String(describing: City.self), into: DatabaseController.getContext()) as! City
+        city.cityName = cityName
+        if(is_save){
+            DatabaseController.saveContext()
+        }
+        return city;
+    }
+    
+//    func modifyAttribute(objectName: String, attributeName: String, is_save: Bool){
+//        
+//    }
+    func modifyAttribute<T>( des: inout T, src: T, is_save: Bool = true){
+        des = src
+        DatabaseController.saveContext()
     }
 }

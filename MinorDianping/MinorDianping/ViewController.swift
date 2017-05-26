@@ -16,16 +16,25 @@ class ViewController: UIViewController {
 
         let restaurantDatabaseController = RestaurantDatabaseController()
         
-        let cities: [City] = restaurantDatabaseController.fetchAllObjectsFromCoreData()!
-        for city in cities{
-            print("City \(city.cityName!)")
+        let cities:[City] = restaurantDatabaseController.fetchAllObjectsFromCoreData()!
+        let restaurantsOfOneCity = cities[0].restaurants
+        
+        for restaruantOfOneCity in restaurantsOfOneCity!{
+            print(restaruantOfOneCity)
         }
         
+        restaurantDatabaseController.createNewRestaurant(name: "Guojiadayuan", address: "NJU", cityName: "Nanjing", latitude: 34, longitude: 68,is_save: true)
+        
         let restaurants:[Restaurant] = restaurantDatabaseController.fetchAllObjectsFromCoreData()!
+        restaurantDatabaseController.modifyAttribute(des: &restaurants[130].latitude, src: 25)
+        restaurantDatabaseController.modifyAttribute(des: &restaurants[130].name, src: "HuangMenJi")
+        
+        
         for restaurant in restaurants{
-            print("No.\(restaurant.placeID!) \(restaurant.name!) is in \(restaurant.city!.cityName!) \(restaurant.latitude), \(restaurant.longitude)")
+            print("\(restaurant.name!) is in \(restaurant.latitude), \(restaurant.longitude)")
         }
         print("Restaurant Num is \(restaurants.count)")
+        print("City Num is \(cities.count)")
     }
 
     override func didReceiveMemoryWarning() {

@@ -11,6 +11,8 @@
 		1835B3C91ED47A420059DA36 /* mexico.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1835B3C81ED47A420059DA36 /* mexico.csv */; };
 		183EB7B11ED6D9B9007A6201 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB7AF1ED6D9B9007A6201 /* City+CoreDataClass.swift */; };
 		183EB7B21ED6D9B9007A6201 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB7B01ED6D9B9007A6201 /* City+CoreDataProperties.swift */; };
+		183EB7B41ED6FF21007A6201 /* CityDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB7B31ED6FF21007A6201 /* CityDatabaseController.swift */; };
+		183EB7B61ED706F4007A6201 /* RecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB7B51ED706F4007A6201 /* RecommendationEngine.swift */; };
 		184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */; };
 		184CFCD41EAE1F0E002EC798 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD31EAE1F0E002EC798 /* ViewController.swift */; };
 		184CFCD71EAE1F0E002EC798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184CFCD51EAE1F0E002EC798 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		1835B3C81ED47A420059DA36 /* mexico.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mexico.csv; sourceTree = "<group>"; };
 		183EB7AF1ED6D9B9007A6201 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
 		183EB7B01ED6D9B9007A6201 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		183EB7B31ED6FF21007A6201 /* CityDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDatabaseController.swift; sourceTree = "<group>"; };
+		183EB7B51ED706F4007A6201 /* RecommendationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationEngine.swift; sourceTree = "<group>"; };
 		184CFCCE1EAE1F0E002EC798 /* MinorDianping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinorDianping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		184CFCD31EAE1F0E002EC798 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			children = (
 				18A183C51ECFF8A200A3ED55 /* Data */,
 				1835B3B21ED45B1D0059DA36 /* CSVHelper.swift */,
+				183EB7B51ED706F4007A6201 /* RecommendationEngine.swift */,
 				184CFCD31EAE1F0E002EC798 /* ViewController.swift */,
 				18721F031ED67EB900FECA43 /* DatabaseControllers */,
 				1875D6EE1ECB3EBB0019A065 /* Models */,
@@ -169,6 +174,7 @@
 				1875D6E41ECB3BC00019A065 /* DatabaseController.swift */,
 				18721EFF1ED67E9800FECA43 /* RestaurantDatabaseController.swift */,
 				18721F111ED68A5700FECA43 /* UserInfoDatabaseController.swift */,
+				183EB7B31ED6FF21007A6201 /* CityDatabaseController.swift */,
 			);
 			name = DatabaseControllers;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				18721F1F1ED68D4800FECA43 /* Restaurant+CoreDataClass.swift in Sources */,
 				184CFCDA1EAE1F0E002EC798 /* MinorDianping.xcdatamodeld in Sources */,
 				18721F1B1ED68D4800FECA43 /* UserInfo+CoreDataClass.swift in Sources */,
+				183EB7B61ED706F4007A6201 /* RecommendationEngine.swift in Sources */,
 				185E06581EC348060027929F /* ShopViewController.swift in Sources */,
 				18721F121ED68A5700FECA43 /* UserInfoDatabaseController.swift in Sources */,
 				18721F1C1ED68D4800FECA43 /* UserInfo+CoreDataProperties.swift in Sources */,
@@ -363,6 +370,7 @@
 				184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */,
 				183EB7B21ED6D9B9007A6201 /* City+CoreDataProperties.swift in Sources */,
 				18721F001ED67E9800FECA43 /* RestaurantDatabaseController.swift in Sources */,
+				183EB7B41ED6FF21007A6201 /* CityDatabaseController.swift in Sources */,
 				1835B3B31ED45B1D0059DA36 /* CSVHelper.swift in Sources */,
 				185E06561EC342670027929F /* MapViewController.swift in Sources */,
 			);
