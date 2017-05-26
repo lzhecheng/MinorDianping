@@ -94,11 +94,24 @@ class RestaurantDatabaseController : DatabaseController{
         return city;
     }
     
-//    func modifyAttribute(objectName: String, attributeName: String, is_save: Bool){
-//        
-//    }
-    func modifyAttribute<T>( des: inout T, src: T, is_save: Bool = true){
+    func modifyAttribute<T>( des: inout T, src: T, is_save: Bool = true) {
         des = src
-        DatabaseController.saveContext()
+        if(is_save){
+            DatabaseController.saveContext()
+        }
+    }
+    
+    func modifyRestaurantToCity( des: Restaurant, cityName: String, is_save: Bool = true ){
+        des.city?.removeFromRestaurants(des)
+        if let city = CityDatabaseController.fetchOneCityFromCoreData(name: cityName){
+            city.addToRestaurants(des)
+        }
+        else{
+            let city = createNewCity(cityName: cityName, is_save: false)
+            city.addToRestaurants(des)
+        }
+        if(is_save){
+            DatabaseController.saveContext()
+        }
     }
 }

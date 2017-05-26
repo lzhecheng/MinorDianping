@@ -24,7 +24,6 @@ extension Restaurant {
     @NSManaged public var name: String?
     @NSManaged public var placeID: String?
     @NSManaged public var city: City?
-    //@NSManaged public var state: State?
     @NSManaged public var users: NSSet?
 
 }
@@ -43,5 +42,4 @@ extension Restaurant {
 
     @objc(removeUsers:)
     @NSManaged public func removeFromUsers(_ values: NSSet)
-
 }

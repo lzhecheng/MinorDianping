@@ -28,10 +28,10 @@ class ViewController: UIViewController {
         let restaurants:[Restaurant] = restaurantDatabaseController.fetchAllObjectsFromCoreData()!
         restaurantDatabaseController.modifyAttribute(des: &restaurants[130].latitude, src: 25)
         restaurantDatabaseController.modifyAttribute(des: &restaurants[130].name, src: "HuangMenJi")
-        
+        restaurantDatabaseController.modifyRestaurantToCity(des: restaurants[130], cityName: "Baoying")
         
         for restaurant in restaurants{
-            print("\(restaurant.name!) is in \(restaurant.latitude), \(restaurant.longitude)")
+            print("\(restaurant.name!) is in \(restaurant.city!.cityName!) \(restaurant.latitude), \(restaurant.longitude)")
         }
         print("Restaurant Num is \(restaurants.count)")
         print("City Num is \(cities.count)")
