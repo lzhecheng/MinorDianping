@@ -59,7 +59,7 @@ class RestaurantDatabaseController : DatabaseController{
     }
 
     deinit{
-        guard self.deleteAllObjectsInCoreData(type: Restaurant.self) && self.deleteAllObjectsInCoreData(type: City.self) else{
+        guard self.deleteAllObjectsInCoreData(type: Restaurant.self) && self.deleteAllObjectsInCoreData(type: City.self) && self.deleteAllObjectsInCoreData(type: UserInfo.self) else{
             print("Failed to delete database")
             return
         }
@@ -92,6 +92,25 @@ class RestaurantDatabaseController : DatabaseController{
             DatabaseController.saveContext()
         }
         return city;
+    }
+    
+    func createNewUserInfo(latitude: Double, longitude: Double, name: String, password: String, price: Double, is_save: Bool) -> UserInfo{
+        do{
+            let userInfo:UserInfo = try NSEntityDescription.insertNewObject(forEntityName: String(describing: UserInfo.self), into: DatabaseController.getContext()) as! UserInfo
+            userInfo.name = name
+            userInfo.latitude = latitude
+            userInfo.longitude = longitude
+            userInfo.password = password
+            userInfo.price = price
+            if(is_save){
+                try DatabaseController.saveContext()
+            }
+            return userInfo
+        }catch{
+            self.deleteAllObjectsInCoreData(type: Restaurant.self)
+            self.deleteAllObjectsInCoreData(type: City.self)
+            self.deleteAllObjectsInCoreData(type: UserInfo.self)
+        }
     }
     
     func modifyAttribute<T>( des: inout T, src: T, is_save: Bool = true) {

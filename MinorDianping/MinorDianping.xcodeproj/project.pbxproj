@@ -165,12 +165,12 @@
 				1839B78C1ED9AFE7006E1004 /* ShopTableViewCell.swift */,
 				1835B3B21ED45B1D0059DA36 /* CSVHelper.swift */,
 				183EB7B51ED706F4007A6201 /* RecommendationEngine.swift */,
+				18721F041ED687B300FECA43 /* DataModels */,
 				1839B7831ED9AE47006E1004 /* ViewControllers */,
 				18A183C51ECFF8A200A3ED55 /* Data */,
 				18721F031ED67EB900FECA43 /* DatabaseControllers */,
 				1875D6EE1ECB3EBB0019A065 /* Models */,
 				1885DDA81EB21C3B0098F7D9 /* Supporting files */,
-				18721F041ED687B300FECA43 /* DataModels */,
 			);
 			path = MinorDianping;
 			sourceTree = "<group>";

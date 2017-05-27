@@ -162,16 +162,24 @@ class ShopTableViewController: UITableViewController {
         
         let cdPhoto = UIImage(named: "defaultPhoto")
         let databaseController = RestaurantDatabaseController()
+        databaseController.createNewRestaurant(name: "a", address: "b", cityName: "c", latitude: 1, longitude: 2, is_save: true)
+        databaseController.createNewCity(cityName: "Nanjing", is_save: true)
+        databaseController.createNewUserInfo(latitude: 100, longitude: 100, name: "Zhijian", password: "123456", price: 1000, is_save: true)
+        let users: [UserInfo] = databaseController.fetchAllObjectsFromCoreData()!
+        print("\(users[0].name!) is in \(users[0].longitude), \(users[0].latitude)")
+        let cities: [City] = databaseController.fetchAllObjectsFromCoreData()!
+        for i in 0..<cities.count{
+            print(cities[i].cityName!)
+        }
+        
         let restaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
+        databaseController.modifyAttribute(des: &restaurants[0].name, src: "cs")
         print(restaurants.count)
         for i in 0..<restaurants.count {
             let shop = Shop(name: restaurants[i].name!, photo: cdPhoto, latitude: restaurants[i].latitude, longitude: restaurants[i].longitude, comment: "")!
             shops += [shop]
         }
-//        databaseController.createNewRestaurant(name: "a", address: "b", cityName: "c", latitude: 1, longitude: 2, is_save: true)
-//        databaseController.createNewCity(cityName: "d", is_save: true)
-//        databaseController.modifyAttribute(des: &restaurants[0].name, src: "cs")
-//        print(restaurants[0].name)
+
     }
     
     private func loadSeachedShops() {

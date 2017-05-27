@@ -22,6 +22,8 @@ extension UserInfo {
     @NSManaged public var password: String?
     @NSManaged public var taste: String?
     @NSManaged public var restaurants: NSSet?
+    @NSManaged public var latitude: Double
+    @NSManaged public var longitude: Double
 
 }
 
