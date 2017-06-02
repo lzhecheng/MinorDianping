@@ -33,7 +33,7 @@ class access {
         $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->name);
 
         if(mysqli_connect_errno()) {
-            echo "Could not connect to database";
+            die("Could not connect to database");
         }
 
         // support all languages
@@ -53,7 +53,7 @@ class access {
     // Insert user
     public function registerUser($username, $password, $salt, $email, $fullname){
         // sql command
-        $sql = "INSERT INTO users SET username=?, password=?, salt=?, email=?, fullname=?";
+        $sql = "INSERT INTO users (username, password, salt, email, fullname) VALUES (?, ?, ?, ?, ?)";
 
         // store query result in $statement
         $statement = $this->conn->prepare($sql);
@@ -67,6 +67,7 @@ class access {
         $statement->bind_param("sssss", $username, $password, $salt, $email, $fullname);
 
         $returnValue = $statement->execute();
+        $statement->close();
         return $returnValue;
     }
 

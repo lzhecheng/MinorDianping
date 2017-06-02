@@ -8,11 +8,11 @@
 
 // STEP 1. Declare params of user info
 // Secruing info and storing var
+
 $username = htmlentities($_REQUEST["username"]);
 $password = htmlentities($_REQUEST["password"]);
 $email = htmlentities($_REQUEST["email"]);
 $fullname = htmlentities($_REQUEST["fullname"]);
-
 
 // if GET or POST are empty
 if (empty($username) || empty($password) || empty($email) || empty($fullname)){
@@ -45,7 +45,7 @@ $access->connect();
 // STEP 3. Register user information
 $result = $access->registerUser($username, $secured_password, $salt, $email, $fullname);
 
-if(!$result){
+if($result){
     $user = $access->selectUser($username);
     $returnArray["status"] = "200";
     $returnArray["message"] = "Successfully registered";
