@@ -21,3 +21,7 @@ This the final project of NJU Mobile Application 2017 Spring by Zhijian Jiang an
 第一个链接提供了读取文件的方法，第二个链接提供了如何处理从csv读取到的字符串的方法。
 #### 注意事项
 * 读取文件内容前，需要使用Bundle.main.path()函数读取文件路径，所以需要**将csv文件添加到Bundle，即添加到项目目录中**。
+
+### MySQL开发经验
+#### 有用的资料
+* [iOS Social App - Swift, PHP, MySQL, HTML](https://www.youtube.com/playlist?list=PLPvpSMth5DlALpnXncMEs9czd3c5odlhr)
