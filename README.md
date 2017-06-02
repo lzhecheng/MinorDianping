@@ -25,3 +25,4 @@ This the final project of NJU Mobile Application 2017 Spring by Zhijian Jiang an
 ### MySQL开发经验
 #### 有用的资料
 * [iOS Social App - Swift, PHP, MySQL, HTML](https://www.youtube.com/playlist?list=PLPvpSMth5DlALpnXncMEs9czd3c5odlhr)
+* [Host your Application in the Google Cloud with XAMPP and Bitnami](https://www.apachefriends.org/docs/hosting-xampp-on-google.html)
