@@ -26,4 +26,6 @@ This the final project of NJU Mobile Application 2017 Spring by Zhijian Jiang an
 #### 有用的资料
 * [iOS Social App - Swift, PHP, MySQL, HTML](https://www.youtube.com/playlist?list=PLPvpSMth5DlALpnXncMEs9czd3c5odlhr)
 * [Host your Application in the Google Cloud with XAMPP and Bitnami](https://www.apachefriends.org/docs/hosting-xampp-on-google.html)
-* [How To Access PhpMyAdmin?](https://docs.bitnami.com/google/components/phpmyadmin/?utm_source=bitnami&utm_medium=cloudimage&utm_campaign=google): If successful, the above commands will create an SSH tunnel but **will not display any output** on the server console.
+* [How To Access PhpMyAdmin?](https://docs.bitnami.com/google/components/phpmyadmin/?utm_source=bitnami&utm_medium=cloudimage&utm_campaign=google): 
+  * If successful, the above commands will create an SSH tunnel but **will not display any output** on the server console.
+  * Shadowsocks不能开全局模式。
