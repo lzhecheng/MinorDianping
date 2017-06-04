@@ -29,7 +29,7 @@ $secured_password = sha1($password . $salt);
 
 // STEP 2. Build connection
 // Secure way to build conn
-$file = parse_ini_file("../../../minor_dianping.ini");
+$file = parse_ini_file("./ini_file/minor_dianping.ini");
 
 // store in php var inf from ini var
 $host = trim($file["dbhost"]);

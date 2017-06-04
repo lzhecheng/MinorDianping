@@ -179,6 +179,8 @@ class ShopTableViewController: UITableViewController {
             let shop = Shop(name: restaurants[i].name!, photo: cdPhoto, latitude: restaurants[i].latitude, longitude: restaurants[i].longitude, comment: "")!
             shops += [shop]
         }
+        let userInfoDatabaseController = UserInfoDatabaseController()
+        userInfoDatabaseController.registerNewUser(username: "ZCL", password: "123", email: "cc@nju.edu.cn", fullname: "ChunCao")
 
     }
     

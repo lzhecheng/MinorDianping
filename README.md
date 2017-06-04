@@ -72,6 +72,8 @@ for i in 0 ..< 5
     * 修改core data中attribute的数据类型时，先删除该attribute，再添加就可以避免此错误。
 * [Generic Parameter 'G' is not used in function signature](https://stackoverflow.com/questions/32407661/how-to-use-a-generic-inside-of-a-function-but-not-in-the-signature-swift-2)
 * ['***' is ambiguous for type lookup in this context](https://forums.raywenderlich.com/t/dog-is-ambiguous-for-type-lookup-in-this-context/22280)
+* [Swift 3 URLSession.shared() Ambiguous reference to member 'dataTask(with:completionHandler:) error (bug)](https://stackoverflow.com/questions/37812286/swift-3-urlsession-shared-ambiguous-reference-to-member-datataskwithcomplet)
+    * it was declared earlier as URLRequest instead of NSMutableURLRequest: ```var request = URLRequest(url:myUrl!)```
 
 ## 其他笔记
 ### Git
@@ -81,3 +83,4 @@ for i in 0 ..< 5
     * 显示当前分支：git branch
 ### 常用命令
 * 查看文件的编码方式：file命令。
+* [如何计算代码行数](https://stackoverflow.com/questions/316590/how-to-count-lines-of-code-including-sub-directories)：```find . -name "*.c" -print0 | xargs -0 wc -l```
