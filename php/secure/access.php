@@ -89,6 +89,25 @@ class access {
         }
         return $returnArray;
     }
+
+    public function updateUser($username, $password, $salt, $email, $fullname){
+        // sql command
+        $sql = "UPDATE users set fullname = ? WHERE username = ?";  
+        // store query result in $statement
+        $statement = $this->conn->prepare($sql);
+
+        // if error
+        if(!$statement){
+            throw new Exception($statement->error);
+        }
+
+        // bind 5 param of type string to be placed in $sql command
+        $statement->bind_param("ss", $fullname, $username);
+
+        $returnValue = $statement->execute();
+        $statement->close();
+        return $returnValue;
+    }
 }
 
 ?>
