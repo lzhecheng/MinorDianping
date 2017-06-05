@@ -7,6 +7,7 @@ This the final project of NJU Mobile Application 2017 Spring by Zhijian Jiang an
 * [**（最有用）iOS Core Data with Swift 3 -- youtube**](https://www.youtube.com/watch?v=da6W7wDh0Dw)
 * [Getting Started with Core Data Tutorial -- raywenderlich](https://www.raywenderlich.com/145809/getting-started-core-data-tutorial)
 * [「死磕」Core Data——入门 -- 简书](http://www.jianshu.com/p/e43edd2a8be2)
+* [Lightweight Migrations in Core Data Tutorial](https://www.raywenderlich.com/145860/core-data-migrations-tutorial-lightweight-migrations-2)
 
 #### 开发步骤
 1. Step 1 创建项目
