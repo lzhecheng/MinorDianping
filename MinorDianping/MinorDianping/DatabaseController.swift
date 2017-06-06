@@ -5,65 +5,22 @@
 //  Created by Apple on 2017/5/16.
 //  Copyright © 2017年 NJU.EE. All rights reserved.
 //
+
 import Foundation
 import CoreData
 
-class DatabaseController{
+class DatabaseController: NSObject{
     // MARK: - Core Data stack
-    
-    init(filename: String){
-        let WHETHER_INIT = true
-        guard self.deleteAllObjectsInCoreData() else{
-            print("Database init: Failed to delete past database")
-            return
-        }
-        if(WHETHER_INIT){
-            // MARK: CSV File Operations
-            let csvHelper = CSVHelper()
-            let file:String = csvHelper.readDataFromFile(file: filename, type: "csv")
-            
-            guard let contents:[[String:String]] = csvHelper.convertCSV(file: file)else {
-                print("Database init: Failed to parse successfully")
-                return
-            }
-            
-            let numOfRestaurants = contents.count
-            
-            // MARK: - Core Data Operations
-            let cityClassName:String = String(describing: City.self)
-            let restaurantClassName:String = String(describing: Restaurant.self)
-            let stateClassName:String = String(describing: State.self)
-            
-            //            let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
-            //            var cityNames:Set<String> = Set()
-            //            for i in 0 ..< numOfRestaurants{
-            //                cityNames.insert(contents[i]["city"]!)
-            //            }
-            //            for cityName in cityNames{
-            //                city.cityName = cityName
-            //            }
-            
-            for i in 1 ..< numOfRestaurants{
-                let restaurant:Restaurant = NSEntityDescription.insertNewObject(forEntityName: restaurantClassName, into: DatabaseController.getContext()) as! Restaurant
-                restaurant.name = contents[i]["name"]
-                restaurant.address = contents[i]["address"]
-                restaurant.latitude = Double(contents[i]["latitude"]!)!
-                restaurant.longitude = Double(contents[i]["longitude"]!)!
-                //restaurant.placeID = contents[i]["placeID"]
-                //city.addToRestaurants(restaurant)
-            }
-        }
-        DatabaseController.saveContext()
-        print("Database init: Save database successfully")
-    }
-    
-    convenience init(){
-        self.init(filename: "mexico")
-    }
-    
-    func deconstruct(){
-    }
-    
+//    init(completionClosure: @escaping () -> ()) {
+//        persistentContainer = NSPersistentContainer(name: "DataModel")
+//        persistentContainer.loadPersistentStores() { (description, error) in
+//            if let error = error {
+//                fatalError("Failed to load Core Data stack: \(error)")
+//            }
+//            completionClosure()
+//        }
+//    }
+
     class func getContext() -> NSManagedObjectContext{
         return DatabaseController.persistentContainer.viewContext
     }
@@ -75,7 +32,7 @@ class DatabaseController{
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "MinorDianping")
+        let container = NSPersistentContainer(name: "MinorDianping") // 声明了core data的存放文件名
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -117,28 +74,16 @@ class DatabaseController{
         do{
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
             return searchResults
-        }
-        catch{
+        }catch{
             print("Error: \(error)")
             
         }
         return nil
     }
     
-    
     // MARK: Core Data Deletion Functions
-    func deleteOneObjectInCoreData(index: Int) -> Bool{
-        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.restaurantFetchRequest()
-        let context = DatabaseController.getContext()
-        if let results = try? context.fetch(fetchRequest){
-            context.delete(results[index])
-            return true
-        }
-        return false
-    }
-    
-    func deleteAllObjectsInCoreData() -> Bool{
-        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.restaurantFetchRequest()
+    internal func deleteAllObjectsInCoreData<T: NSManagedObject>(type: T.Type) -> Bool{
+        let fetchRequest:NSFetchRequest<T> = NSFetchRequest<T>(entityName: String(describing: T.self))
         let context = DatabaseController.getContext()
         if let results = try? context.fetch(fetchRequest){
             for result in results{
@@ -149,4 +94,8 @@ class DatabaseController{
         }
         return false
     }
+    
+    // MARK: Modification Functions
+
+    
 }

@@ -1,5 +1,5 @@
 //
-//  Restaurant+CoreDataClass.swift
+//  UserInfo+CoreDataClass.swift
 //  MinorDianping
 //
 //  Created by Apple on 2017/5/25.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Restaurant)
-public class Restaurant: NSManagedObject {
+@objc(UserInfo)
+public class UserInfo: NSManagedObject {
 
 }
