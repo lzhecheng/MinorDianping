@@ -10,23 +10,27 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var mainMapView: MKMapView!
-    
     var shop: Shop?
-    
+
     //定位管理器
     let locationManager:CLLocationManager = CLLocationManager()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = shop?.name
+        
+        //经纬度+comment
+        let localLatitude = shop?.latitude
+        let localLongitude = shop?.longitude
+        let localComment = shop?.comment
         
         //使用代码创建
         self.mainMapView = MKMapView(frame:self.view.frame)
         self.view.addSubview(self.mainMapView)
+        self.mainMapView.delegate = self
         
         //地图类型设置 - 标准地图
         self.mainMapView.mapType = MKMapType.standard
@@ -40,7 +44,7 @@ class MapViewController: UIViewController {
         //使用当前位置
         //var center:CLLocation = locationManager.location.coordinate
         //使用自定义位置
-        let center:CLLocation = CLLocation(latitude: 32.029171, longitude: 118.788231)
+        let center:CLLocation = CLLocation(latitude: localLatitude!, longitude: localLongitude!)
         let currentRegion:MKCoordinateRegion = MKCoordinateRegion(center: center.coordinate,
                                                                   span: currentLocationSpan)
         
@@ -50,13 +54,31 @@ class MapViewController: UIViewController {
         //创建一个大头针对象
         let objectAnnotation = MKPointAnnotation()
         //设置大头针的显示位置
-        objectAnnotation.coordinate = CLLocation(latitude: 32.029171,
-                                                 longitude: 118.788231).coordinate
+        objectAnnotation.coordinate = CLLocation(latitude: localLatitude!,
+                                                 longitude: localLongitude!).coordinate
         //设置点击大头针之后显示的标题
         objectAnnotation.title = shop?.name
         //设置点击大头针之后显示的描述
-        objectAnnotation.subtitle = "南京市秦淮区秦淮河北岸中华路"
+        objectAnnotation.subtitle = localComment
         //添加大头针
         self.mainMapView.addAnnotation(objectAnnotation)
+    }
+    
+    
+    @IBAction func navButton(_ sender: UIBarButtonItem) {
+        //define destination
+        let latitude:CLLocationDegrees = (shop?.latitude)!
+        let longitude:CLLocationDegrees = (shop?.longitude)!
+        
+        let regionDistance:CLLocationDistance = 1000
+        let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinate, regionDistance, regionDistance)
+        
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        
+        let placemark = MKPlacemark(coordinate: coordinate)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = shop?.name
+        mapItem.openInMaps(launchOptions: options)
     }
 }

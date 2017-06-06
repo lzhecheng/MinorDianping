@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18294F6D1EE6DA3200815EDA /* MinorDianping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18294F6B1EE6DA3200815EDA /* MinorDianping.xcdatamodeld */; };
 		183073E81ED4128800CA3558 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183073E71ED4128800CA3558 /* RatingControl.swift */; };
 		183073EA1ED41C6C00CA3558 /* CommentShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */; };
-		183C2EC21EE0379800E98F7D /* MinorDianping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 183C2EC01EE0379800E98F7D /* MinorDianping.xcdatamodeld */; };
 		184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */; };
 		184CFCD71EAE1F0E002EC798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184CFCD51EAE1F0E002EC798 /* Main.storyboard */; };
 		184CFCDC1EAE1F0E002EC798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184CFCDB1EAE1F0E002EC798 /* Assets.xcassets */; };
@@ -56,9 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18294F6C1EE6DA3200815EDA /* MinorDianping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MinorDianping.xcdatamodel; sourceTree = "<group>"; };
 		183073E71ED4128800CA3558 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentShopViewController.swift; sourceTree = "<group>"; };
-		183C2EC11EE0379800E98F7D /* MinorDianping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MinorDianping.xcdatamodel; sourceTree = "<group>"; };
 		184CFCCE1EAE1F0E002EC798 /* MinorDianping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinorDianping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		184CFCD61EAE1F0E002EC798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		184CFCD01EAE1F0E002EC798 /* MinorDianping */ = {
 			isa = PBXGroup;
 			children = (
-				183C2EC01EE0379800E98F7D /* MinorDianping.xcdatamodeld */,
+				18294F6B1EE6DA3200815EDA /* MinorDianping.xcdatamodeld */,
 				18967CD91ED5A05800687541 /* Data */,
 				1885DDA81EB21C3B0098F7D9 /* Supporting files */,
 				1875D6EE1ECB3EBB0019A065 /* Models */,
@@ -379,7 +379,7 @@
 				1877A5E71ED713BA007A4561 /* AccountViewController.swift in Sources */,
 				18967CD41ED5A04900687541 /* CSVHelper.swift in Sources */,
 				18967CDD1ED5A2C800687541 /* Restaurant+CoreDataProperties.swift in Sources */,
-				183C2EC21EE0379800E98F7D /* MinorDianping.xcdatamodeld in Sources */,
+				18294F6D1EE6DA3200815EDA /* MinorDianping.xcdatamodeld in Sources */,
 				18B2F7191ECF1EF800086EC6 /* Shop.swift in Sources */,
 				18967CD71ED5A04900687541 /* State+CoreDataClass.swift in Sources */,
 				1893F0201ECDD763003993D6 /* City+CoreDataClass.swift in Sources */,
@@ -665,14 +665,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		183C2EC01EE0379800E98F7D /* MinorDianping.xcdatamodeld */ = {
+		18294F6B1EE6DA3200815EDA /* MinorDianping.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				183C2EC11EE0379800E98F7D /* MinorDianping.xcdatamodel */,
+				18294F6C1EE6DA3200815EDA /* MinorDianping.xcdatamodel */,
 			);
-			currentVersion = 183C2EC11EE0379800E98F7D /* MinorDianping.xcdatamodel */;
+			currentVersion = 18294F6C1EE6DA3200815EDA /* MinorDianping.xcdatamodel */;
 			path = MinorDianping.xcdatamodeld;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

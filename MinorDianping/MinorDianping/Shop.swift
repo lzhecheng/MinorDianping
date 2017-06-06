@@ -15,6 +15,9 @@ class Shop{
     //MARK: Properties
     var name: String
     var photo: UIImage?
+    var latitude: Double
+    var longitude: Double
+    var comment: String
     
     /*
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -25,10 +28,13 @@ class Shop{
     struct PropertyKey {
         static let name = "name"
         static let photo = "photo"
+        static let latitude = "latitude"
+        static let longitude = "longitude"
+        static let comment = "comment"
     }
     
     //MARK: Initialization
-    init?(name: String, photo: UIImage?) {
+    init?(name: String, photo: UIImage?, latitude: Double, longitude: Double, comment: String) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -38,6 +44,9 @@ class Shop{
         // Initialize stored properties.
         self.name = name
         self.photo = photo
+        self.latitude = latitude
+        self.longitude = longitude
+        self.comment = comment
     }
     
     /*

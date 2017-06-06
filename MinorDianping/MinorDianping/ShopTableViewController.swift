@@ -8,18 +8,31 @@
 
 import UIKit
 import os.log
+import CoreData
 
 class ShopTableViewController: UITableViewController {
-
     
     //MARK: Properties
     var shops = [Shop]()
+    var target: String = "#nothing"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set naviation bar color & word color & word color in button
+        self.navigationController?.navigationBar.barTintColor =
+            UIColor(red: 135/255, green: 206/255, blue: 250/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
 
-        // Load the sample data.
-        loadSampleShops()
+        // Load core data or load search results
+        if target == "#nothing"{
+            loadSampleShops()
+            loadCoreDataShops()
+        }else {
+            loadSeachedShops()
+        }
     }
 
     // MARK: - Table view data source
@@ -33,7 +46,6 @@ class ShopTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return shops.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
@@ -88,18 +100,12 @@ class ShopTableViewController: UITableViewController {
     }
     */
 
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
-            
-            //case "AddItem":
-                //os_log("Adding a new meal.", log: OSLog.default, type: .debug)
-                
             case "ShopChosen":
                 guard let shopDetailViewController = segue.destination as? ShopViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
@@ -115,7 +121,7 @@ class ShopTableViewController: UITableViewController {
                 
                 let selectedShop = shops[indexPath.row]
                 shopDetailViewController.shop = selectedShop
-                
+            
             default:
                 fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
@@ -123,37 +129,56 @@ class ShopTableViewController: UITableViewController {
 
     private func loadSampleShops() {
         
-        let photo1 = UIImage(named: "shop1")
-        let photo2 = UIImage(named: "shop2")
-        let photo3 = UIImage(named: "shop3")
+        //sameple shops
         
-        guard let shop1 = Shop(name: "KFC", photo: photo1) else {
+        //shop1: KFC
+        let photo1 = UIImage(named: "shop1")
+        let latitude1 = 32.1025600000
+        let longitude1 = 118.9261600000
+        let comment1 = "This is KFC and it's better than M"
+        
+        //shop2: M
+        let photo2 = UIImage(named: "shop2")
+        let latitude2 = 32.0942600000
+        let longitude2 = 118.9157500000
+        let comment2 = "This is M and it's better than Burger King"
+        
+        //shop3: Burger King
+        let photo3 = UIImage(named: "shop3")
+        let latitude3 = 32.0389900000
+        let longitude3 = 118.7830500000
+        let comment3 = "This is Burger King and it's better than KFC"
+        
+        guard let shop1 = Shop(name: "KFC", photo: photo1, latitude: latitude1, longitude: longitude1, comment: comment1) else {
             fatalError("Unable to instantiate meal1")
         }
         
-        guard let shop2 = Shop(name: "M", photo: photo2) else {
+        guard let shop2 = Shop(name: "M", photo: photo2, latitude: latitude2, longitude: longitude2, comment: comment2) else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let shop3 = Shop(name: "Burger King", photo: photo3) else {
+        guard let shop3 = Shop(name: "Burger King", photo: photo3, latitude: latitude3, longitude: longitude3, comment: comment3) else {
             fatalError("Unable to instantiate meal3")
         }
-        
         shops += [shop1,shop2,shop3]
+        
     }
-    /*
-    private func saveShops() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Shop.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("Shops successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save shops...", log: OSLog.default, type: .error)
+    
+    private func loadCoreDataShops(){
+        
+        let cdPhoto = UIImage(named: "defaultPhoto")
+        let databaseController = DatabaseController()
+        let restaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
+        for i in 0..<restaurants.count {
+            let shop = Shop(name: restaurants[i].name!, photo: cdPhoto, latitude: restaurants[i].latitude, longitude: restaurants[i].longitude, comment: "")!
+            shops += [shop]
         }
     }
     
-    private func loadShops() -> [Shop]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Shop.ArchiveURL.path) as? [Shop]
+    private func loadSeachedShops() {
+        //data from core data
+        let search = searchBrain()
+        let results = search.searchWords(words: target)
+        shops += results
     }
- */
-    
 }
