@@ -159,6 +159,10 @@ class ShopTableViewController: UITableViewController {
             fatalError("Unable to instantiate meal3")
         }
         shops += [shop1,shop2,shop3]
+        let mySQLOps = MySQLOps()
+        mySQLOps.registerNewUser(username: "test", password: "123", email: "123", fullname: "123")
+        mySQLOps.fetchUserInfoFromMySQL(username: "user4", attributeName: "fullname")
+        mySQLOps.updateUserInfoToMySQL(username: "user4", attributeName: "fullname", attributeValue: "zz")
         
         let cdPhoto = UIImage(named: "defaultPhoto")
         let databaseController = RestaurantDatabaseController()
@@ -170,17 +174,16 @@ class ShopTableViewController: UITableViewController {
 //        for i in 0..<cities.count{
 //            print(cities[i].cityName!)
 //        }
-        
+
         let restaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
         databaseController.modifyAttribute(des: &restaurants[0].name, src: "cs")
         print(restaurants.count)
-        for i in 0..<restaurants.count {
+        for i in 0..<3 {
             let shop = Shop(name: restaurants[i].name!, photo: cdPhoto, latitude: restaurants[i].latitude, longitude: restaurants[i].longitude, comment: "")!
             shops += [shop]
         }
-//        let userInfoDatabaseController = UserInfoDatabaseController()
-//        userInfoDatabaseController.registerNewUser(username: "ZCL", password: "123", email: "cc@nju.edu.cn", fullname: "ChunCao")
 
+        
     }
     
     private func loadSeachedShops() {

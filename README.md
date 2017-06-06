@@ -74,6 +74,7 @@ for i in 0 ..< 5
 * ['***' is ambiguous for type lookup in this context](https://forums.raywenderlich.com/t/dog-is-ambiguous-for-type-lookup-in-this-context/22280)
 * [Swift 3 URLSession.shared() Ambiguous reference to member 'dataTask(with:completionHandler:) error (bug)](https://stackoverflow.com/questions/37812286/swift-3-urlsession-shared-ambiguous-reference-to-member-datataskwithcomplet)
     * it was declared earlier as URLRequest instead of NSMutableURLRequest: ```var request = URLRequest(url:myUrl!)```
+* [Type 'Any' has no subscript members](https://stackoverflow.com/questions/39423367/correctly-parsing-json-in-swift-3)
 
 ## 其他笔记
 ### Git

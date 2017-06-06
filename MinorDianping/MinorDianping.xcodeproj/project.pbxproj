@@ -37,6 +37,7 @@
 		18721F1F1ED68D4800FECA43 /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18721F171ED68D4800FECA43 /* Restaurant+CoreDataClass.swift */; };
 		18721F201ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18721F181ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift */; };
 		1875D6E51ECB3BC00019A065 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875D6E41ECB3BC00019A065 /* DatabaseController.swift */; };
+		18861AE01EE6D803008DC5CF /* MySQLOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18861ADF1EE6D803008DC5CF /* MySQLOps.swift */; };
 		18A183C71ED0471E00A3ED55 /* Nanjing.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18A183C61ED0471E00A3ED55 /* Nanjing.csv */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		18721F171ED68D4800FECA43 /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
 		18721F181ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1875D6E41ECB3BC00019A065 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		18861ADF1EE6D803008DC5CF /* MySQLOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySQLOps.swift; sourceTree = "<group>"; };
 		18A183C61ED0471E00A3ED55 /* Nanjing.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nanjing.csv; sourceTree = "<group>"; };
 		18F524BF1EE5738400884641 /* MinorDianping v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v2.xcdatamodel"; sourceTree = "<group>"; };
 		18F524C01EE5806200884641 /* MinorDianping v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v3.xcdatamodel"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				18721EFF1ED67E9800FECA43 /* RestaurantDatabaseController.swift */,
 				18721F111ED68A5700FECA43 /* UserInfoDatabaseController.swift */,
 				183EB7B31ED6FF21007A6201 /* CityDatabaseController.swift */,
+				18861ADF1EE6D803008DC5CF /* MySQLOps.swift */,
 			);
 			name = DatabaseControllers;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				1875D6E51ECB3BC00019A065 /* DatabaseController.swift in Sources */,
 				18721F201ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift in Sources */,
 				18721F1F1ED68D4800FECA43 /* Restaurant+CoreDataClass.swift in Sources */,
+				18861AE01EE6D803008DC5CF /* MySQLOps.swift in Sources */,
 				184CFCDA1EAE1F0E002EC798 /* MinorDianping.xcdatamodeld in Sources */,
 				18721F1B1ED68D4800FECA43 /* UserInfo+CoreDataClass.swift in Sources */,
 				183EB7B61ED706F4007A6201 /* RecommendationEngine.swift in Sources */,

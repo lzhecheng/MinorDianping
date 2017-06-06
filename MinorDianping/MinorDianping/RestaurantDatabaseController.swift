@@ -50,8 +50,8 @@ class RestaurantDatabaseController : DatabaseController{
                 
             }
             DatabaseController.saveContext()
+            print("Database init: Save database successfully")
         }
-        print("Database init: Save database successfully")
     }
     
     convenience override init(){
