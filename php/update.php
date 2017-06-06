@@ -10,24 +10,25 @@
 // Secruing info and storing var
 
 $username = htmlentities($_REQUEST["username"]);
-$password = htmlentities($_REQUEST["password"]);
-$email = htmlentities($_REQUEST["email"]);
-$fullname = htmlentities($_REQUEST["fullname"]);
+$attributeName = htmlentities($_REQUEST["attributeName"]);
+$attributeValue = htmlentities($_REQUEST["attributeValue"]);
 
 // if GET or POST are empty
-if (empty($username)){
+if (empty($username) || empty($attributeName) || empty($attributeValue)){
 
     $returnArray["status"] = "400";
-    $returnArray["message"] = "Missing username";
+    $returnArray["message"] = "Missing required information";
     echo json_encode($returnArray);
     return;
 }
 
 // secure password
-if(!empty($password)){
+if(strcmp($attributeName, "password") == 0){
     $salt = openssl_random_pseudo_bytes(20);
-    $secured_password = sha1($password . $salt);
+    $secured_password = sha1($attributeValue . $salt);
 }
+
+
 
 // STEP 2. Build connection
 // Secure way to build conn
@@ -45,23 +46,37 @@ $access = new access($host, $user, $pass, $name);
 $access->connect();
 
 // STEP 3. Register user information
-$result = $access->updateUser($username, $secured_password, $salt, $email, $fullname);
 
-if($result){
-    $user = $access->selectUser($username);
-    $returnArray["status"] = "200";
-    $returnArray["message"] = "Successfully updated";
-    $returnArray["id"] = $user["id"];
-    $returnArray["username"] = $user["username"];
-    $returnArray["fullname"] = $user["fullname"];
-    $returnArray["ava"] = $user["ava"];
-
-
-}else{
+if(strcmp($attributeName, "password") == 0){
+    $passResult = $access->updateUser($username, $attributeName, $secured_password);
+    $saltResult = $access->updateUser($username, "salt", $salt);
+    if($passResult && $saltResult){
+        $user = $access->selectUser($username);
+        $returnArray["status"] = "200";
+        $returnArray["message"] = "Successfully updated";
+        $returnArray["id"] = $user["id"];
+        $returnArray["username"] = $user["username"];
+        $returnArray[$attributeName] = $user[$attributeName];
+        $returnArray["salt"] = $user[$salt];
+    }else{
     $returnArray["status"] = "400";
-    $returnArray["message"] = "Could not register with provided information";
+    $returnArray["message"] = "Could not update with provided information";
 }
+}else{
+    $result = $access->updateUser($username, $attributeName, $attributeValue);
 
+    if($result){
+        $user = $access->selectUser($username);
+        $returnArray["status"] = "200";
+        $returnArray["message"] = "Successfully updated";
+        $returnArray["id"] = $user["id"];
+        $returnArray["username"] = $user["username"];
+        $returnArray[$attributeName] = $user[$attributeName];
+    }else{
+        $returnArray["status"] = "400";
+        $returnArray["message"] = "Could not update with provided information";
+    }
+}
 // STEP 4. Close Connection
 $access->disconnect();
 

@@ -24,6 +24,8 @@ extension UserInfo {
     @NSManaged public var restaurants: NSSet?
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
+    @NSManaged public var fullname: String?
+    @NSManaged public var salt: NSData?
 
 }
 

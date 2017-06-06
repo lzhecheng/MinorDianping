@@ -10,9 +10,10 @@
 // Secruing info and storing var
 
 $username = htmlentities($_REQUEST["username"]);
+$attributeName = htmlentities($_REQUEST["attributeName"]);
 
 // if GET or POST are empty
-if (empty($username)){
+if (empty($username) || empty($attributeName)){
 
     $returnArray["status"] = "400";
     $returnArray["message"] = "Missing username";
@@ -36,7 +37,7 @@ $access = new access($host, $user, $pass, $name);
 $access->connect();
 
 // STEP 3. Register user information
-$result = $access->selectUser($username, $secured_password, $salt, $email, $fullname);
+$result = $access->selectUserSpecificAttribute($username, $attributeName);
 
 if($result){
     $user = $access->selectUser($username);
@@ -44,7 +45,7 @@ if($result){
     $returnArray["message"] = "Successfully selected";
     $returnArray["id"] = $user["id"];
     $returnArray["username"] = $user["username"];
-    $returnArray["fullname"] = $user["fullname"];
+    $returnArray[$attributeName] = $user[$attributeName];
 
 }else{
     $returnArray["status"] = "400";

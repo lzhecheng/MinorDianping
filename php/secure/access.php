@@ -90,9 +90,29 @@ class access {
         return $returnArray;
     }
 
-    public function updateUser($username, $password, $salt, $email, $fullname){
+    public function  selectUserSpecificAttribute($username, $attributeName){
+        $returnArray = null;
         // sql command
-        $sql = "UPDATE users set fullname = ? WHERE username = ?";  
+        $sql = "SELECT ".$attributeName." FROM users WHERE username='".$username."'";
+
+        // assign result we got from $sql to $result var
+        $result = $this->conn->query($sql);
+        if($result != null && (mysqli_num_rows($result) >= 1)){
+            echo "into";
+            // assign results we got to $row as associative array
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            echo "row" . $row["id"];
+            if(!empty($row)){
+                $returnArray = $row;
+            }
+        }
+        return $returnArray;
+    }
+
+
+    public function updateUser($username, $attributeName, $attributeValue){
+        // sql command
+        $sql = "UPDATE users set ".$attributeName." = ? WHERE username = ?";
         // store query result in $statement
         $statement = $this->conn->prepare($sql);
 
@@ -102,12 +122,13 @@ class access {
         }
 
         // bind 5 param of type string to be placed in $sql command
-        $statement->bind_param("ss", $fullname, $username);
+        $statement->bind_param("ss", $attributeValue, $username);
 
         $returnValue = $statement->execute();
         $statement->close();
         return $returnValue;
     }
+
 }
 
 ?>

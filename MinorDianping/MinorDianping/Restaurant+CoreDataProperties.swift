@@ -22,7 +22,7 @@ extension Restaurant {
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
     @NSManaged public var name: String?
-    @NSManaged public var placeID: String?
+    @NSManaged public var comments: String?
     @NSManaged public var city: City?
     @NSManaged public var users: NSSet?
 

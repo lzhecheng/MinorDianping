@@ -52,7 +52,16 @@ if($result){
     $returnArray["id"] = $user["id"];
     $returnArray["username"] = $user["username"];
     $returnArray["fullname"] = $user["fullname"];
-    $returnArray["ava"] = $user["ava"];
+
+    // $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."activate.php?id=" . $current_id;
+    // $toEmail = $email;
+    // $subject = "User Registration Activation Email";
+    // $content = "Click this link to activate your account. <a href='" . $actual_link . "'>" . $actual_link . "</a>";
+    // $mailHeaders = "From: Admin\r\n";
+    // if(mail($toEmail, $subject, $content, $mailHeaders)) {
+    //     $message = "You have registered and the activation mail is sent to your email. Click the activation link to activate you account."; 
+    // }
+    // unset($_POST);
 
 
 }else{

@@ -95,6 +95,10 @@
 		18721F181ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1875D6E41ECB3BC00019A065 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		18A183C61ED0471E00A3ED55 /* Nanjing.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nanjing.csv; sourceTree = "<group>"; };
+		18F524BF1EE5738400884641 /* MinorDianping v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v2.xcdatamodel"; sourceTree = "<group>"; };
+		18F524C01EE5806200884641 /* MinorDianping v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v3.xcdatamodel"; sourceTree = "<group>"; };
+		18F524C11EE5890600884641 /* MinorDianping v4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v4.xcdatamodel"; sourceTree = "<group>"; };
+		18F524C21EE58AE200884641 /* MinorDianping v5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v5.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +317,7 @@
 				TargetAttributes = {
 					184CFCCD1EAE1F0E002EC798 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = UDKZAJWF43;
 						ProvisioningStyle = Automatic;
 					};
 					184CFCE41EAE1F0F002EC798 = {
@@ -556,10 +561,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UDKZAJWF43;
 				INFOPLIST_FILE = MinorDianping/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianping;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zhijian-zhecheng.MinorDianping";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -569,10 +575,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UDKZAJWF43;
 				INFOPLIST_FILE = MinorDianping/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianping;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zhijian-zhecheng.MinorDianping";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -677,9 +684,13 @@
 		184CFCD81EAE1F0E002EC798 /* MinorDianping.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				18F524C21EE58AE200884641 /* MinorDianping v5.xcdatamodel */,
+				18F524C11EE5890600884641 /* MinorDianping v4.xcdatamodel */,
+				18F524C01EE5806200884641 /* MinorDianping v3.xcdatamodel */,
+				18F524BF1EE5738400884641 /* MinorDianping v2.xcdatamodel */,
 				184CFCD91EAE1F0E002EC798 /* MinorDianping.xcdatamodel */,
 			);
-			currentVersion = 184CFCD91EAE1F0E002EC798 /* MinorDianping.xcdatamodel */;
+			currentVersion = 18F524C21EE58AE200884641 /* MinorDianping v5.xcdatamodel */;
 			path = MinorDianping.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

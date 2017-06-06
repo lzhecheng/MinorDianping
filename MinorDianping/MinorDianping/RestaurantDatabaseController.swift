@@ -13,7 +13,7 @@ class RestaurantDatabaseController : DatabaseController{
     init(filename: String){
         super.init()
         let WHETHER_CLEAR = false
-        let WHETHER_INIT = true
+        let WHETHER_INIT = false
         if(WHETHER_CLEAR){
             guard self.deleteAllObjectsInCoreData(type: Restaurant.self) else{
                 print("Database init: Failed to delete past database")
@@ -58,12 +58,12 @@ class RestaurantDatabaseController : DatabaseController{
         self.init(filename: "mexico")
     }
 
-    deinit{
-        guard self.deleteAllObjectsInCoreData(type: Restaurant.self) && self.deleteAllObjectsInCoreData(type: City.self) && self.deleteAllObjectsInCoreData(type: UserInfo.self) else{
-            print("Failed to delete database")
-            return
-        }
-    }
+//    deinit{
+//        guard self.deleteAllObjectsInCoreData(type: Restaurant.self) && self.deleteAllObjectsInCoreData(type: City.self) && self.deleteAllObjectsInCoreData(type: UserInfo.self) else{
+//            print("Failed to delete database")
+//            return
+//        }
+//    }
     
     // MARK: Attribute Modification Functions
     func createNewRestaurant(name: String, address: String, cityName: String, latitude: Double, longitude: Double, is_save: Bool) -> Restaurant{
