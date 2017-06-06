@@ -26,9 +26,10 @@ class ShopTableViewController: UITableViewController {
             [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
 
-        // Load sample data or load search results
+        // Load core data or load search results
         if target == "#nothing"{
             loadSampleShops()
+            loadCoreDataShops()
         }else {
             loadSeachedShops()
         }
@@ -127,6 +128,7 @@ class ShopTableViewController: UITableViewController {
     }
 
     private func loadSampleShops() {
+        
         //sameple shops
         
         //shop1: KFC
@@ -159,6 +161,10 @@ class ShopTableViewController: UITableViewController {
             fatalError("Unable to instantiate meal3")
         }
         shops += [shop1,shop2,shop3]
+        
+    }
+    
+    private func loadCoreDataShops(){
         
         let cdPhoto = UIImage(named: "defaultPhoto")
         let databaseController = DatabaseController()

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		183073E81ED4128800CA3558 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183073E71ED4128800CA3558 /* RatingControl.swift */; };
 		183073EA1ED41C6C00CA3558 /* CommentShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */; };
+		183C2EC21EE0379800E98F7D /* MinorDianping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 183C2EC01EE0379800E98F7D /* MinorDianping.xcdatamodeld */; };
 		184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */; };
 		184CFCD71EAE1F0E002EC798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184CFCD51EAE1F0E002EC798 /* Main.storyboard */; };
 		184CFCDC1EAE1F0E002EC798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184CFCDB1EAE1F0E002EC798 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		18B2F71B1ECF201200086EC6 /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2F71A1ECF201200086EC6 /* ShopTableViewController.swift */; };
 		18B2F71D1ECF210300086EC6 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 18B2F71C1ECF210300086EC6 /* Images */; };
 		18B82E4E1EC9E5250086A531 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */; };
+		18FCF6EB1EE6A47300C547E5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FCF6EA1EE6A47300C547E5 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,7 @@
 /* Begin PBXFileReference section */
 		183073E71ED4128800CA3558 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentShopViewController.swift; sourceTree = "<group>"; };
+		183C2EC11EE0379800E98F7D /* MinorDianping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MinorDianping.xcdatamodel; sourceTree = "<group>"; };
 		184CFCCE1EAE1F0E002EC798 /* MinorDianping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinorDianping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		184CFCD61EAE1F0E002EC798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		18B2F71A1ECF201200086EC6 /* ShopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewController.swift; sourceTree = "<group>"; };
 		18B2F71C1ECF210300086EC6 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
+		18FCF6EA1EE6A47300C547E5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FCF6EB1EE6A47300C547E5 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +139,7 @@
 				184CFCE81EAE1F0F002EC798 /* MinorDianpingTests */,
 				184CFCF31EAE1F0F002EC798 /* MinorDianpingUITests */,
 				184CFCCF1EAE1F0E002EC798 /* Products */,
+				18FCF6E91EE6A47300C547E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +156,7 @@
 		184CFCD01EAE1F0E002EC798 /* MinorDianping */ = {
 			isa = PBXGroup;
 			children = (
+				183C2EC01EE0379800E98F7D /* MinorDianping.xcdatamodeld */,
 				18967CD91ED5A05800687541 /* Data */,
 				1885DDA81EB21C3B0098F7D9 /* Supporting files */,
 				1875D6EE1ECB3EBB0019A065 /* Models */,
@@ -215,6 +222,14 @@
 				18967CD11ED5A04900687541 /* Nanjing.csv */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		18FCF6E91EE6A47300C547E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18FCF6EA1EE6A47300C547E5 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +300,7 @@
 				TargetAttributes = {
 					184CFCCD1EAE1F0E002EC798 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3F528M7TXJ;
 						ProvisioningStyle = Automatic;
 					};
 					184CFCE41EAE1F0F002EC798 = {
@@ -363,6 +379,7 @@
 				1877A5E71ED713BA007A4561 /* AccountViewController.swift in Sources */,
 				18967CD41ED5A04900687541 /* CSVHelper.swift in Sources */,
 				18967CDD1ED5A2C800687541 /* Restaurant+CoreDataProperties.swift in Sources */,
+				183C2EC21EE0379800E98F7D /* MinorDianping.xcdatamodeld in Sources */,
 				18B2F7191ECF1EF800086EC6 /* Shop.swift in Sources */,
 				18967CD71ED5A04900687541 /* State+CoreDataClass.swift in Sources */,
 				1893F0201ECDD763003993D6 /* City+CoreDataClass.swift in Sources */,
@@ -524,10 +541,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3F528M7TXJ;
 				INFOPLIST_FILE = MinorDianping/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianping;
+				PRODUCT_BUNDLE_IDENTIFIER = zhecheng.MinorDianping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -537,10 +555,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3F528M7TXJ;
 				INFOPLIST_FILE = MinorDianping/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianping;
+				PRODUCT_BUNDLE_IDENTIFIER = zhecheng.MinorDianping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -644,6 +663,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		183C2EC01EE0379800E98F7D /* MinorDianping.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				183C2EC11EE0379800E98F7D /* MinorDianping.xcdatamodel */,
+			);
+			currentVersion = 183C2EC11EE0379800E98F7D /* MinorDianping.xcdatamodel */;
+			path = MinorDianping.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 184CFCC61EAE1F0E002EC798 /* Project object */;
 }
