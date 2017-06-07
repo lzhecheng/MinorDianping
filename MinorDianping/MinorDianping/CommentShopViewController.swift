@@ -10,14 +10,22 @@ import UIKit
 
 class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var shopNameLabel: UILabel!
     @IBOutlet weak var ratingControl: RatingControl!
     
     var shop: Shop?
+    
+    var comment: String = ""
+    var evaluation: Int = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commentTextField.delegate = self
         
         navigationItem.title = shop?.name
         shopNameLabel.text = shop?.name
@@ -29,16 +37,29 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     }
     
     //MARK: UITextField
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Hide the keyboard.
-        textField.resignFirstResponder()
-        return true
+    //move keyboard to avoid covering textfield
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0,y: 250), animated: true)
     }
     
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        mealNameLabel.text = textField.text
-//    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0,y: 0), animated: true)
+        
+        comment = textField.text!
+    }
     
+    //hide keyboard when pressing somewhere outside the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //hide keyboard when pressing return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        commentTextField.resignFirstResponder()
+        return true
+    }
+
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled.
@@ -94,6 +115,9 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     
     @IBAction func save(_ sender: UIBarButtonItem) {
+        
+        //save stuff
+        
         
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
         let isPresentingInAddMealMode = presentingViewController is UINavigationController

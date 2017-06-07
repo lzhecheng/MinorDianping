@@ -21,7 +21,7 @@ class ShopTableViewController: UITableViewController {
         
         //set naviation bar color & word color & word color in button
         self.navigationController?.navigationBar.barTintColor =
-            UIColor(red: 135/255, green: 206/255, blue: 250/255, alpha: 1)
+            UIColor(red: 99/255, green: 6/255, blue: 95/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
