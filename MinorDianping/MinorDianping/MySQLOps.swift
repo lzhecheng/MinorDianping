@@ -12,7 +12,8 @@ public class MySQLOps{
     let URL_REGISTER_USERS:String = "http://104.199.144.39/MinorDianping/register.php"
     let URL_FETCH_USERS:String = "http://104.199.144.39/MinorDianping/select.php"
     let URL_UPDATE_USERS:String = "http://104.199.144.39/MinorDianping/update.php"
-
+    //var userJSON = [String:Any]()
+    
     func registerNewUser(username: String, password: String, email: String, fullname: String){
         var request = URLRequest(url: URL(string: URL_REGISTER_USERS)!)
         request.httpMethod = "POST"
@@ -32,11 +33,12 @@ public class MySQLOps{
         task.resume();
     }
     
-    func fetchUserInfoFromMySQL(username:String, attributeName:String){
+    func fetchUserInfoFromMySQL(username:String, attributeName:String, handler: @escaping (_ attributeValue: String)-> ()){
         var request = URLRequest(url: URL(string: URL_FETCH_USERS)!)
         request.httpMethod = "POST"
         let getString = "username=\(username)&attributeName=\(attributeName)"
         request.httpBody = getString.data(using: String.Encoding.utf8)
+
         
         let task = URLSession.shared.dataTask(with: request){
             data, response, error in
@@ -50,7 +52,7 @@ public class MySQLOps{
             do{
                 // convert response to NSDictionary
                 let userJSON = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
-                print("SELECT \(String(describing: userJSON[attributeName]))")
+                handler(userJSON[attributeName] as! String)
 
             }catch{
                 print(error)

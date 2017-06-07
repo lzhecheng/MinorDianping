@@ -160,9 +160,12 @@ class ShopTableViewController: UITableViewController {
         }
         shops += [shop1,shop2,shop3]
         let mySQLOps = MySQLOps()
-        mySQLOps.registerNewUser(username: "test", password: "123", email: "123", fullname: "123")
-        mySQLOps.fetchUserInfoFromMySQL(username: "user4", attributeName: "fullname")
-        mySQLOps.updateUserInfoToMySQL(username: "user4", attributeName: "fullname", attributeValue: "zz")
+        //mySQLOps.registerNewUser(username: "test", password: "123", email: "123", fullname: "123")
+        mySQLOps.fetchUserInfoFromMySQL(username: "user4", attributeName: "fullname"){
+            attributeValue in
+            print(attributeValue)
+        }
+        //mySQLOps.updateUserInfoToMySQL(username: "user4", attributeName: "fullname", attributeValue: "zz")
         
         let cdPhoto = UIImage(named: "defaultPhoto")
         let databaseController = RestaurantDatabaseController()
