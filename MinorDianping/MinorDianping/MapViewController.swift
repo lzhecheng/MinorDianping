@@ -13,19 +13,19 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var mainMapView: MKMapView!
-    var shop: Shop?
+    var restaurant: Restaurant?
 
     //定位管理器
     let locationManager:CLLocationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = shop?.name
+        navigationItem.title = restaurant?.name
         
         //经纬度+comment
-        let localLatitude = shop?.latitude
-        let localLongitude = shop?.longitude
-        let localComment = shop?.comment
+        let localLatitude = restaurant?.latitude
+        let localLongitude = restaurant?.longitude
+        let localComment = restaurant?.comments
         
         //使用代码创建
         self.mainMapView = MKMapView(frame:self.view.frame)
@@ -57,7 +57,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         objectAnnotation.coordinate = CLLocation(latitude: localLatitude!,
                                                  longitude: localLongitude!).coordinate
         //设置点击大头针之后显示的标题
-        objectAnnotation.title = shop?.name
+        objectAnnotation.title = restaurant?.name
         //设置点击大头针之后显示的描述
         objectAnnotation.subtitle = localComment
         //添加大头针
@@ -67,8 +67,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func navButton(_ sender: UIBarButtonItem) {
         //define destination
-        let latitude:CLLocationDegrees = (shop?.latitude)!
-        let longitude:CLLocationDegrees = (shop?.longitude)!
+        let latitude:CLLocationDegrees = (restaurant?.latitude)!
+        let longitude:CLLocationDegrees = (restaurant?.longitude)!
         
         let regionDistance:CLLocationDistance = 1000
         let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
@@ -78,7 +78,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let placemark = MKPlacemark(coordinate: coordinate)
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = shop?.name
+        mapItem.name = restaurant?.name
         mapItem.openInMaps(launchOptions: options)
     }
 }

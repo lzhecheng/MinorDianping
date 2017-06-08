@@ -15,18 +15,22 @@ class ShopViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
     
-    var shop: Shop?
+    var restaurant: Restaurant?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        if let shop = shop {
-            navigationItem.title = shop.name
-            photoImageView.image = shop.photo
-            nameLabel.text=shop.name
-            commentLabel.text = shop.comment
+        if let restaurant = restaurant {
+//            let restaurantDBC = RestaurantDatabaseController()
+//            let targetRestaurant = restaurantDBC.
+            
+            
+            navigationItem.title = restaurant.name
+            //photoImageView.image = UIImage()
+            nameLabel.text = restaurant.name
+            commentLabel.text = restaurant.comments
         }
     }
 
@@ -46,17 +50,17 @@ class ShopViewController: UIViewController {
                     fatalError("Unexpected destination")
                 }
                 
-                MapDetailViewController.shop = shop
+                MapDetailViewController.restaurant = restaurant
             
             case "AddComment":
                 guard let commentShopViewController = segue.destination as? CommentShopViewController else {
                     fatalError("Unexpected destination")
                 }
                 
-                commentShopViewController.shop = shop
+                commentShopViewController.restaurant = restaurant
             
             default:
-                fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+                fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
  

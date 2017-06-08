@@ -1,3 +1,4 @@
+
 //
 //  UserInfoDatabaseController.swift
 //  MinorDianping
@@ -18,12 +19,12 @@ class UserInfoDatabaseController : DatabaseController{
         let task = URLSession.shared.dataTask(with: request){
                 data, response, error in
                 if error != nil {
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 print("response = \(response)")
                 let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                print("responseString = \(responseString)")
+                print("responseString = \(String(describing: responseString))")
             }
         task.resume();
     }

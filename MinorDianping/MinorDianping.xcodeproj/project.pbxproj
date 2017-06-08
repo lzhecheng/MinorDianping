@@ -36,7 +36,6 @@
 		18967CD61ED5A04900687541 /* Nanjing.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18967CD11ED5A04900687541 /* Nanjing.csv */; };
 		18967CD71ED5A04900687541 /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18967CD21ED5A04900687541 /* State+CoreDataClass.swift */; };
 		18967CD81ED5A04900687541 /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18967CD31ED5A04900687541 /* State+CoreDataProperties.swift */; };
-		18B2F7191ECF1EF800086EC6 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2F7181ECF1EF800086EC6 /* Shop.swift */; };
 		18B2F71B1ECF201200086EC6 /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2F71A1ECF201200086EC6 /* ShopTableViewController.swift */; };
 		18B2F71D1ECF210300086EC6 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 18B2F71C1ECF210300086EC6 /* Images */; };
 		18B82E4E1EC9E5250086A531 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */; };
@@ -100,7 +99,6 @@
 		18967CD11ED5A04900687541 /* Nanjing.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nanjing.csv; sourceTree = "<group>"; };
 		18967CD21ED5A04900687541 /* State+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = "<group>"; };
 		18967CD31ED5A04900687541 /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		18B2F7181ECF1EF800086EC6 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		18B2F71A1ECF201200086EC6 /* ShopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewController.swift; sourceTree = "<group>"; };
 		18B2F71C1ECF210300086EC6 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 				18B2F71C1ECF210300086EC6 /* Images */,
 				184CFCD51EAE1F0E002EC798 /* Main.storyboard */,
 				18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */,
-				18B2F7181ECF1EF800086EC6 /* Shop.swift */,
 				18967CCF1ED5A04900687541 /* CSVHelper.swift */,
 				183073E71ED4128800CA3558 /* RatingControl.swift */,
 				185F35591ED670F4007F94A8 /* searchBrain.swift */,
@@ -407,7 +404,6 @@
 				18967CD41ED5A04900687541 /* CSVHelper.swift in Sources */,
 				18294F8E1EE6E1A500815EDA /* UserInfoDatabaseController.swift in Sources */,
 				18294F741EE6DE1700815EDA /* MinorDianping.xcdatamodeld in Sources */,
-				18B2F7191ECF1EF800086EC6 /* Shop.swift in Sources */,
 				18294F8C1EE6E13D00815EDA /* RestaurantDatabaseController.swift in Sources */,
 				18967CD71ED5A04900687541 /* State+CoreDataClass.swift in Sources */,
 				1893F0201ECDD763003993D6 /* City+CoreDataClass.swift in Sources */,

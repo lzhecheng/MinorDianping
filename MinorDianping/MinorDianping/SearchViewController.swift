@@ -27,7 +27,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: UITextField
@@ -41,7 +40,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
         searchTextField.resignFirstResponder()
-        return true
+        return (true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,7 +55,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             searchDetailViewController.target = searchTextField.text!
             
         default:
-            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
 }

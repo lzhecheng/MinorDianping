@@ -47,6 +47,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="d8W-td-sUu" id="toJ-Bj-7vZ"/>
                                     <outlet property="photoImageView" destination="64t-6j-eL2" id="8dn-iT-tQJ"/>
+                                    <outlet property="ratingControl" destination="Wuw-9L-haQ" id="2yi-JU-t5w"/>
                                     <segue destination="SPX-f8-JLR" kind="show" identifier="ShopChosen" id="5l6-fh-nxH"/>
                                 </connections>
                             </tableViewCell>

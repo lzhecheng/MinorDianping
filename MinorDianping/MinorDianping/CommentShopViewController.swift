@@ -11,24 +11,23 @@ import UIKit
 class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var shopNameLabel: UILabel!
     @IBOutlet weak var ratingControl: RatingControl!
     
-    var shop: Shop?
+    var restaurant: Restaurant?
     
     var comment: String = ""
-    var evaluation: Int = 5
+    //var evaluation: Int = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         commentTextField.delegate = self
         
-        navigationItem.title = shop?.name
-        shopNameLabel.text = shop?.name
+        navigationItem.title = restaurant?.name
+        shopNameLabel.text = restaurant?.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,9 +115,9 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     @IBAction func save(_ sender: UIBarButtonItem) {
         
-        //save stuff
-//        let databaseController = DatabaseController()
-//        let restaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
+        //save comment and evaluation
+        restaurant?.evaluation = Int16(ratingControl.rating)
+        restaurant?.comments =  (restaurant?.comments)! + "\n" + commentTextField.text!
         
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
         let isPresentingInAddMealMode = presentingViewController is UINavigationController
