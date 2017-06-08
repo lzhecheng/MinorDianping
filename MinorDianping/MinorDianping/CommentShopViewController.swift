@@ -17,17 +17,20 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet weak var ratingControl: RatingControl!
     
     var restaurant: Restaurant?
+    var restaurantIndex: Int?
     
     var comment: String = ""
-    //var evaluation: Int = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         commentTextField.delegate = self
         
-        navigationItem.title = restaurant?.name
-        shopNameLabel.text = restaurant?.name
+        let databaseController = DatabaseController()
+        let DBrestaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
+        
+        navigationItem.title = DBrestaurants[restaurantIndex!].name
+        shopNameLabel.text = DBrestaurants[restaurantIndex!].name
     }
 
     override func didReceiveMemoryWarning() {

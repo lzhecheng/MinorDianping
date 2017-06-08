@@ -14,8 +14,10 @@ class ShopViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     var restaurant: Restaurant?
+    var restaurantIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +25,14 @@ class ShopViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         if let restaurant = restaurant {
-//            let restaurantDBC = RestaurantDatabaseController()
-//            let targetRestaurant = restaurantDBC.
+            let databaseController = DatabaseController()
+            let DBrestaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
             
-            
-            navigationItem.title = restaurant.name
+            navigationItem.title = DBrestaurants[restaurantIndex!].name
             //photoImageView.image = UIImage()
-            nameLabel.text = restaurant.name
-            commentLabel.text = restaurant.comments
+            nameLabel.text = DBrestaurants[restaurantIndex!].name
+            commentLabel.text = DBrestaurants[restaurantIndex!].comments
+            ratingControl.rating = Int(DBrestaurants[restaurantIndex!].evaluation)
         }
     }
 
@@ -58,6 +60,7 @@ class ShopViewController: UIViewController {
                 }
                 
                 commentShopViewController.restaurant = restaurant
+                commentShopViewController.restaurantIndex = restaurantIndex
             
             default:
                 fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")

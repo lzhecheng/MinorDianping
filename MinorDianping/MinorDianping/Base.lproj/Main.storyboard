@@ -271,6 +271,7 @@
                         <outlet property="commentLabel" destination="Ahs-Oj-i8e" id="dKA-8o-Uao"/>
                         <outlet property="nameLabel" destination="4Xi-cc-fnm" id="C8B-OB-wlk"/>
                         <outlet property="photoImageView" destination="VLN-8g-lHh" id="7ro-cM-XWM"/>
+                        <outlet property="ratingControl" destination="TrR-MS-ebh" id="SUH-2R-waK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o55-8E-a2S" userLabel="First Responder" sceneMemberID="firstResponder"/>

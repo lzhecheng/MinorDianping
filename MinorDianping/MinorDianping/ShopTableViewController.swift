@@ -87,6 +87,7 @@ class ShopTableViewController: UITableViewController {
                 
                 let selectedRestaurants = restaurants[indexPath.row]
                 shopDetailViewController.restaurant = selectedRestaurants
+                shopDetailViewController.restaurantIndex = indexPath.row
             
             default:
                 fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
