@@ -71,11 +71,44 @@ class access {
         return $returnValue;
     }
 
+    public function registerRestaurant($resName, $address, $latitude, $longitude, $city){
+        // sql command
+        $sql = "INSERT INTO restaurants (name, address, latitude, longitude, city) VALUES (?, ?, ?, ?, ?)";
+        // store query result in $statement
+        $statement = $this->conn->prepare($sql);
+        // if error
+        if(!$statement){
+            throw new Exception($statement->error);
+        }
+        // bind 5 param of type string to be placed in $sql command
+        $statement->bind_param("sssss", $resName, $address, $latitude, $longitude, $city);
+        $returnValue = $statement->execute();
+        $statement->close();
+        return $returnValue;
+    }
+
     public function selectUser($username){
         $returnArray = null;
         // sql command
         $sql = "SELECT * FROM users WHERE username='".$username."'";
 
+        // assign result we got from $sql to $result var
+        $result = $this->conn->query($sql);
+        if($result != null && (mysqli_num_rows($result) >= 1)){
+            
+            // assign results we got to $row as associative array
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            if(!empty($row)){
+                $returnArray = $row;
+            }
+        }
+        return $returnArray;
+    }
+
+    public function selectRestaurant($name){
+        $returnArray = null;
+        // sql command
+        $sql = "SELECT * FROM restaurants WHERE name='".$name."'";
         // assign result we got from $sql to $result var
         $result = $this->conn->query($sql);
         if($result != null && (mysqli_num_rows($result) >= 1)){
@@ -106,6 +139,23 @@ class access {
         return $returnArray;
     }
 
+    public function selectRestaurantSpecificAttribute($name, $attributeName){
+        $returnArray = null;
+        // sql command
+        $sql = "SELECT ".$attributeName." FROM restaurants WHERE name='".$name."'";
+
+        // assign result we got from $sql to $result var
+        $result = $this->conn->query($sql);
+        if($result != null && (mysqli_num_rows($result) >= 1)){
+            // assign results we got to $row as associative array
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            if(!empty($row)){
+                $returnArray = $row;
+            }
+        }
+        return $returnArray;
+    }
+
     public function updateUser($username, $attributeName, $attributeValue){
         // sql command
 	$sql = "UPDATE users set ".$attributeName." = ? WHERE username = ?";
@@ -120,6 +170,21 @@ class access {
         // bind 5 param of type string to be placed in $sql command
         $statement->bind_param("ss", $attributeValue, $username);
 
+        $returnValue = $statement->execute();
+        $statement->close();
+        return $returnValue;
+    }
+    public function updateRestaurant($name, $attributeName, $attributeValue){
+        // sql command
+        $sql = "UPDATE restaurants set ".$attributeName." = ? WHERE name = ?";
+        // store query result in $statement
+        $statement = $this->conn->prepare($sql);
+        // if error
+        if(!$statement){
+            throw new Exception($statement->error);
+        }
+        // bind 5 param of type string to be placed in $sql command
+        $statement->bind_param("ss", $attributeValue, $name);
         $returnValue = $statement->execute();
         $statement->close();
         return $returnValue;

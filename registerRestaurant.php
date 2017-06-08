@@ -9,24 +9,22 @@
 // STEP 1. Declare params of user info
 // Secruing info and storing var
 
-$username = htmlentities($_REQUEST["username"]);
-$attributeName = htmlentities($_REQUEST["attributeName"]);
-$attributeValue = htmlentities($_REQUEST["attributeValue"]);
+$resName = htmlentities($_REQUEST["name"]);
+$address = htmlentities($_REQUEST["address"]);
+$latitude = htmlentities($_REQUEST["latitude"]);
+$longitude = htmlentities($_REQUEST["longitude"]);
+$city = htmlentities($_REQUEST["city"]);
+
+
 
 // if GET or POST are empty
-if (empty($username) || empty($attributeName) || empty($attributeValue)){
+if (empty($resName) || empty($address) || empty($latitude) || empty($longitude) || empty($city)){
 
     $returnArray["status"] = "400";
     $returnArray["message"] = "Missing required information";
     echo json_encode($returnArray);
     return;
 }
-
-// secure password
-//if(!empty($password)){
-//    $salt = openssl_random_pseudo_bytes(20);
-//    $secured_password = sha1($password . $salt);
-//}
 
 // STEP 2. Build connection
 // Secure way to build conn
@@ -44,15 +42,15 @@ $access = new access($host, $user, $pass, $name);
 $access->connect();
 
 // STEP 3. Register user information
-$result = $access->updateUser($username, $attributeName, $attributeValue);
-
+$result = $access->registerRestaurant($resName, $address, $latitude, $longitude, $city);
 if($result){
-    $user = $access->selectUser($username);
+    $res = $access->selectRestaurant($resName);
     $returnArray["status"] = "200";
-    $returnArray["message"] = "Successfully updated";
-    $returnArray["id"] = $user["id"];
-    $returnArray["username"] = $user["username"];
-    $returnArray[$attributeName] = $user[$attributeName];
+    $returnArray["message"] = "Successfully registered";
+    $returnArray["id"] = $res["id"];
+    $returnArray["name"] = $res["name"];
+
+
 }else{
     $returnArray["status"] = "400";
     $returnArray["message"] = "Could not register with provided information";
