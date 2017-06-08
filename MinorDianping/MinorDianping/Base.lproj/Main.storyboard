@@ -343,37 +343,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="phy-rb-qVy">
-                                <rect key="frame" x="0.0" y="94" width="375" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3am-ML-Smj">
+                                <rect key="frame" x="0.0" y="174" width="375" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU3-DJ-h8B">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                        <state key="normal" title="登陆／注册"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icm-tG-q2s">
-                                        <rect key="frame" x="0.0" y="30" width="375" height="30"/>
-                                        <state key="normal" title="我的订单"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-k7-HfR">
-                                        <rect key="frame" x="0.0" y="60" width="375" height="30"/>
-                                        <state key="normal" title="历史纪录"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                        <state key="normal" title="我的订单">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1O-aL-59B">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="30"/>
-                                        <state key="normal" title="我的收藏"/>
+                                        <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                        <state key="normal" title="我的收藏">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-k7-HfR">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="30"/>
+                                        <state key="normal" title="历史纪录">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LQa-fu-wl2">
+                                <rect key="frame" x="0.0" y="94" width="375" height="50"/>
+                                <subviews>
+                                    <imageView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-DT-avV">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU3-DJ-h8B">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
+                                        <state key="normal" title="登陆／注册">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDe-ME-PNd">
+                                <rect key="frame" x="-0.5" y="212" width="375" height="30"/>
+                                <state key="normal" title="设置">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="phy-rb-qVy" firstAttribute="top" secondItem="YUh-Pl-nBr" secondAttribute="bottom" constant="30" id="Md4-V8-rDe"/>
-                            <constraint firstItem="phy-rb-qVy" firstAttribute="centerX" secondItem="qjk-e8-deV" secondAttribute="centerX" id="gbU-sP-1GR"/>
-                            <constraint firstItem="phy-rb-qVy" firstAttribute="width" secondItem="qjk-e8-deV" secondAttribute="width" id="gcL-Ty-4rv"/>
+                            <constraint firstItem="bDe-ME-PNd" firstAttribute="centerX" secondItem="qjk-e8-deV" secondAttribute="centerX" id="4f7-rT-BJz"/>
+                            <constraint firstItem="LQa-fu-wl2" firstAttribute="centerX" secondItem="qjk-e8-deV" secondAttribute="centerX" id="N1i-Oa-7yP"/>
+                            <constraint firstItem="LQa-fu-wl2" firstAttribute="top" secondItem="YUh-Pl-nBr" secondAttribute="bottom" constant="30" id="Npm-rt-FB6"/>
+                            <constraint firstItem="3am-ML-Smj" firstAttribute="centerX" secondItem="qjk-e8-deV" secondAttribute="centerX" id="WmP-fn-7z9"/>
+                            <constraint firstItem="LQa-fu-wl2" firstAttribute="width" secondItem="qjk-e8-deV" secondAttribute="width" id="Xoi-hq-4iR"/>
+                            <constraint firstItem="bDe-ME-PNd" firstAttribute="width" secondItem="qjk-e8-deV" secondAttribute="width" id="gbK-6w-BlR"/>
+                            <constraint firstItem="3am-ML-Smj" firstAttribute="top" secondItem="LQa-fu-wl2" secondAttribute="bottom" constant="30" id="rFR-QF-7Hj"/>
+                            <constraint firstItem="3am-ML-Smj" firstAttribute="width" secondItem="qjk-e8-deV" secondAttribute="width" id="yEq-Bd-aFZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的帐户" id="LiU-f1-4Qe">
-                        <barButtonItem key="rightBarButtonItem" title="设置" id="dMa-0B-UhK"/>
+                        <barButtonItem key="rightBarButtonItem" image="message" id="h0o-Ia-aJe">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfe-92-tGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -421,7 +450,7 @@
         <scene sceneID="cBD-Tn-8H2">
             <objects>
                 <navigationController title="推荐" automaticallyAdjustsScrollViewInsets="NO" id="nmd-JM-R9C" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="Bvw-vr-J21"/>
+                    <tabBarItem key="tabBarItem" title="推荐餐厅" image="recommendation" id="Bvw-vr-J21"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R8U-gN-4s8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -436,11 +465,11 @@
             </objects>
             <point key="canvasLocation" x="2628" y="-726"/>
         </scene>
-        <!--My Account-->
+        <!--我的帐户-->
         <scene sceneID="gjS-yW-LIq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SlZ-I5-zoS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Account" id="bFJ-fK-hHW"/>
+                    <tabBarItem key="tabBarItem" title="我的帐户" image="myAccount" id="bFJ-fK-hHW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uUq-Tj-9Jd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -473,11 +502,11 @@
             </objects>
             <point key="canvasLocation" x="3241" y="987"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--搜索-->
         <scene sceneID="IOR-mn-hEy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8J9-9I-DZY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="H4r-em-8Mo"/>
+                    <tabBarItem key="tabBarItem" title="搜索" image="search" id="H4r-em-8Mo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AiF-1S-zno">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -495,11 +524,16 @@
     </scenes>
     <resources>
         <image name="defaultPhoto" width="320" height="320"/>
+        <image name="message" width="32" height="32"/>
+        <image name="myAccount" width="25" height="25"/>
+        <image name="portrait" width="50" height="50"/>
+        <image name="recommendation" width="25" height="25"/>
+        <image name="search" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jgt-EC-wCG"/>
         <segue reference="5l6-fh-nxH"/>
-        <segue reference="H2t-iM-z8S"/>
+        <segue reference="juk-6U-rOg"/>
         <segue reference="40j-Ft-rVb"/>
     </inferredMetricsTieBreakers>
 </document>

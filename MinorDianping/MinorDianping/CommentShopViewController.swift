@@ -117,7 +117,8 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBAction func save(_ sender: UIBarButtonItem) {
         
         //save stuff
-        
+//        let databaseController = DatabaseController()
+//        let restaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
         
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
         let isPresentingInAddMealMode = presentingViewController is UINavigationController
