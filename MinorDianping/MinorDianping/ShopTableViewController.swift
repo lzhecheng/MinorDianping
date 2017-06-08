@@ -159,15 +159,17 @@ class ShopTableViewController: UITableViewController {
             fatalError("Unable to instantiate meal3")
         }
         shops += [shop1,shop2,shop3]
-        let mySQLOps = MySQLOps()
+        
+//        let imageData = try? Data(contentsOf: URL(string: "http://104.199.144.39/MinorDianping/img/Paseo_de_las_Fuentes.jpg")!)
+        
+        
         
         let cdPhoto = UIImage(named: "defaultPhoto")
         let databaseController = RestaurantDatabaseController()
         databaseController.addEvaluation(resName: "Restaurant Familiar El Chino", evaluation: 3)
         let res = databaseController.fetchOneRestaurantFromCoreData(with: "Restaurant Familiar El Chino")!
-        print("\(res.name!) \(res.evaluation) with \(res.evaluationNum)")
         databaseController.downloadEvaluation(resName: "Restaurant Familiar El Chino")
-        print("\(res.name!) \(res.evaluation) with \(res.evaluationNum)")
+       
 
 //        databaseController.createNewRestaurant(name: "a", address: "b", cityName: "c", latitude: 1, longitude: 2, is_save: true)
 //        databaseController.createNewCity(cityName: "Nanjing", is_save: true)
@@ -179,7 +181,6 @@ class ShopTableViewController: UITableViewController {
 //        }
 
         let restaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
-        databaseController.modifyAttribute(des: &restaurants[0].name, src: "cs")
         for i in 0..<restaurants.count {
             let shop = Shop(name: restaurants[i].name!, photo: cdPhoto, latitude: restaurants[i].latitude, longitude: restaurants[i].longitude, comment: "")!
             shops += [shop]

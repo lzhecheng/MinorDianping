@@ -26,7 +26,7 @@ extension Restaurant {
     @NSManaged public var city: City?
     @NSManaged public var users: NSSet?
     @NSManaged public var evaluationNum: Double
-
+    @NSManaged public var imagePath: String?
 }
 
 // MARK: Generated accessors for users

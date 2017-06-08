@@ -37,6 +37,7 @@ func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
 #### Core Data
 * [Swift 3 Core Data Delete Object](ttps://stackoverflow.com/questions/38017449/swift-3-core-data-delete-object)
 * [Core Data: Relationship 总结](http://www.jianshu.com/p/8e3b64f16fc3)
+* [Saving Picked Image to CoreData](https://stackoverflow.com/questions/27995955/saving-picked-image-to-coredata)
 
 #### 错误处理
 

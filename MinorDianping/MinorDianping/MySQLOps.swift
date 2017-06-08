@@ -102,6 +102,7 @@ public class MySQLOps{
             do{
                 // convert response to NSDictionary
                 let resJSON = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
+                
                 handler(resJSON[attributeName] as! String)
                 
             }catch{

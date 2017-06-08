@@ -28,6 +28,14 @@ class ShopViewController: UIViewController {
             nameLabel.text=shop.name
             commentLabel.text = shop.comment
         }
+        let mySQLOps = MySQLOps()
+        mySQLOps.fetchRestaurantInfoFromMySQL(name: "Paseo de las Fuentes", attributeName: "imgPath"){
+            imgPath in
+            UIImageView.imageFromServerURL(urlString: imgPath){
+                image in
+                self.photoImageView.image = image
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

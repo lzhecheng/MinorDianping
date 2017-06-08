@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class RestaurantDatabaseController : DatabaseController{
     init(filename: String){
@@ -115,7 +116,6 @@ class RestaurantDatabaseController : DatabaseController{
     
     func modifyAttribute<T>( des: inout T, src: T, is_save: Bool = true) {
         des = src
-        print("source \(src) des \(des)")
         if(is_save){
             DatabaseController.saveContext()
         }
@@ -180,3 +180,23 @@ class RestaurantDatabaseController : DatabaseController{
         }
     }
 }
+
+extension UIImageView {
+    class public func imageFromServerURL(urlString: String, handler: @escaping (_ attributeValue: UIImage)->()) {
+        
+        URLSession.shared.dataTask(with: URL(string: urlString)!, completionHandler: { (data, response, error) -> Void in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            DispatchQueue.main.async(execute: { () -> Void in
+                let image = UIImage(data: data!)
+                handler(image!)
+
+            })
+            
+        }).resume()
+    }}
+
+

@@ -97,6 +97,8 @@
 		186C34B21EE915A0004E736A /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		186C34B91EE915E3004E736A /* MinorDianping v7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v7.xcdatamodel"; sourceTree = "<group>"; };
 		186C34BA1EE94B0E004E736A /* MinorDianping v8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v8.xcdatamodel"; sourceTree = "<group>"; };
+		186C34BB1EE96933004E736A /* MinorDianping v9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v9.xcdatamodel"; sourceTree = "<group>"; };
+		186C34BC1EE96AC5004E736A /* MinorDianping v10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v10.xcdatamodel"; sourceTree = "<group>"; };
 		18721EFF1ED67E9800FECA43 /* RestaurantDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDatabaseController.swift; sourceTree = "<group>"; };
 		18721F111ED68A5700FECA43 /* UserInfoDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoDatabaseController.swift; sourceTree = "<group>"; };
 		1875D6E41ECB3BC00019A065 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
@@ -695,6 +697,8 @@
 		184CFCD81EAE1F0E002EC798 /* MinorDianping.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				186C34BC1EE96AC5004E736A /* MinorDianping v10.xcdatamodel */,
+				186C34BB1EE96933004E736A /* MinorDianping v9.xcdatamodel */,
 				186C34BA1EE94B0E004E736A /* MinorDianping v8.xcdatamodel */,
 				186C34B91EE915E3004E736A /* MinorDianping v7.xcdatamodel */,
 				186C34AC1EE8ECF9004E736A /* MinorDianping v6.xcdatamodel */,
