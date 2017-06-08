@@ -2,7 +2,7 @@
 //  Restaurant+CoreDataProperties.swift
 //  MinorDianping
 //
-//  Created by Apple on 2017/5/25.
+//  Created by Apple on 2017/6/8.
 //  Copyright © 2017年 NJU.EE. All rights reserved.
 //
 
@@ -12,19 +12,20 @@ import CoreData
 
 extension Restaurant {
 
-    @nonobjc public class func restaurantFetchRequest() -> NSFetchRequest<Restaurant> {
-        return NSFetchRequest<Restaurant>(entityName: "Restaurant");
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Restaurant> {
+        return NSFetchRequest<Restaurant>(entityName: "Restaurant")
     }
 
     @NSManaged public var address: String?
-    @NSManaged public var evaluation: Int16
+    @NSManaged public var comments: String?
+    @NSManaged public var evaluation: Double
     @NSManaged public var images: NSData?
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
     @NSManaged public var name: String?
-    @NSManaged public var comments: String?
     @NSManaged public var city: City?
     @NSManaged public var users: NSSet?
+    @NSManaged public var evaluationNum: Double
 
 }
 
@@ -42,4 +43,5 @@ extension Restaurant {
 
     @objc(removeUsers:)
     @NSManaged public func removeFromUsers(_ values: NSSet)
+
 }

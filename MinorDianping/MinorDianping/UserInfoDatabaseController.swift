@@ -11,4 +11,5 @@ import CoreData
 
 class UserInfoDatabaseController : DatabaseController{
 
+
 }

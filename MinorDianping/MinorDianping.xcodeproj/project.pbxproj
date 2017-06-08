@@ -22,20 +22,21 @@
 		1839B78F1ED9AFE7006E1004 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839B78B1ED9AFE7006E1004 /* Shop.swift */; };
 		1839B7901ED9AFE7006E1004 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839B78C1ED9AFE7006E1004 /* ShopTableViewCell.swift */; };
 		1839B7931ED9B001006E1004 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1839B7911ED9B001006E1004 /* Main.storyboard */; };
-		183EB7B11ED6D9B9007A6201 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB7AF1ED6D9B9007A6201 /* City+CoreDataClass.swift */; };
-		183EB7B21ED6D9B9007A6201 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB7B01ED6D9B9007A6201 /* City+CoreDataProperties.swift */; };
 		183EB7B41ED6FF21007A6201 /* CityDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB7B31ED6FF21007A6201 /* CityDatabaseController.swift */; };
 		183EB7B61ED706F4007A6201 /* RecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB7B51ED706F4007A6201 /* RecommendationEngine.swift */; };
 		184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */; };
 		184CFCDA1EAE1F0E002EC798 /* MinorDianping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD81EAE1F0E002EC798 /* MinorDianping.xcdatamodeld */; };
 		184CFCEA1EAE1F0F002EC798 /* MinorDianpingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCE91EAE1F0F002EC798 /* MinorDianpingTests.swift */; };
 		184CFCF51EAE1F0F002EC798 /* MinorDianpingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCF41EAE1F0F002EC798 /* MinorDianpingUITests.swift */; };
+		186C34AB1EE8EA57004E736A /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C34AA1EE8EA57004E736A /* SyncEngine.swift */; };
+		186C34B31EE915A0004E736A /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C34AD1EE915A0004E736A /* City+CoreDataClass.swift */; };
+		186C34B41EE915A0004E736A /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C34AE1EE915A0004E736A /* City+CoreDataProperties.swift */; };
+		186C34B51EE915A0004E736A /* UserInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C34AF1EE915A0004E736A /* UserInfo+CoreDataClass.swift */; };
+		186C34B61EE915A0004E736A /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C34B01EE915A0004E736A /* UserInfo+CoreDataProperties.swift */; };
+		186C34B71EE915A0004E736A /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C34B11EE915A0004E736A /* Restaurant+CoreDataClass.swift */; };
+		186C34B81EE915A0004E736A /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C34B21EE915A0004E736A /* Restaurant+CoreDataProperties.swift */; };
 		18721F001ED67E9800FECA43 /* RestaurantDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18721EFF1ED67E9800FECA43 /* RestaurantDatabaseController.swift */; };
 		18721F121ED68A5700FECA43 /* UserInfoDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18721F111ED68A5700FECA43 /* UserInfoDatabaseController.swift */; };
-		18721F1B1ED68D4800FECA43 /* UserInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18721F131ED68D4800FECA43 /* UserInfo+CoreDataClass.swift */; };
-		18721F1C1ED68D4800FECA43 /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18721F141ED68D4800FECA43 /* UserInfo+CoreDataProperties.swift */; };
-		18721F1F1ED68D4800FECA43 /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18721F171ED68D4800FECA43 /* Restaurant+CoreDataClass.swift */; };
-		18721F201ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18721F181ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift */; };
 		1875D6E51ECB3BC00019A065 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875D6E41ECB3BC00019A065 /* DatabaseController.swift */; };
 		18861AE01EE6D803008DC5CF /* MySQLOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18861ADF1EE6D803008DC5CF /* MySQLOps.swift */; };
 		18A183C71ED0471E00A3ED55 /* Nanjing.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18A183C61ED0471E00A3ED55 /* Nanjing.csv */; };
@@ -74,8 +75,6 @@
 		1839B78B1ED9AFE7006E1004 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		1839B78C1ED9AFE7006E1004 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
 		1839B7921ED9B001006E1004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		183EB7AF1ED6D9B9007A6201 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
-		183EB7B01ED6D9B9007A6201 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		183EB7B31ED6FF21007A6201 /* CityDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDatabaseController.swift; sourceTree = "<group>"; };
 		183EB7B51ED706F4007A6201 /* RecommendationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationEngine.swift; sourceTree = "<group>"; };
 		184CFCCE1EAE1F0E002EC798 /* MinorDianping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinorDianping.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,12 +87,18 @@
 		184CFCF01EAE1F0F002EC798 /* MinorDianpingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinorDianpingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		184CFCF41EAE1F0F002EC798 /* MinorDianpingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorDianpingUITests.swift; sourceTree = "<group>"; };
 		184CFCF61EAE1F0F002EC798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		186C34AA1EE8EA57004E736A /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
+		186C34AC1EE8ECF9004E736A /* MinorDianping v6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v6.xcdatamodel"; sourceTree = "<group>"; };
+		186C34AD1EE915A0004E736A /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		186C34AE1EE915A0004E736A /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		186C34AF1EE915A0004E736A /* UserInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		186C34B01EE915A0004E736A /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		186C34B11EE915A0004E736A /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		186C34B21EE915A0004E736A /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		186C34B91EE915E3004E736A /* MinorDianping v7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v7.xcdatamodel"; sourceTree = "<group>"; };
+		186C34BA1EE94B0E004E736A /* MinorDianping v8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v8.xcdatamodel"; sourceTree = "<group>"; };
 		18721EFF1ED67E9800FECA43 /* RestaurantDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDatabaseController.swift; sourceTree = "<group>"; };
 		18721F111ED68A5700FECA43 /* UserInfoDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoDatabaseController.swift; sourceTree = "<group>"; };
-		18721F131ED68D4800FECA43 /* UserInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		18721F141ED68D4800FECA43 /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		18721F171ED68D4800FECA43 /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
-		18721F181ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1875D6E41ECB3BC00019A065 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		18861ADF1EE6D803008DC5CF /* MySQLOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySQLOps.swift; sourceTree = "<group>"; };
 		18A183C61ED0471E00A3ED55 /* Nanjing.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nanjing.csv; sourceTree = "<group>"; };
@@ -207,6 +212,7 @@
 				18721F111ED68A5700FECA43 /* UserInfoDatabaseController.swift */,
 				183EB7B31ED6FF21007A6201 /* CityDatabaseController.swift */,
 				18861ADF1EE6D803008DC5CF /* MySQLOps.swift */,
+				186C34AA1EE8EA57004E736A /* SyncEngine.swift */,
 			);
 			name = DatabaseControllers;
 			sourceTree = "<group>";
@@ -222,12 +228,12 @@
 		1875D6EE1ECB3EBB0019A065 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				183EB7AF1ED6D9B9007A6201 /* City+CoreDataClass.swift */,
-				183EB7B01ED6D9B9007A6201 /* City+CoreDataProperties.swift */,
-				18721F131ED68D4800FECA43 /* UserInfo+CoreDataClass.swift */,
-				18721F141ED68D4800FECA43 /* UserInfo+CoreDataProperties.swift */,
-				18721F171ED68D4800FECA43 /* Restaurant+CoreDataClass.swift */,
-				18721F181ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift */,
+				186C34AD1EE915A0004E736A /* City+CoreDataClass.swift */,
+				186C34AE1EE915A0004E736A /* City+CoreDataProperties.swift */,
+				186C34AF1EE915A0004E736A /* UserInfo+CoreDataClass.swift */,
+				186C34B01EE915A0004E736A /* UserInfo+CoreDataProperties.swift */,
+				186C34B11EE915A0004E736A /* Restaurant+CoreDataClass.swift */,
+				186C34B21EE915A0004E736A /* Restaurant+CoreDataProperties.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -390,27 +396,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				1875D6E51ECB3BC00019A065 /* DatabaseController.swift in Sources */,
-				18721F201ED68D4800FECA43 /* Restaurant+CoreDataProperties.swift in Sources */,
-				18721F1F1ED68D4800FECA43 /* Restaurant+CoreDataClass.swift in Sources */,
 				18861AE01EE6D803008DC5CF /* MySQLOps.swift in Sources */,
 				184CFCDA1EAE1F0E002EC798 /* MinorDianping.xcdatamodeld in Sources */,
-				18721F1B1ED68D4800FECA43 /* UserInfo+CoreDataClass.swift in Sources */,
+				186C34AB1EE8EA57004E736A /* SyncEngine.swift in Sources */,
 				183EB7B61ED706F4007A6201 /* RecommendationEngine.swift in Sources */,
 				1839B78E1ED9AFE7006E1004 /* searchBrain.swift in Sources */,
+				186C34B61EE915A0004E736A /* UserInfo+CoreDataProperties.swift in Sources */,
+				186C34B41EE915A0004E736A /* City+CoreDataProperties.swift in Sources */,
 				1839B77E1ED9AE41006E1004 /* CommentShopViewController.swift in Sources */,
 				1839B78D1ED9AFE7006E1004 /* RatingControl.swift in Sources */,
 				18721F121ED68A5700FECA43 /* UserInfoDatabaseController.swift in Sources */,
-				18721F1C1ED68D4800FECA43 /* UserInfo+CoreDataProperties.swift in Sources */,
-				183EB7B11ED6D9B9007A6201 /* City+CoreDataClass.swift in Sources */,
 				184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */,
-				183EB7B21ED6D9B9007A6201 /* City+CoreDataProperties.swift in Sources */,
+				186C34B71EE915A0004E736A /* Restaurant+CoreDataClass.swift in Sources */,
 				1839B7821ED9AE41006E1004 /* ShopViewController.swift in Sources */,
 				1839B7901ED9AFE7006E1004 /* ShopTableViewCell.swift in Sources */,
+				186C34B31EE915A0004E736A /* City+CoreDataClass.swift in Sources */,
+				186C34B51EE915A0004E736A /* UserInfo+CoreDataClass.swift in Sources */,
 				1839B7801ED9AE41006E1004 /* SearchViewController.swift in Sources */,
 				1839B7811ED9AE41006E1004 /* ShopTableViewController.swift in Sources */,
 				1839B77D1ED9AE41006E1004 /* AccountViewController.swift in Sources */,
 				18721F001ED67E9800FECA43 /* RestaurantDatabaseController.swift in Sources */,
 				183EB7B41ED6FF21007A6201 /* CityDatabaseController.swift in Sources */,
+				186C34B81EE915A0004E736A /* Restaurant+CoreDataProperties.swift in Sources */,
 				1835B3B31ED45B1D0059DA36 /* CSVHelper.swift in Sources */,
 				1839B78F1ED9AFE7006E1004 /* Shop.swift in Sources */,
 				1839B77F1ED9AE41006E1004 /* MapViewController.swift in Sources */,
@@ -688,13 +695,16 @@
 		184CFCD81EAE1F0E002EC798 /* MinorDianping.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				186C34BA1EE94B0E004E736A /* MinorDianping v8.xcdatamodel */,
+				186C34B91EE915E3004E736A /* MinorDianping v7.xcdatamodel */,
+				186C34AC1EE8ECF9004E736A /* MinorDianping v6.xcdatamodel */,
 				18F524C21EE58AE200884641 /* MinorDianping v5.xcdatamodel */,
 				18F524C11EE5890600884641 /* MinorDianping v4.xcdatamodel */,
 				18F524C01EE5806200884641 /* MinorDianping v3.xcdatamodel */,
 				18F524BF1EE5738400884641 /* MinorDianping v2.xcdatamodel */,
 				184CFCD91EAE1F0E002EC798 /* MinorDianping.xcdatamodel */,
 			);
-			currentVersion = 18F524C21EE58AE200884641 /* MinorDianping v5.xcdatamodel */;
+			currentVersion = 186C34BA1EE94B0E004E736A /* MinorDianping v8.xcdatamodel */;
 			path = MinorDianping.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

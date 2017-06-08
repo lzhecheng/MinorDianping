@@ -160,15 +160,15 @@ class ShopTableViewController: UITableViewController {
         }
         shops += [shop1,shop2,shop3]
         let mySQLOps = MySQLOps()
-        //mySQLOps.registerNewUser(username: "test", password: "123", email: "123", fullname: "123")
-        mySQLOps.fetchUserInfoFromMySQL(username: "user4", attributeName: "fullname"){
-            attributeValue in
-            print(attributeValue)
-        }
-        //mySQLOps.updateUserInfoToMySQL(username: "user4", attributeName: "fullname", attributeValue: "zz")
         
         let cdPhoto = UIImage(named: "defaultPhoto")
         let databaseController = RestaurantDatabaseController()
+        databaseController.addEvaluation(resName: "Restaurant Familiar El Chino", evaluation: 3)
+        let res = databaseController.fetchOneRestaurantFromCoreData(with: "Restaurant Familiar El Chino")!
+        print("\(res.name!) \(res.evaluation) with \(res.evaluationNum)")
+        databaseController.downloadEvaluation(resName: "Restaurant Familiar El Chino")
+        print("\(res.name!) \(res.evaluation) with \(res.evaluationNum)")
+
 //        databaseController.createNewRestaurant(name: "a", address: "b", cityName: "c", latitude: 1, longitude: 2, is_save: true)
 //        databaseController.createNewCity(cityName: "Nanjing", is_save: true)
 //        let users: [UserInfo] = databaseController.fetchAllObjectsFromCoreData()!
@@ -180,13 +180,10 @@ class ShopTableViewController: UITableViewController {
 
         let restaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
         databaseController.modifyAttribute(des: &restaurants[0].name, src: "cs")
-        print(restaurants.count)
-        for i in 0..<3 {
+        for i in 0..<restaurants.count {
             let shop = Shop(name: restaurants[i].name!, photo: cdPhoto, latitude: restaurants[i].latitude, longitude: restaurants[i].longitude, comment: "")!
             shops += [shop]
         }
-
-        
     }
     
     private func loadSeachedShops() {

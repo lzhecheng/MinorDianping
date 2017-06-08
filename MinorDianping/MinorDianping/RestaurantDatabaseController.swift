@@ -115,6 +115,7 @@ class RestaurantDatabaseController : DatabaseController{
     
     func modifyAttribute<T>( des: inout T, src: T, is_save: Bool = true) {
         des = src
+        print("source \(src) des \(des)")
         if(is_save){
             DatabaseController.saveContext()
         }
@@ -131,6 +132,51 @@ class RestaurantDatabaseController : DatabaseController{
         }
         if(is_save){
             DatabaseController.saveContext()
+        }
+    }
+    
+    func fetchOneRestaurantFromCoreData(with name: String)->Restaurant?{
+        let fetchRequest:NSFetchRequest<Restaurant> = NSFetchRequest(entityName: String(describing: Restaurant.self))
+        do{
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            for i in 0..<searchResults.count{
+                if(searchResults[i].name == name){
+                    return searchResults[i]
+                }
+            }
+        }catch{
+            print("Error: \(error)")
+            
+        }
+        return nil
+    }
+    
+    func addEvaluation(resName: String, evaluation: Double){
+        let mySQLOps = MySQLOps()
+        mySQLOps.fetchRestaurantInfoFromMySQL(name: resName, attributeName: "evaluation"){
+            evaluationBefore in
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: resName, attributeName: "evaluationNum"){
+                evaluationNumBefore in
+                let evaluationNumNew = Int(evaluationNumBefore)! + 1
+                let evaluationNew = (Double(evaluationBefore)! * Double(evaluationNumBefore)! + evaluation) / Double(evaluationNumNew)
+                mySQLOps.updateRestaurantToMySQL(name: resName, attributeName: "evaluation", attributeValue: String(evaluationNew))
+                mySQLOps.updateRestaurantToMySQL(name: resName, attributeName: "evaluationNum", attributeValue: String(evaluationNumNew))
+            }
+        }
+    }
+    
+    func downloadEvaluation(resName: String){
+        let mySQLOps = MySQLOps()
+        let restaurantDatabaseController = RestaurantDatabaseController()
+        if let restaurant = restaurantDatabaseController.fetchOneRestaurantFromCoreData(with: resName){
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: resName, attributeName: "evaluation"){
+                evaluation in
+                restaurantDatabaseController.modifyAttribute(des: &restaurant.evaluation, src: Double(evaluation)!)
+            }
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: resName, attributeName: "evaluationNum"){
+                evaluationNum in
+                restaurantDatabaseController.modifyAttribute(des: &restaurant.evaluationNum, src: Double(evaluationNum)!)
+            }
         }
     }
 }
