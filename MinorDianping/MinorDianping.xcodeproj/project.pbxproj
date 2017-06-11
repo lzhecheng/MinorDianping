@@ -35,6 +35,7 @@
 		1877A5E51ED6F1E3007A4561 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */; };
 		1877A5E71ED713BA007A4561 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877A5E61ED713BA007A4561 /* AccountViewController.swift */; };
 		188E53AE1EECD7D900632111 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E53AD1EECD7D900632111 /* Shop.swift */; };
+		188E53B01EED2FF600632111 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E53AF1EED2FF600632111 /* SignInViewController.swift */; };
 		18967CD41ED5A04900687541 /* CSVHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18967CCF1ED5A04900687541 /* CSVHelper.swift */; };
 		18967CD51ED5A04900687541 /* mexico.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18967CD01ED5A04900687541 /* mexico.csv */; };
 		18967CD61ED5A04900687541 /* Nanjing.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18967CD11ED5A04900687541 /* Nanjing.csv */; };
@@ -100,6 +101,7 @@
 		1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1877A5E61ED713BA007A4561 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		188E53AD1EECD7D900632111 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		188E53AF1EED2FF600632111 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		18967CCF1ED5A04900687541 /* CSVHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVHelper.swift; sourceTree = "<group>"; };
 		18967CD01ED5A04900687541 /* mexico.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mexico.csv; sourceTree = "<group>"; };
 		18967CD11ED5A04900687541 /* Nanjing.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nanjing.csv; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				185E06551EC342670027929F /* MapViewController.swift */,
 				1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */,
 				1877A5E61ED713BA007A4561 /* AccountViewController.swift */,
+				188E53AF1EED2FF600632111 /* SignInViewController.swift */,
 			);
 			name = ViewContorllers;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				185303EB1EE989190027B683 /* UserInfo+CoreDataClass.swift in Sources */,
 				183073EA1ED41C6C00CA3558 /* CommentShopViewController.swift in Sources */,
 				185303F01EE989190027B683 /* Restaurant+CoreDataProperties.swift in Sources */,
+				188E53B01EED2FF600632111 /* SignInViewController.swift in Sources */,
 				188E53AE1EECD7D900632111 /* Shop.swift in Sources */,
 				185303EC1EE989190027B683 /* UserInfo+CoreDataProperties.swift in Sources */,
 				18B82E4E1EC9E5250086A531 /* ShopTableViewCell.swift in Sources */,

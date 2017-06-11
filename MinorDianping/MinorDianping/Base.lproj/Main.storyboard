@@ -317,7 +317,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="地图" id="OjY-AI-UWd">
-                        <barButtonItem key="rightBarButtonItem" title="导航" id="sbg-Du-hjG">
+                        <barButtonItem key="rightBarButtonItem" image="Car" id="sbg-Du-hjG">
                             <connections>
                                 <action selector="navButton:" destination="x9b-M0-teD" id="kNf-kZ-ASK"/>
                             </connections>
@@ -359,60 +359,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3am-ML-Smj">
-                                <rect key="frame" x="0.0" y="174" width="375" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="daK-b9-4hA">
+                                <rect key="frame" x="0.0" y="94" width="375" height="126"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icm-tG-q2s">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
-                                        <state key="normal" title="我的订单">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1O-aL-59B">
-                                        <rect key="frame" x="125" y="0.0" width="125" height="30"/>
-                                        <state key="normal" title="我的收藏">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-k7-HfR">
-                                        <rect key="frame" x="250" y="0.0" width="125" height="30"/>
-                                        <state key="normal" title="历史纪录">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LQa-fu-wl2">
-                                <rect key="frame" x="0.0" y="94" width="375" height="50"/>
-                                <subviews>
-                                    <imageView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-DT-avV">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
+                                    <imageView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-DT-avV">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU3-DJ-h8B">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
-                                        <state key="normal" title="登陆／注册">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nmj-gK-OkS">
+                                        <rect key="frame" x="0.0" y="58" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU3-DJ-h8B">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                                <state key="normal" title="登陆／注册">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="rBL-fd-t17" kind="show" id="GT0-yu-VcX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDe-ME-PNd">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
+                                                <state key="normal" title="设置">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3am-ML-Smj">
+                                        <rect key="frame" x="0.0" y="96" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icm-tG-q2s">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                                <state key="normal" title="我的订单">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1O-aL-59B">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                                <state key="normal" title="我的收藏">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-k7-HfR">
+                                                <rect key="frame" x="250" y="0.0" width="125" height="30"/>
+                                                <state key="normal" title="历史纪录">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDe-ME-PNd">
-                                <rect key="frame" x="-0.5" y="212" width="375" height="30"/>
-                                <state key="normal" title="设置">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bDe-ME-PNd" firstAttribute="centerX" secondItem="qjk-e8-deV" secondAttribute="centerX" id="4f7-rT-BJz"/>
-                            <constraint firstItem="LQa-fu-wl2" firstAttribute="centerX" secondItem="qjk-e8-deV" secondAttribute="centerX" id="N1i-Oa-7yP"/>
-                            <constraint firstItem="LQa-fu-wl2" firstAttribute="top" secondItem="YUh-Pl-nBr" secondAttribute="bottom" constant="30" id="Npm-rt-FB6"/>
-                            <constraint firstItem="3am-ML-Smj" firstAttribute="centerX" secondItem="qjk-e8-deV" secondAttribute="centerX" id="WmP-fn-7z9"/>
-                            <constraint firstItem="LQa-fu-wl2" firstAttribute="width" secondItem="qjk-e8-deV" secondAttribute="width" id="Xoi-hq-4iR"/>
-                            <constraint firstItem="bDe-ME-PNd" firstAttribute="width" secondItem="qjk-e8-deV" secondAttribute="width" id="gbK-6w-BlR"/>
-                            <constraint firstItem="3am-ML-Smj" firstAttribute="top" secondItem="LQa-fu-wl2" secondAttribute="bottom" constant="30" id="rFR-QF-7Hj"/>
-                            <constraint firstItem="3am-ML-Smj" firstAttribute="width" secondItem="qjk-e8-deV" secondAttribute="width" id="yEq-Bd-aFZ"/>
+                            <constraint firstItem="daK-b9-4hA" firstAttribute="top" secondItem="YUh-Pl-nBr" secondAttribute="bottom" constant="30" id="71f-R2-aRZ"/>
+                            <constraint firstItem="daK-b9-4hA" firstAttribute="width" secondItem="qjk-e8-deV" secondAttribute="width" id="GYX-k4-y53"/>
+                            <constraint firstItem="daK-b9-4hA" firstAttribute="centerX" secondItem="qjk-e8-deV" secondAttribute="centerX" id="I9g-c6-aXU"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -426,6 +429,112 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfe-92-tGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="332" y="1748.2758620689656"/>
+        </scene>
+        <!--注册/登录-->
+        <scene sceneID="NNb-qb-XLd">
+            <objects>
+                <viewController title="注册/登录" hidesBottomBarWhenPushed="YES" id="rBL-fd-t17" customClass="SignInViewController" customModule="MinorDianping" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KfF-hy-jI1"/>
+                        <viewControllerLayoutGuide type="bottom" id="OjX-NJ-XvF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7ct-E5-akr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CaT-ne-zee">
+                                <rect key="frame" x="0.0" y="105" width="375" height="398"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="CpP-Oc-gAr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="8D2-BM-Pgc"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="DEz-hu-Hba"/>
+                                            <constraint firstAttribute="width" constant="375" id="Spv-sO-ADp"/>
+                                            <constraint firstAttribute="height" constant="284" id="iAu-rI-s7d"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-ak-ncZ">
+                                        <rect key="frame" x="0.0" y="292" width="375" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcO-jm-DxU">
+                                                <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H34-qf-04H">
+                                                <rect key="frame" x="60" y="0.0" width="315" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ebq-gk-pmg">
+                                        <rect key="frame" x="0.0" y="330" width="375" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1v-wz-QbD">
+                                                <rect key="frame" x="0.0" y="0.0" width="52.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l3L-dJ-bTf">
+                                                <rect key="frame" x="60.5" y="0.0" width="314.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ErH-e2-gkc">
+                                        <rect key="frame" x="0.0" y="368" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aF-aG-U4u">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                                <state key="normal" title="注册">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="signUp:" destination="rBL-fd-t17" eventType="touchUpInside" id="hlJ-up-9g9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mk2-x4-Qvn">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
+                                                <state key="normal" title="登录">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="signIn:" destination="rBL-fd-t17" eventType="touchUpInside" id="oZB-xa-CW7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ebq-gk-pmg" secondAttribute="trailing" constant="8" id="BE2-rg-EDM"/>
+                                    <constraint firstAttribute="trailing" secondItem="DKq-ak-ncZ" secondAttribute="trailing" constant="8" id="BsW-LM-ETl"/>
+                                    <constraint firstItem="ebq-gk-pmg" firstAttribute="leading" secondItem="CaT-ne-zee" secondAttribute="leading" constant="8" id="sPd-ck-HqU"/>
+                                    <constraint firstItem="DKq-ak-ncZ" firstAttribute="leading" secondItem="CaT-ne-zee" secondAttribute="leading" constant="8" id="sa4-jG-MKN"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CaT-ne-zee" firstAttribute="top" secondItem="KfF-hy-jI1" secondAttribute="bottom" constant="41" id="URi-yF-IJd"/>
+                            <constraint firstItem="CaT-ne-zee" firstAttribute="width" secondItem="7ct-E5-akr" secondAttribute="width" id="aEy-rx-2Nz"/>
+                            <constraint firstItem="CaT-ne-zee" firstAttribute="centerX" secondItem="7ct-E5-akr" secondAttribute="centerX" id="ghl-5O-o2e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pwdTextField" destination="l3L-dJ-bTf" id="K0Y-vq-jI6"/>
+                        <outlet property="userNameTextField" destination="H34-qf-04H" id="pxQ-nh-MYN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ph4-31-lW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="1747.3763118440781"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YBu-Nj-tqp">
@@ -541,7 +650,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Car" width="24" height="24"/>
         <image name="defaultPhoto" width="320" height="320"/>
+        <image name="icon" width="748" height="748"/>
         <image name="like" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
         <image name="message" width="32" height="32"/>

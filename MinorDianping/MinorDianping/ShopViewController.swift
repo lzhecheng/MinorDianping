@@ -19,12 +19,11 @@ class ShopViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // set name, image, comments and evaluation
+        // set name, comments and evaluation
         if let restaurant = restaurant {
             let restaurantDBC = RestaurantDatabaseController()
             let target = restaurantDBC.fetchOneRestaurantFromCoreData(with: restaurant.name!)
             
-            //navigationItem.title = target?.name
             //photoImageView.image = UIImage()
             nameLabel.text = target?.name
             commentLabel.text = target?.comments
