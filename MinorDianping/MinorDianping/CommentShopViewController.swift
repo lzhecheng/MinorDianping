@@ -20,6 +20,7 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     var restaurant: Restaurant?
     var shop: Shop?
+    var userName: String = "游客"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,12 +109,11 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
             owningNavigationController.popViewController(animated: true)
         }
         else {
-            fatalError("The MealViewController is not inside a navigation controller.")
+            fatalError("The CommentShopViewController is not inside a navigation controller.")
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         super.prepare(for: segue, sender: sender)
         
         guard let button = sender as? UIBarButtonItem, button === saveButton else {
@@ -129,9 +129,9 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
         
         // comments
         if (restaurant?.comments) != nil {
-            restaurant?.comments = (restaurant?.comments)! + "\n" + commentTextField.text!
+            restaurant?.comments = (restaurant?.comments)! + commentTextField.text! + "\n ----" + userName + "\n"
         } else {
-            restaurant?.comments = commentTextField.text
+            restaurant?.comments = commentTextField.text! + "\n ----" + userName + "\n"
         }
         
         //save comment, evaluation, evaluationNum in core data

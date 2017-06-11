@@ -24,11 +24,24 @@ class ShopViewController: UIViewController {
             let restaurantDBC = RestaurantDatabaseController()
             let target = restaurantDBC.fetchOneRestaurantFromCoreData(with: restaurant.name!)
             
-            //photoImageView.image = UIImage()
             nameLabel.text = target?.name
             commentLabel.text = target?.comments
             ratingControl.rating = Int((target?.evaluation)!)
+            
+            // display image
+            let mySQLOps = MySQLOps()
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: "Restaurant Familiar El Chino", attributeName: "imagePath"){
+                imagePath in
+                UIImageView.imageFromServerURL(urlString: imagePath){
+                    image in
+                    self.photoImageView.image = image
+                }
+            }
         }
+        
+        // multiline display
+        commentLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        commentLabel.numberOfLines = 0
     }
     
     override func didReceiveMemoryWarning() {

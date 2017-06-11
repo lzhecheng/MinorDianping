@@ -56,7 +56,7 @@ class ShopTableViewController: UITableViewController {
         // Fetches the appropriate restaurant for the data source layout.
         let restaurant = restaurants[indexPath.row]
         
-        //imae
+        //image
         let mySQLOps = MySQLOps()
         mySQLOps.fetchRestaurantInfoFromMySQL(name: "Restaurant Familiar El Chino", attributeName: "imagePath"){
             imagePath in
