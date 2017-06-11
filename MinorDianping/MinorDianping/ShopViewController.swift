@@ -24,17 +24,11 @@ class ShopViewController: UIViewController {
             let restaurantDBC = RestaurantDatabaseController()
             let target = restaurantDBC.fetchOneRestaurantFromCoreData(with: restaurant.name!)
             
-            navigationItem.title = target?.name
+            //navigationItem.title = target?.name
             //photoImageView.image = UIImage()
             nameLabel.text = target?.name
             commentLabel.text = target?.comments
             ratingControl.rating = Int((target?.evaluation)!)
-        
-//            navigationItem.title = restaurant.name
-//            nameLabel.text = restaurant.name
-//            commentLabel.text = restaurant.comments
-//            print(restaurant.evaluation)
-//            ratingControl.rating = Int(restaurant.evaluation)
         }
     }
     

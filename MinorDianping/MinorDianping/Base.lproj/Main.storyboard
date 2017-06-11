@@ -32,7 +32,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8W-td-sUu">
-                                            <rect key="frame" x="84" y="11" width="189" height="21"/>
+                                            <rect key="frame" x="84" y="11" width="283" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -43,7 +43,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5Y-SG-Dh9">
-                                            <rect key="frame" x="21" y="86" width="333" height="44"/>
+                                            <rect key="frame" x="8" y="86" width="359" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -223,7 +223,7 @@
             </objects>
             <point key="canvasLocation" x="3997.5999999999999" y="987.25637181409309"/>
         </scene>
-        <!--餐厅-->
+        <!--Shop View Controller-->
         <scene sceneID="y92-S6-ZuA">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="SPX-f8-JLR" customClass="ShopViewController" customModule="MinorDianping" customModuleProvider="target" sceneMemberID="viewController">
@@ -236,7 +236,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0LK-ns-aNE">
-                                <rect key="frame" x="67" y="101" width="240" height="272.5"/>
+                                <rect key="frame" x="67" y="101" width="240" height="278.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="dsfdsf" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xi-cc-fnm" userLabel="name">
                                         <rect key="frame" x="99" y="0.0" width="42" height="20.5"/>
@@ -248,7 +248,7 @@
                                         <rect key="frame" x="0.0" y="31.5" width="240" height="186"/>
                                     </imageView>
                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TrR-MS-ebh" customClass="RatingControl" customModule="MinorDianping" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="228.5" width="220" height="44"/>
+                                        <rect key="frame" x="10" y="228.5" width="220" height="50"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -266,18 +266,19 @@
                             <constraint firstItem="0LK-ns-aNE" firstAttribute="centerX" secondItem="z98-L7-7E9" secondAttribute="centerX" id="xZU-Nt-K56"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="餐厅" id="cZX-Vk-B0w">
+                    <navigationItem key="navigationItem" id="cZX-Vk-B0w">
                         <rightBarButtonItems>
-                            <barButtonItem title="地图" id="gWu-CF-aAU">
+                            <barButtonItem image="map" id="gWu-CF-aAU">
                                 <connections>
                                     <segue destination="x9b-M0-teD" kind="show" identifier="ShopChosen2" id="40j-Ft-rVb"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="我要点评！" id="kKq-49-7HZ">
+                            <barButtonItem image="write" id="kKq-49-7HZ">
                                 <connections>
                                     <segue destination="Vy1-a0-MFw" kind="show" identifier="AddComment" id="Jgt-EC-wCG"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem image="like" id="MqI-6f-YIZ"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -541,11 +542,14 @@
     </scenes>
     <resources>
         <image name="defaultPhoto" width="320" height="320"/>
+        <image name="like" width="25" height="25"/>
+        <image name="map" width="25" height="25"/>
         <image name="message" width="32" height="32"/>
         <image name="myAccount" width="25" height="25"/>
         <image name="portrait" width="50" height="50"/>
         <image name="recommendation" width="25" height="25"/>
         <image name="search" width="25" height="25"/>
+        <image name="write" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="40j-Ft-rVb"/>

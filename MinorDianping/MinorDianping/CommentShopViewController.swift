@@ -28,8 +28,10 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
         
         navigationItem.title = restaurant?.name
         shopNameLabel.text = restaurant?.name
+        
+        updateSaveButtonState()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -38,12 +40,14 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     //move keyboard to avoid covering textfield
     func textFieldDidBeginEditing(_ textField: UITextField) {
         scrollView.setContentOffset(CGPoint(x: 0,y: 250), animated: true)
+        
+        saveButton.isEnabled = false
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         scrollView.setContentOffset(CGPoint(x: 0,y: 0), animated: true)
         
-        //comment = textField.text!
+        updateSaveButtonState()
     }
     
     //hide keyboard when pressing somewhere outside the keyboard
@@ -109,26 +113,41 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         super.prepare(for: segue, sender: sender)
         
-        // when press saveButton
         guard let button = sender as? UIBarButtonItem, button === saveButton else {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
         
-        restaurant?.evaluation = Double(ratingControl.rating)
+        //change evaluation, evaluationNum, comments
+        let dbEvaluationNum = Double((restaurant?.evaluationNum)!)
+        let dbRating = Double(ratingControl.rating)
+        restaurant?.evaluation = ((restaurant?.evaluation)! * dbEvaluationNum + dbRating) / (dbEvaluationNum + 1)
+        restaurant?.evaluationNum = (restaurant?.evaluationNum)! + 1
+        let originComments = restaurant?.comments
+        let newComment = commentTextField.text
+        restaurant?.comments = "\(String(describing: originComments))\n\(String(describing: newComment))"
         
-        //save comment and evaluation in core data
+        //save comment, evaluation, evaluationNum in core data
         let restaurantDBC = RestaurantDatabaseController()
         restaurantDBC.addEvaluation(resName: (restaurant?.name!)!, evaluation: Double(ratingControl.rating))
-        let sample = restaurantDBC.fetchOneRestaurantFromCoreData(with: (restaurant?.name)!)
-        print(sample?.evaluation)
-
-//        if restaurant?.comments != nil{
-//            restaurant?.comments = (restaurant?.comments)! + commentTextField.text!
-//        }else{
-//            restaurant?.comments = commentTextField.text
-//        }
     }
+    
+    private func updateSaveButtonState() {
+        // Disable the Save button if the comment field is empty and rating is empty.
+        if commentTextField.text != "" {
+            saveButton.isEnabled = true
+        }else {
+            saveButton.isEnabled = false
+        }
+    }
+    
+//    func notCompleteAlert(){
+//        let alert = UIAlertController(title: "未正确填写", message: "请完整填写评分和评论", preferredStyle: UIAlertControllerStyle.alert)
+//        
+//        alert.addAction(UIAlertAction(title: "好的", style: UIAlertActionStyle.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)
+//        }))
+//    }
 }

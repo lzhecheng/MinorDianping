@@ -66,10 +66,11 @@ class ShopTableViewController: UITableViewController {
             }
         }
         
-        //set name, evaluation
+        //set name, evaluation, other information
         cell.nameLabel.text = restaurant.name
         cell.ratingControl.rating = Int(restaurant.evaluation)
-        cell.otherInfo.text = "评分: \(restaurant.evaluation) 评分人数：\(restaurant.evaluationNum)"
+        let evaluation2digit = String(format: "%.2f", restaurant.evaluation)
+        cell.otherInfo.text = "详细评分：\(evaluation2digit) 评分人数：\(Int(restaurant.evaluationNum))"
         
         //let restaurantDatabaseController = RestaurantDatabaseController()
         //restaurantDatabaseController.downloadEvaluation(resName: restaurant.name!)
@@ -127,7 +128,6 @@ class ShopTableViewController: UITableViewController {
     }
     
     private func loadSeachedShops() {
-        //data from core data
         let search = searchBrain()
         let results = search.searchWords(words: target)
         restaurants += results
