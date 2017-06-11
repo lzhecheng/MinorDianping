@@ -120,10 +120,10 @@ class ShopTableViewController: UITableViewController {
     
     private func loadCoreDataShops(){
         //let cdPhoto = UIImage(named: "defaultPhoto")
-        let databaseController = DatabaseController()
+        let databaseController = RestaurantDatabaseController()
         let DBrestaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
         restaurants += DBrestaurants
-        print(restaurants[18].evaluation)
+        //print(restaurants[18].evaluation)
     }
     
     private func loadSeachedShops() {
