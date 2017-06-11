@@ -20,6 +20,11 @@ class ShopTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let mySQLOps = MySQLOps()
+        mySQLOps.registerNewUser(username: "user", password: "123", email: "123", fullname: "123"){
+            success in
+            print(success)
+        }
         
         //set colors in button
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 99/255, green: 6/255, blue: 95/255, alpha: 1)

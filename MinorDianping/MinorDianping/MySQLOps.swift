@@ -17,7 +17,7 @@ public class MySQLOps{
     let URL_REGISTER_RES:String = "http://104.199.144.39/MinorDianping/registerRestaurant.php"
 
     
-    func registerNewUser(username: String, password: String, email: String, fullname: String){
+    func registerNewUser(username: String, password: String, email: String, fullname: String, handler: @escaping (_ success: Bool)-> ()){
         var request = URLRequest(url: URL(string: URL_REGISTER_USERS)!)
         request.httpMethod = "POST"
         let postString = "username=\(username)&password=\(password)&email=\(email)&fullname=\(fullname)"
@@ -31,6 +31,13 @@ public class MySQLOps{
             }
             //print("response = \(String(describing: response))")
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            do{
+                let responseJSON = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
+                handler(responseJSON["status"]! as! String != "400")
+            }
+            catch{
+                print(error)
+            }
             print("REGISTER responseString = \(String(describing: responseString))")
         }
         task.resume();
@@ -64,7 +71,7 @@ public class MySQLOps{
         task.resume()
     }
     
-    func updateUserInfoToMySQL(username: String, attributeName: String, attributeValue: String){
+    func updateUserInfoToMySQL(username: String, attributeName: String, attributeValue: String, handler: @escaping (_ success: Bool)-> ()){
         var request = URLRequest(url: URL(string: URL_UPDATE_USERS)!)
         request.httpMethod = "POST"
         let getString = "username=\(username)&attributeName=\(attributeName)&attributeValue=\(attributeValue)"
@@ -79,6 +86,13 @@ public class MySQLOps{
             }
             
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            do{
+                let responseJSON = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
+                handler(responseJSON["status"]! as! String != "400")
+            }
+            catch{
+                print(error)
+            }
             print("UPDATE responseString = \(String(describing: responseString))")
         }
         task.resume()
@@ -112,7 +126,7 @@ public class MySQLOps{
         task.resume()
     }
     
-    func updateRestaurantToMySQL(name: String, attributeName: String, attributeValue: String){
+    func updateRestaurantToMySQL(name: String, attributeName: String, attributeValue: String, handler: @escaping (_ success: Bool)-> ()){
         var request = URLRequest(url: URL(string: URL_UPDATE_RES)!)
         request.httpMethod = "POST"
         let getString = "name=\(name)&attributeName=\(attributeName)&attributeValue=\(attributeValue)"
@@ -127,11 +141,19 @@ public class MySQLOps{
             }
             
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            do{
+                let responseJSON = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
+                handler(responseJSON["status"]! as! String != "400")
+            }
+            catch{
+                print(error)
+            }
             print("UPDATE responseString = \(String(describing: responseString))")
         }
         task.resume()
     }
-    func registerNewRestaurant(resName: String, address: String, latitude: Double, longitude: Double, city: String){
+    
+    func registerNewRestaurant(resName: String, address: String, latitude: Double, longitude: Double, city: String, handler: @escaping (_ success: Bool)-> ()){
         var request = URLRequest(url: URL(string: URL_REGISTER_RES)!)
         request.httpMethod = "POST"
         let postString = "name=\(resName)&address=\(address)&latitude=\(latitude)&longitude=\(longitude)&city=\(city)"
@@ -145,6 +167,13 @@ public class MySQLOps{
             }
             //print("response = \(String(describing: response))")
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            do{
+                let responseJSON = try JSONSerialization.jsonObject(with: data!) as! [String:Any]
+                handler(responseJSON["status"]! as! String != "400")
+            }
+            catch{
+                print(error)
+            }
             print("REGISTER responseString = \(String(describing: responseString))")
         }
         task.resume();

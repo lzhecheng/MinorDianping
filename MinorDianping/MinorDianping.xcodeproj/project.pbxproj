@@ -150,8 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				18B2F71A1ECF201200086EC6 /* ShopTableViewController.swift */,
-				18767B451ED0634500C8D6C2 /* ShopViewController.swift */,
-				183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */,
 				185E06551EC342670027929F /* MapViewController.swift */,
 				1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */,
 				1877A5E61ED713BA007A4561 /* AccountViewController.swift */,
@@ -227,6 +225,7 @@
 				185303E71EE989190027B683 /* City+CoreDataClass.swift */,
 				185303E81EE989190027B683 /* City+CoreDataProperties.swift */,
 				185303E91EE989190027B683 /* Restaurant+CoreDataClass.swift */,
+				18767B451ED0634500C8D6C2 /* ShopViewController.swift */,
 				185303EA1EE989190027B683 /* Restaurant+CoreDataProperties.swift */,
 				185303E51EE989190027B683 /* UserInfo+CoreDataClass.swift */,
 			);
@@ -247,6 +246,7 @@
 		18967CD91ED5A05800687541 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */,
 				18967CD01ED5A04900687541 /* mexico.csv */,
 				18967CD11ED5A04900687541 /* Nanjing.csv */,
 			);
