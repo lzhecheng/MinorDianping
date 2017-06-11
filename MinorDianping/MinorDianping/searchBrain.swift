@@ -38,7 +38,7 @@ class searchBrain{
     
     public func searchWords(words: String) -> [Restaurant]{
         //get all words in the input
-        let wordsSplited: [String] = words.components(separatedBy: " ")
+        let wordsSplited: [String] = words.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).components(separatedBy: " ")
         var allSets: [Set<Int>] = []
         
         //get restaurants' names of each word
@@ -52,7 +52,7 @@ class searchBrain{
             allSets += [result]
         }
         
-        //get the intersection of these restaurant name sets
+        //get intersection of restaurant name sets
         if allSets.count == 0 {
             return []
         }
@@ -66,7 +66,6 @@ class searchBrain{
         //let cdPhoto = UIImage(named: "defaultPhoto")
         var returnRestaurants = [Restaurant]()
         for i in finalResults {
-            //let shop = Shop(name: restaurants[i].name!, photo: cdPhoto, latitude: restaurants[i].latitude, longitude: restaurants[i].longitude, comment: "")!
             returnRestaurants += [restaurants[i]]
         }
         

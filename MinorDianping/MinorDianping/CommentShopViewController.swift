@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -15,27 +16,22 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var shopNameLabel: UILabel!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var restaurant: Restaurant?
-    var restaurantIndex: Int?
-    
-    var comment: String = ""
+    var shop: Shop?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         commentTextField.delegate = self
         
-        let databaseController = DatabaseController()
-        let DBrestaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
-        
-        navigationItem.title = DBrestaurants[restaurantIndex!].name
-        shopNameLabel.text = DBrestaurants[restaurantIndex!].name
+        navigationItem.title = restaurant?.name
+        shopNameLabel.text = restaurant?.name
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: UITextField
@@ -47,7 +43,7 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     func textFieldDidEndEditing(_ textField: UITextField) {
         scrollView.setContentOffset(CGPoint(x: 0,y: 0), animated: true)
         
-        comment = textField.text!
+        //comment = textField.text!
     }
     
     //hide keyboard when pressing somewhere outside the keyboard
@@ -69,7 +65,6 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
         // The info dictionary may contain multiple representations of the image. You want to use the original.
         guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
@@ -84,7 +79,6 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     //MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        
         // Hide the keyboard.
         commentTextField.resignFirstResponder()
         
@@ -100,7 +94,6 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
         let isPresentingInAddMealMode = presentingViewController is UINavigationController
         
@@ -115,24 +108,27 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
         }
     }
     
-    
-    @IBAction func save(_ sender: UIBarButtonItem) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         
-        //save comment and evaluation
-        restaurant?.evaluation = Int16(ratingControl.rating)
-        restaurant?.comments =  (restaurant?.comments)! + "\n" + commentTextField.text!
+        // when press saveButton
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
         
-        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        restaurant?.evaluation = Double(ratingControl.rating)
         
-        if isPresentingInAddMealMode {
-            dismiss(animated: true, completion: nil)
-        }
-        else if let owningNavigationController = navigationController{
-            owningNavigationController.popViewController(animated: true)
-        }
-        else {
-            fatalError("The MealViewController is not inside a navigation controller.")
-        }
+        //save comment and evaluation in core data
+        let restaurantDBC = RestaurantDatabaseController()
+        restaurantDBC.addEvaluation(resName: (restaurant?.name!)!, evaluation: Double(ratingControl.rating))
+        let sample = restaurantDBC.fetchOneRestaurantFromCoreData(with: (restaurant?.name)!)
+        print(sample?.evaluation)
+
+//        if restaurant?.comments != nil{
+//            restaurant?.comments = (restaurant?.comments)! + commentTextField.text!
+//        }else{
+//            restaurant?.comments = commentTextField.text
+//        }
     }
 }

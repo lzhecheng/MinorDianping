@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class RestaurantDatabaseController : DatabaseController{
     init(filename: String){
@@ -50,8 +51,8 @@ class RestaurantDatabaseController : DatabaseController{
                 
             }
             DatabaseController.saveContext()
+            print("Database init: Save database successfully")
         }
-        print("Database init: Save database successfully")
     }
     
     convenience override init(){
@@ -133,4 +134,70 @@ class RestaurantDatabaseController : DatabaseController{
             DatabaseController.saveContext()
         }
     }
+    
+    func fetchOneRestaurantFromCoreData(with name: String)->Restaurant?{
+        let fetchRequest:NSFetchRequest<Restaurant> = NSFetchRequest(entityName: String(describing: Restaurant.self))
+        do{
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            for i in 0..<searchResults.count{
+                if(searchResults[i].name == name){
+                    return searchResults[i]
+                }
+            }
+        }catch{
+            print("Error: \(error)")
+            
+        }
+        return nil
+    }
+    
+    func addEvaluation(resName: String, evaluation: Double){
+        let mySQLOps = MySQLOps()
+        mySQLOps.fetchRestaurantInfoFromMySQL(name: resName, attributeName: "evaluation"){
+            evaluationBefore in
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: resName, attributeName: "evaluationNum"){
+                evaluationNumBefore in
+                let evaluationNumNew = Int(evaluationNumBefore)! + 1
+                let evaluationNew = (Double(evaluationBefore)! * Double(evaluationNumBefore)! + evaluation) / Double(evaluationNumNew)
+                mySQLOps.updateRestaurantToMySQL(name: resName, attributeName: "evaluation", attributeValue: String(evaluationNew))
+                mySQLOps.updateRestaurantToMySQL(name: resName, attributeName: "evaluationNum", attributeValue: String(evaluationNumNew))
+            }
+        }
+    }
+    
+    func downloadEvaluation(resName: String){
+        let mySQLOps = MySQLOps()
+        let restaurantDatabaseController = RestaurantDatabaseController()
+        if let restaurant = restaurantDatabaseController.fetchOneRestaurantFromCoreData(with: resName){
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: resName, attributeName: "evaluation"){
+                evaluation in
+                restaurantDatabaseController.modifyAttribute(des: &restaurant.evaluation, src: Double(evaluation)!)
+            }
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: resName, attributeName: "evaluationNum"){
+                evaluationNum in
+                restaurantDatabaseController.modifyAttribute(des: &restaurant.evaluationNum, src: Double(evaluationNum)!)
+            }
+        }
+    }
 }
+
+extension UIImageView {
+    class public func imageFromServerURL(urlString: String, handler: @escaping (_ attributeValue: UIImage)->()) {
+        
+        URLSession.shared.dataTask(with: URL(string: urlString)!, completionHandler: { (data, response, error) -> Void in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            DispatchQueue.main.async(execute: { () -> Void in
+                let image = UIImage(data: data!)
+                handler(image!)
+
+            })
+            
+        }).resume()
+    }
+}
+
+

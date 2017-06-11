@@ -10,43 +10,42 @@ import UIKit
 import os.log
 
 class ShopViewController: UIViewController {
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var ratingControl: RatingControl!
     
     var restaurant: Restaurant?
-    var restaurantIndex: Int?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
+        // set name, image, comments and evaluation
         if let restaurant = restaurant {
-            let databaseController = DatabaseController()
-            let DBrestaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
+            let restaurantDBC = RestaurantDatabaseController()
+            let target = restaurantDBC.fetchOneRestaurantFromCoreData(with: restaurant.name!)
             
-            navigationItem.title = DBrestaurants[restaurantIndex!].name
+            navigationItem.title = target?.name
             //photoImageView.image = UIImage()
-            nameLabel.text = DBrestaurants[restaurantIndex!].name
-            commentLabel.text = DBrestaurants[restaurantIndex!].comments
-            ratingControl.rating = Int(DBrestaurants[restaurantIndex!].evaluation)
+            nameLabel.text = target?.name
+            commentLabel.text = target?.comments
+            ratingControl.rating = Int((target?.evaluation)!)
+        
+//            navigationItem.title = restaurant.name
+//            nameLabel.text = restaurant.name
+//            commentLabel.text = restaurant.comments
+//            print(restaurant.evaluation)
+//            ratingControl.rating = Int(restaurant.evaluation)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
-                
             case "ShopChosen2":
                 guard let MapDetailViewController = segue.destination as? MapViewController else {
                     fatalError("Unexpected destination")
@@ -58,13 +57,10 @@ class ShopViewController: UIViewController {
                 guard let commentShopViewController = segue.destination as? CommentShopViewController else {
                     fatalError("Unexpected destination")
                 }
-                
                 commentShopViewController.restaurant = restaurant
-                commentShopViewController.restaurantIndex = restaurantIndex
             
             default:
                 fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
- 
 }

@@ -15,16 +15,16 @@
         <scene sceneID="ejz-6H-0y5">
             <objects>
                 <tableViewController id="B4c-BS-wTG" customClass="ShopTableViewController" customModule="MinorDianping" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" id="wIS-P9-YCk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" sectionHeaderHeight="28" sectionFooterHeight="28" id="wIS-P9-YCk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopTableViewCell" rowHeight="88" id="g0g-dG-Q94" customClass="ShopTableViewCell" customModule="MinorDianping" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopTableViewCell" rowHeight="131" id="g0g-dG-Q94" customClass="ShopTableViewCell" customModule="MinorDianping" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g0g-dG-Q94" id="Kqs-wF-cTs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64t-6j-eL2">
@@ -42,10 +42,18 @@
                                             <rect key="frame" x="86" y="35" width="223" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5Y-SG-Dh9">
+                                            <rect key="frame" x="21" y="86" width="333" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="d8W-td-sUu" id="toJ-Bj-7vZ"/>
+                                    <outlet property="otherInfo" destination="I5Y-SG-Dh9" id="oxE-D9-0Bn"/>
                                     <outlet property="photoImageView" destination="64t-6j-eL2" id="8dn-iT-tQJ"/>
                                     <outlet property="ratingControl" destination="Wuw-9L-haQ" id="2yi-JU-t5w"/>
                                     <segue destination="SPX-f8-JLR" kind="show" identifier="ShopChosen" id="5l6-fh-nxH"/>
@@ -58,6 +66,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="小众点评" id="6D5-b1-LGE"/>
+                    <connections>
+                        <outlet property="shopTableView" destination="wIS-P9-YCk" id="qXo-r7-z4U"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ze-Ea-gqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +200,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" id="ZsB-uW-dJi">
                             <connections>
-                                <action selector="save:" destination="Vy1-a0-MFw" id="Wob-LK-WSP"/>
+                                <segue destination="hNc-cA-nIu" kind="unwind" unwindAction="unwindToShopTableWithSender:" id="bGF-IF-wew"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -197,11 +208,13 @@
                         <outlet property="commentTextField" destination="Ndm-IQ-IOw" id="abV-ga-c1m"/>
                         <outlet property="photoImageView" destination="Vgd-1l-7od" id="QLq-R9-IZm"/>
                         <outlet property="ratingControl" destination="djE-Cj-VTh" id="391-Z0-GfF"/>
+                        <outlet property="saveButton" destination="ZsB-uW-dJi" id="5Vp-4w-IWA"/>
                         <outlet property="scrollView" destination="CNO-yB-X10" id="wvp-tk-ZnZ"/>
                         <outlet property="shopNameLabel" destination="oAc-Yd-CUc" id="a74-Tm-Qk8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIw-FY-Dzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hNc-cA-nIu" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="bks-YQ-ZLj">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="Vy1-a0-MFw" id="TNJ-Ju-SNB"/>
@@ -240,7 +253,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahs-Oj-i8e" userLabel="comment">
-                                <rect key="frame" x="67" y="390" width="240" height="81"/>
+                                <rect key="frame" x="67" y="390" width="240" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -401,11 +414,13 @@
                             <constraint firstItem="3am-ML-Smj" firstAttribute="width" secondItem="qjk-e8-deV" secondAttribute="width" id="yEq-Bd-aFZ"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="我的帐户" id="LiU-f1-4Qe">
                         <barButtonItem key="rightBarButtonItem" image="message" id="h0o-Ia-aJe">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfe-92-tGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -533,9 +548,9 @@
         <image name="search" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jgt-EC-wCG"/>
-        <segue reference="5l6-fh-nxH"/>
-        <segue reference="juk-6U-rOg"/>
         <segue reference="40j-Ft-rVb"/>
+        <segue reference="5l6-fh-nxH"/>
+        <segue reference="H2t-iM-z8S"/>
+        <segue reference="Jgt-EC-wCG"/>
     </inferredMetricsTieBreakers>
 </document>

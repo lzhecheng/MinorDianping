@@ -1,5 +1,5 @@
 //
-//  City+CoreDataClass.swift
+//  SyncEngine.swift
 //  MinorDianping
 //
 //  Created by Apple on 2017/6/8.
@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import CoreData
 
-@objc(City)
-public class City: NSManagedObject {
+class SyncEngine{
+
+    
 
 }
