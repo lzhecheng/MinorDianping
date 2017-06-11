@@ -121,18 +121,29 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
             return
         }
         
-        //change evaluation, evaluationNum, comments
+        //change evaluation, evaluationNum
         let dbEvaluationNum = Double((restaurant?.evaluationNum)!)
         let dbRating = Double(ratingControl.rating)
         restaurant?.evaluation = ((restaurant?.evaluation)! * dbEvaluationNum + dbRating) / (dbEvaluationNum + 1)
         restaurant?.evaluationNum = (restaurant?.evaluationNum)! + 1
-        let originComments = restaurant?.comments
-        let newComment = commentTextField.text
-        restaurant?.comments = "\(String(describing: originComments))\n\(String(describing: newComment))"
+        
+        // comments
+        if (restaurant?.comments) != nil {
+            restaurant?.comments = (restaurant?.comments)! + "\n" + commentTextField.text!
+        } else {
+            restaurant?.comments = commentTextField.text
+        }
         
         //save comment, evaluation, evaluationNum in core data
         let restaurantDBC = RestaurantDatabaseController()
         restaurantDBC.addEvaluation(resName: (restaurant?.name!)!, evaluation: Double(ratingControl.rating))
+        
+        // save info online
+        let mySQLOps = MySQLOps()
+        
+        mySQLOps.updateRestaurantToMySQL(name: (restaurant?.name)!, attributeName: "evaluation", attributeValue: String(describing: restaurant?.evaluation))
+        mySQLOps.updateRestaurantToMySQL(name: (restaurant?.name)!, attributeName: "evaluationNum", attributeValue: String(describing: restaurant?.evaluationNum))
+        mySQLOps.updateRestaurantToMySQL(name: (restaurant?.name)!, attributeName: "comments", attributeValue: (restaurant?.comments)!)
     }
     
     private func updateSaveButtonState() {
@@ -143,11 +154,4 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
             saveButton.isEnabled = false
         }
     }
-    
-//    func notCompleteAlert(){
-//        let alert = UIAlertController(title: "未正确填写", message: "请完整填写评分和评论", preferredStyle: UIAlertControllerStyle.alert)
-//        
-//        alert.addAction(UIAlertAction(title: "好的", style: UIAlertActionStyle.default, handler: {(action) in alert.dismiss(animated: true, completion: nil)
-//        }))
-//    }
 }
