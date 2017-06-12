@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180118741EEE2DA30097FBA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180118731EEE2DA30097FBA9 /* CurrentUser.swift */; };
+		180118761EEE71D20097FBA9 /* RestaurantDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180118751EEE71D20097FBA9 /* RestaurantDatabaseController.swift */; };
+		180118781EEE71DE0097FBA9 /* MySQLOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180118771EEE71DE0097FBA9 /* MySQLOps.swift */; };
+		1801187A1EEE84F80097FBA9 /* commentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180118791EEE84F80097FBA9 /* commentsTableViewCell.swift */; };
 		18294F741EE6DE1700815EDA /* MinorDianping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18294F6E1EE6DE1700815EDA /* MinorDianping.xcdatamodeld */; };
 		18294F881EE6E08200815EDA /* CityDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18294F871EE6E08200815EDA /* CityDatabaseController.swift */; };
 		183073E81ED4128800CA3558 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183073E71ED4128800CA3558 /* RatingControl.swift */; };
@@ -25,8 +29,6 @@
 		185303F01EE989190027B683 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303EA1EE989190027B683 /* Restaurant+CoreDataProperties.swift */; };
 		185303F21EE98A180027B683 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303F11EE98A180027B683 /* DatabaseController.swift */; };
 		185303F41EE98A550027B683 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185303F31EE98A550027B683 /* Info.plist */; };
-		185303F61EE98A860027B683 /* MySQLOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303F51EE98A860027B683 /* MySQLOps.swift */; };
-		185303F81EE98AA90027B683 /* RestaurantDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303F71EE98AA90027B683 /* RestaurantDatabaseController.swift */; };
 		185303FA1EE98AD20027B683 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303F91EE98AD20027B683 /* SyncEngine.swift */; };
 		185303FC1EE98AF70027B683 /* UserInfoDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303FB1EE98AF70027B683 /* UserInfoDatabaseController.swift */; };
 		185E06561EC342670027929F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E06551EC342670027929F /* MapViewController.swift */; };
@@ -63,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180118731EEE2DA30097FBA9 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		180118751EEE71D20097FBA9 /* RestaurantDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDatabaseController.swift; sourceTree = "<group>"; };
+		180118771EEE71DE0097FBA9 /* MySQLOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySQLOps.swift; sourceTree = "<group>"; };
+		180118791EEE84F80097FBA9 /* commentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentsTableViewCell.swift; sourceTree = "<group>"; };
 		18294F6F1EE6DE1700815EDA /* MinorDianping v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v2.xcdatamodel"; sourceTree = "<group>"; };
 		18294F701EE6DE1700815EDA /* MinorDianping v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v3.xcdatamodel"; sourceTree = "<group>"; };
 		18294F711EE6DE1700815EDA /* MinorDianping v4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v4.xcdatamodel"; sourceTree = "<group>"; };
@@ -91,8 +97,6 @@
 		185303EA1EE989190027B683 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		185303F11EE98A180027B683 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		185303F31EE98A550027B683 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		185303F51EE98A860027B683 /* MySQLOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySQLOps.swift; sourceTree = "<group>"; };
-		185303F71EE98AA90027B683 /* RestaurantDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDatabaseController.swift; sourceTree = "<group>"; };
 		185303F91EE98AD20027B683 /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
 		185303FB1EE98AF70027B683 /* UserInfoDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoDatabaseController.swift; sourceTree = "<group>"; };
 		185E06551EC342670027929F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -137,12 +141,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1801187B1EEE85020097FBA9 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */,
+				180118791EEE84F80097FBA9 /* commentsTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 		18294F931EE6E2E700815EDA /* DatabaseControllers */ = {
 			isa = PBXGroup;
 			children = (
+				180118751EEE71D20097FBA9 /* RestaurantDatabaseController.swift */,
 				185303F11EE98A180027B683 /* DatabaseController.swift */,
 				185303FB1EE98AF70027B683 /* UserInfoDatabaseController.swift */,
-				185303F71EE98AA90027B683 /* RestaurantDatabaseController.swift */,
 				18294F871EE6E08200815EDA /* CityDatabaseController.swift */,
 			);
 			name = DatabaseControllers;
@@ -190,17 +203,18 @@
 				18967CD91ED5A05800687541 /* Data */,
 				1885DDA81EB21C3B0098F7D9 /* Supporting files */,
 				1875D6EE1ECB3EBB0019A065 /* Models */,
+				1801187B1EEE85020097FBA9 /* TableViewCell */,
 				183073E61ED3DF8000CA3558 /* ViewContorllers */,
 				18B2F71C1ECF210300086EC6 /* Images */,
 				18294F6E1EE6DE1700815EDA /* MinorDianping.xcdatamodeld */,
 				184CFCD51EAE1F0E002EC798 /* Main.storyboard */,
 				185303F91EE98AD20027B683 /* SyncEngine.swift */,
-				185303F51EE98A860027B683 /* MySQLOps.swift */,
-				18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */,
 				18967CCF1ED5A04900687541 /* CSVHelper.swift */,
+				180118771EEE71DE0097FBA9 /* MySQLOps.swift */,
 				188E53AD1EECD7D900632111 /* Shop.swift */,
 				183073E71ED4128800CA3558 /* RatingControl.swift */,
 				185F35591ED670F4007F94A8 /* searchBrain.swift */,
+				180118731EEE2DA30097FBA9 /* CurrentUser.swift */,
 			);
 			path = MinorDianping;
 			sourceTree = "<group>";
@@ -403,7 +417,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185303F61EE98A860027B683 /* MySQLOps.swift in Sources */,
 				185303EE1EE989190027B683 /* City+CoreDataProperties.swift in Sources */,
 				183073E81ED4128800CA3558 /* RatingControl.swift in Sources */,
 				18B2F71B1ECF201200086EC6 /* ShopTableViewController.swift in Sources */,
@@ -413,13 +426,15 @@
 				18767B461ED0634500C8D6C2 /* ShopViewController.swift in Sources */,
 				1877A5E51ED6F1E3007A4561 /* SearchViewController.swift in Sources */,
 				185F355A1ED670F4007F94A8 /* searchBrain.swift in Sources */,
+				180118781EEE71DE0097FBA9 /* MySQLOps.swift in Sources */,
 				1877A5E71ED713BA007A4561 /* AccountViewController.swift in Sources */,
+				1801187A1EEE84F80097FBA9 /* commentsTableViewCell.swift in Sources */,
 				18967CD41ED5A04900687541 /* CSVHelper.swift in Sources */,
-				185303F81EE98AA90027B683 /* RestaurantDatabaseController.swift in Sources */,
 				18294F741EE6DE1700815EDA /* MinorDianping.xcdatamodeld in Sources */,
 				185303FA1EE98AD20027B683 /* SyncEngine.swift in Sources */,
 				185303EB1EE989190027B683 /* UserInfo+CoreDataClass.swift in Sources */,
 				183073EA1ED41C6C00CA3558 /* CommentShopViewController.swift in Sources */,
+				180118741EEE2DA30097FBA9 /* CurrentUser.swift in Sources */,
 				185303F01EE989190027B683 /* Restaurant+CoreDataProperties.swift in Sources */,
 				188E53B01EED2FF600632111 /* SignInViewController.swift in Sources */,
 				188E53AE1EECD7D900632111 /* Shop.swift in Sources */,
@@ -429,6 +444,7 @@
 				185E06561EC342670027929F /* MapViewController.swift in Sources */,
 				18294F881EE6E08200815EDA /* CityDatabaseController.swift in Sources */,
 				185303EF1EE989190027B683 /* Restaurant+CoreDataClass.swift in Sources */,
+				180118761EEE71D20097FBA9 /* RestaurantDatabaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

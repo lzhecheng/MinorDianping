@@ -10,7 +10,6 @@ import UIKit
 import os.log
 
 class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var commentTextField: UITextField!
@@ -19,8 +18,8 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var restaurant: Restaurant?
-    var shop: Shop?
-    var userName: String = "游客"
+    //var shop: Shop?
+    let user = CurrentUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,7 +120,7 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
             return
         }
         
-        //change evaluation, evaluationNum
+        // change evaluation, evaluationNum
         let dbEvaluationNum = Double((restaurant?.evaluationNum)!)
         let dbRating = Double(ratingControl.rating)
         restaurant?.evaluation = ((restaurant?.evaluation)! * dbEvaluationNum + dbRating) / (dbEvaluationNum + 1)
@@ -129,21 +128,23 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
         
         // comments
         if (restaurant?.comments) != nil {
-            restaurant?.comments = (restaurant?.comments)! + commentTextField.text! + "\n ----" + userName + "\n"
+            restaurant?.comments = (restaurant?.comments)! + commentTextField.text! + "<n>" + user.getUserName() + "<c>"
         } else {
-            restaurant?.comments = commentTextField.text! + "\n ----" + userName + "\n"
+            restaurant?.comments = commentTextField.text! + "<n>" + user.getUserName() + "<c>"
         }
+        
+        /////
+        print(user.getUserName())
+        /////
         
         //save comment, evaluation, evaluationNum in core data
         let restaurantDBC = RestaurantDatabaseController()
-        restaurantDBC.addEvaluation(resName: (restaurant?.name!)!, evaluation: Double(ratingControl.rating))
+        //restaurantDBC.addEvaluation(resName: (restaurant?.name!)!, evaluation: Double(ratingControl.rating))
         
-        // save info online
-        let mySQLOps = MySQLOps()
-        
-        mySQLOps.updateRestaurantToMySQL(name: (restaurant?.name)!, attributeName: "evaluation", attributeValue: String(describing: restaurant?.evaluation))
-        mySQLOps.updateRestaurantToMySQL(name: (restaurant?.name)!, attributeName: "evaluationNum", attributeValue: String(describing: restaurant?.evaluationNum))
-        mySQLOps.updateRestaurantToMySQL(name: (restaurant?.name)!, attributeName: "comments", attributeValue: (restaurant?.comments)!)
+        // modify comments, evaluation, evaluationNum
+        restaurantDBC.modifyAttribute(des: &restaurant!.comments, src: restaurant?.comments)
+        restaurantDBC.modifyAttribute(des: &restaurant!.evaluation, src: (restaurant?.evaluation)!)
+        restaurantDBC.modifyAttribute(des: &restaurant!.evaluationNum, src: restaurant!.evaluationNum)
     }
     
     private func updateSaveButtonState() {

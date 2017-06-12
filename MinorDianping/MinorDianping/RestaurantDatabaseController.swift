@@ -15,6 +15,7 @@ class RestaurantDatabaseController : DatabaseController{
         super.init()
         let WHETHER_CLEAR = false
         let WHETHER_INIT = false
+        
         if(WHETHER_CLEAR){
             guard self.deleteAllObjectsInCoreData(type: Restaurant.self) else{
                 print("Database init: Failed to delete past database")
@@ -36,19 +37,7 @@ class RestaurantDatabaseController : DatabaseController{
             // MARK: - Core Data Operations
             
             for i in 1 ..< numOfRestaurants{
-                let restaurant = createNewRestaurant(name: contents[i]["name"]!, address: contents[i]["address"]!, cityName: contents[i]["city"]!, latitude: Double(contents[i]["latitude"]!)!, longitude: Double(contents[i]["longitude"]!)!, is_save: false)
-                // impprt city data
-//                if let city = CityDatabaseController.fetchOneCityFromCoreData(name: contents[i]["city"]!){
-//                    city.addToRestaurants(restaurant)
-//                }
-//                else{
-//                    let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
-//                    city.cityName = contents[i]["city"]!
-//                    city.addToRestaurants(restaurant)
-//                }
-            
-                // import user data
-                
+                _ = createNewRestaurant(name: contents[i]["name"]!, address: contents[i]["address"]!, cityName: contents[i]["city"]!, latitude: Double(contents[i]["latitude"]!)!, longitude: Double(contents[i]["longitude"]!)!, is_save: false)
             }
             DatabaseController.saveContext()
             print("Database init: Save database successfully")
@@ -60,7 +49,7 @@ class RestaurantDatabaseController : DatabaseController{
     }
 
 //    deinit{
-//        guard self.deleteAllObjectsInCoreData(type: Restaurant.self) && self.deleteAllObjectsInCoreData(type: City.self) && self.deleteAllObjectsInCoreData(type: UserInfo.self) else{
+//        guard self.deleteAllObjectsInCoreData(type: Restaurant.self) && self.deleteAllObjectsInCoreData(type: City.self) else{
 //            print("Failed to delete database")
 //            return
 //        }
@@ -96,22 +85,18 @@ class RestaurantDatabaseController : DatabaseController{
     }
     
     func createNewUserInfo(latitude: Double, longitude: Double, name: String, password: String, price: Double, is_save: Bool) -> UserInfo{
-        do{
-            let userInfo:UserInfo = try NSEntityDescription.insertNewObject(forEntityName: String(describing: UserInfo.self), into: DatabaseController.getContext()) as! UserInfo
+
+            let userInfo:UserInfo = NSEntityDescription.insertNewObject(forEntityName: String(describing: UserInfo.self), into: DatabaseController.getContext()) as! UserInfo
             userInfo.name = name
             userInfo.latitude = latitude
             userInfo.longitude = longitude
             userInfo.password = password
             userInfo.price = price
             if(is_save){
-                try DatabaseController.saveContext()
+                DatabaseController.saveContext()
             }
             return userInfo
-        }catch{
-            self.deleteAllObjectsInCoreData(type: Restaurant.self)
-            self.deleteAllObjectsInCoreData(type: City.self)
-            self.deleteAllObjectsInCoreData(type: UserInfo.self)
-        }
+
     }
     
     func modifyAttribute<T>( des: inout T, src: T, is_save: Bool = true) {
@@ -159,8 +144,8 @@ class RestaurantDatabaseController : DatabaseController{
                 evaluationNumBefore in
                 let evaluationNumNew = Int(evaluationNumBefore)! + 1
                 let evaluationNew = (Double(evaluationBefore)! * Double(evaluationNumBefore)! + evaluation) / Double(evaluationNumNew)
-                mySQLOps.updateRestaurantToMySQL(name: resName, attributeName: "evaluation", attributeValue: String(evaluationNew))
-                mySQLOps.updateRestaurantToMySQL(name: resName, attributeName: "evaluationNum", attributeValue: String(evaluationNumNew))
+                mySQLOps.updateRestaurantToMySQL(name: resName, attributeName: "evaluation", attributeValue: String(evaluationNew)){success in}
+                mySQLOps.updateRestaurantToMySQL(name: resName, attributeName: "evaluationNum", attributeValue: String(evaluationNumNew)){success in}
             }
         }
     }
@@ -179,6 +164,10 @@ class RestaurantDatabaseController : DatabaseController{
             }
         }
     }
+    
+    func insertImageToOneRestaurantInCoreData(img: UIImage){
+        
+    }
 }
 
 extension UIImageView {
@@ -187,7 +176,7 @@ extension UIImageView {
         URLSession.shared.dataTask(with: URL(string: urlString)!, completionHandler: { (data, response, error) -> Void in
             
             if error != nil {
-                print(error)
+                print(error!)
                 return
             }
             DispatchQueue.main.async(execute: { () -> Void in
