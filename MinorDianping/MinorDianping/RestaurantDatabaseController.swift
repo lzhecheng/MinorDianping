@@ -168,6 +168,28 @@ class RestaurantDatabaseController : DatabaseController{
     func insertImageToOneRestaurantInCoreData(img: UIImage){
         
     }
+    
+    func batchUploadRestaurantsFromCSVToMySQL(filename: String, attributeName: String){
+        // MARK: CSV File Operations
+        let csvHelper = CSVHelper()
+        let file:String = csvHelper.readDataFromFile(file: filename, type: "csv")
+        
+        guard let contents:[[String:String]] = csvHelper.convertCSV(file: file)else {
+            print("Database init: Failed to parse successfully")
+            return
+        }
+        
+        let numOfRestaurants = contents.count
+        
+        // MARK: - Core Data Operations
+        let mySQLOps = MySQLOps()
+        for i in 1 ..< numOfRestaurants{
+            
+            mySQLOps.updateRestaurantToMySQL(name: contents[i]["name"]!, attributeName: attributeName, attributeValue: contents[i][attributeName]!){
+                success in
+            }
+        }
+    }
 }
 
 extension UIImageView {
