@@ -17,6 +17,7 @@ class ShopTableViewController: UITableViewController {
     //MARK: Properties
     var restaurants = [Restaurant]()
     var target: String = "#nothing"
+    let user = CurrentUser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,10 @@ class ShopTableViewController: UITableViewController {
         // Load core data or load search results
         if target == "#nothing"{
             loadCoreDataShops()
+        }else if target != "myCollections"{
+            loadSearchedShops()
         }else {
-            loadSeachedShops()
+            loadMyCollection()
         }
     }
 
@@ -120,16 +123,32 @@ class ShopTableViewController: UITableViewController {
     }
     
     private func loadCoreDataShops(){
-        //let cdPhoto = UIImage(named: "defaultPhoto")
         let databaseController = RestaurantDatabaseController()
         let DBrestaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
         restaurants += DBrestaurants
     }
     
-    private func loadSeachedShops() {
+    private func loadSearchedShops() {
         let search = searchBrain()
         let results = search.searchWords(words: target)
         restaurants += results
+    }
+    
+    private func loadMyCollection() {
+        let myCollections = user.getRestaurantCollection()
+        let databaseController = RestaurantDatabaseController()
+        let DBrestaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
+        
+        // put collections input restaurants
+        if myCollections.count != 0 {
+            for name in myCollections {
+                for shop in DBrestaurants {
+                    if name == shop.name {
+                        restaurants += [shop]
+                    }
+                }
+            }
+        }
     }
     
     //    private func loadSampleShops() {

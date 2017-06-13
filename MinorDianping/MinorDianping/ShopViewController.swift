@@ -13,10 +13,12 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var collection: UIBarButtonItem!
     
     var restaurant: Restaurant?
     var commentsList = [String]()
     var userNameList = [String]()
+    let user = CurrentUser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,16 +61,19 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
         }
+        
+        if user.getUserName() != "游客" {
+            if user.ifRestaurantInCollection(name: (restaurant?.name)!) {
+                collection.image = UIImage(named: "filledLike")
+            } else {
+                collection.image = UIImage(named: "like")
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return commentsList.count
@@ -101,5 +106,31 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
             default:
                 fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
+    }
+    
+    
+    @IBAction func collectionButton(_ sender: UIBarButtonItem) {
+        if user.getUserName() != "游客" {
+            if !user.ifRestaurantInCollection(name: (restaurant?.name)!) {
+                user.addRestaurantCollection(name: (restaurant?.name)!)
+                alert(title: "收藏", message: "收藏成功！", succeed: true)
+                collection.image = UIImage(named: "filledLike")
+            } else {
+                user.removeRestaurantCollection(name: (restaurant?.name)!)
+                alert(title: "取消收藏", message: "取消收藏成功!", succeed: true)
+                collection.image = UIImage(named: "like")
+            }
+        }
+    }
+    
+    // Alert message
+    func alert(title: String, message: String, succeed: Bool){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "好的", style: UIAlertActionStyle.default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

@@ -34,4 +34,22 @@ class AccountViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        switch(segue.identifier ?? "") {
+        case "myCollections":
+            guard let searchDetailViewController = segue.destination as? ShopTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            searchDetailViewController.target = "myCollections"
+            
+        case "sign": break
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
+    }
 }

@@ -58,6 +58,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         if signInOk() {
             let title = "登录成功"
             let message = "欢迎回来，" + userNameTextField.text!
+            userName = userNameTextField.text!
+            
             alert(title: title, message: message, succeed: true)
             user.changeUserName(name: userNameTextField.text!)
         } else {
@@ -85,10 +87,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 print(username)
             }
         }
-        
-        
-        
-        
+
         mySQLOps.registerNewUser(username: userName, password: pwd){
             success in
             ifExist = !success

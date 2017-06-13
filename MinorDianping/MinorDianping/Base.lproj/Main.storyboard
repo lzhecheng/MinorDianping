@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFm-dA-XuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="921.58920539730138"/>
+            <point key="canvasLocation" x="2148" y="1693"/>
         </scene>
         <!--新点评-->
         <scene sceneID="5HY-k0-v2Y">
@@ -246,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0LK-ns-aNE">
-                                <rect key="frame" x="-0.5" y="101" width="375" height="517"/>
+                                <rect key="frame" x="-0.5" y="101" width="375" height="522"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="餐厅名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9x-hI-ZPP">
                                         <rect key="frame" x="153" y="0.0" width="69.5" height="20.5"/>
@@ -286,7 +286,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uzy-wZ-e09">
-                                        <rect key="frame" x="0.0" y="295" width="375" height="222"/>
+                                        <rect key="frame" x="0.0" y="295" width="375" height="227"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commentsCell" rowHeight="55" id="1CM-Fa-dEY" customClass="commentsTableViewCell" customModule="MinorDianping" customModuleProvider="target">
@@ -360,10 +360,15 @@
                                     <segue destination="Vy1-a0-MFw" kind="show" identifier="AddComment" id="Jgt-EC-wCG"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="like" id="MqI-6f-YIZ"/>
+                            <barButtonItem image="like" id="MqI-6f-YIZ">
+                                <connections>
+                                    <action selector="collectionButton:" destination="SPX-f8-JLR" id="8Eb-wB-Xda"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="collection" destination="MqI-6f-YIZ" id="fb7-ah-Fx3"/>
                         <outlet property="nameLabel" destination="4Xi-cc-fnm" id="C8B-OB-wlk"/>
                         <outlet property="photoImageView" destination="VLN-8g-lHh" id="7ro-cM-XWM"/>
                         <outlet property="ratingControl" destination="TrR-MS-ebh" id="SUH-2R-waK"/>
@@ -461,7 +466,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="rBL-fd-t17" kind="show" id="GT0-yu-VcX"/>
+                                                    <segue destination="rBL-fd-t17" kind="show" identifier="sign" id="GT0-yu-VcX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDe-ME-PNd">
@@ -486,6 +491,9 @@
                                                 <state key="normal" title="我的收藏">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="B4c-BS-wTG" kind="show" identifier="myCollections" id="qNM-3R-XRF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-k7-HfR">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="30"/>
@@ -518,7 +526,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfe-92-tGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="1748.2758620689656"/>
+            <point key="canvasLocation" x="332" y="1722"/>
         </scene>
         <!--注册/登录-->
         <scene sceneID="NNb-qb-XLd">
@@ -620,7 +628,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ph4-31-lW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="1747.3763118440781"/>
+            <point key="canvasLocation" x="406" y="2495"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YBu-Nj-tqp">
@@ -695,7 +703,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRr-SK-maZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="922"/>
+            <point key="canvasLocation" x="332" y="958"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mAH-GG-QMI">
@@ -732,7 +740,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QjX-zS-i7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1353" y="922"/>
+            <point key="canvasLocation" x="1431" y="1693"/>
         </scene>
     </scenes>
     <resources>
@@ -751,7 +759,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="40j-Ft-rVb"/>
         <segue reference="5l6-fh-nxH"/>
-        <segue reference="H2t-iM-z8S"/>
+        <segue reference="qNM-3R-XRF"/>
         <segue reference="Jgt-EC-wCG"/>
     </inferredMetricsTieBreakers>
 </document>
