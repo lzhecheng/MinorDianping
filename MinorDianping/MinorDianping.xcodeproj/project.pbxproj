@@ -36,6 +36,7 @@
 		18767B461ED0634500C8D6C2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18767B451ED0634500C8D6C2 /* ShopViewController.swift */; };
 		1877A5E51ED6F1E3007A4561 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */; };
 		1877A5E71ED713BA007A4561 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877A5E61ED713BA007A4561 /* AccountViewController.swift */; };
+		188CB7111EEFE0B40034F6D0 /* RecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CB7101EEFE0B40034F6D0 /* RecommendationEngine.swift */; };
 		188E53AE1EECD7D900632111 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E53AD1EECD7D900632111 /* Shop.swift */; };
 		188E53B01EED2FF600632111 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E53AF1EED2FF600632111 /* SignInViewController.swift */; };
 		18967CD41ED5A04900687541 /* CSVHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18967CCF1ED5A04900687541 /* CSVHelper.swift */; };
@@ -104,6 +105,10 @@
 		18767B451ED0634500C8D6C2 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1877A5E61ED713BA007A4561 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		188CB7101EEFE0B40034F6D0 /* RecommendationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationEngine.swift; sourceTree = "<group>"; };
+		188CB7121EEFE6440034F6D0 /* MinorDianping v7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v7.xcdatamodel"; sourceTree = "<group>"; };
+		188CB7131EEFE7960034F6D0 /* MinorDianping v8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v8.xcdatamodel"; sourceTree = "<group>"; };
+		188CB7141EEFE83C0034F6D0 /* MinorDianping v9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v9.xcdatamodel"; sourceTree = "<group>"; };
 		188E53AD1EECD7D900632111 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		188E53AF1EED2FF600632111 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		18967CCF1ED5A04900687541 /* CSVHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVHelper.swift; sourceTree = "<group>"; };
@@ -215,6 +220,7 @@
 				183073E71ED4128800CA3558 /* RatingControl.swift */,
 				185F35591ED670F4007F94A8 /* searchBrain.swift */,
 				180118731EEE2DA30097FBA9 /* CurrentUser.swift */,
+				188CB7101EEFE0B40034F6D0 /* RecommendationEngine.swift */,
 			);
 			path = MinorDianping;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 				18767B461ED0634500C8D6C2 /* ShopViewController.swift in Sources */,
 				1877A5E51ED6F1E3007A4561 /* SearchViewController.swift in Sources */,
 				185F355A1ED670F4007F94A8 /* searchBrain.swift in Sources */,
+				188CB7111EEFE0B40034F6D0 /* RecommendationEngine.swift in Sources */,
 				180118781EEE71DE0097FBA9 /* MySQLOps.swift in Sources */,
 				1877A5E71ED713BA007A4561 /* AccountViewController.swift in Sources */,
 				1801187A1EEE84F80097FBA9 /* commentsTableViewCell.swift in Sources */,
@@ -723,6 +730,9 @@
 		18294F6E1EE6DE1700815EDA /* MinorDianping.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				188CB7141EEFE83C0034F6D0 /* MinorDianping v9.xcdatamodel */,
+				188CB7131EEFE7960034F6D0 /* MinorDianping v8.xcdatamodel */,
+				188CB7121EEFE6440034F6D0 /* MinorDianping v7.xcdatamodel */,
 				185303E41EE987E60027B683 /* MinorDianping v6.xcdatamodel */,
 				18294F6F1EE6DE1700815EDA /* MinorDianping v2.xcdatamodel */,
 				18294F701EE6DE1700815EDA /* MinorDianping v3.xcdatamodel */,
@@ -730,7 +740,7 @@
 				18294F721EE6DE1700815EDA /* MinorDianping v5.xcdatamodel */,
 				18294F731EE6DE1700815EDA /* MinorDianping.xcdatamodel */,
 			);
-			currentVersion = 185303E41EE987E60027B683 /* MinorDianping v6.xcdatamodel */;
+			currentVersion = 188CB7141EEFE83C0034F6D0 /* MinorDianping v9.xcdatamodel */;
 			path = MinorDianping.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

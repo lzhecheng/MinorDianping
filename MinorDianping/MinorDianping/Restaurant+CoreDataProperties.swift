@@ -26,6 +26,9 @@ extension Restaurant {
     @NSManaged public var evaluationNum: Double
     @NSManaged public var city: City?
     @NSManaged public var users: NSSet?
+    @NSManaged public var point: Double
+    @NSManaged public var taste: Int16
+    @NSManaged public var price: Double
 
 }
 

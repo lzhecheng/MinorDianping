@@ -26,6 +26,7 @@ extension UserInfo {
     @NSManaged public var salt: NSData?
     @NSManaged public var taste: String?
     @NSManaged public var restaurants: NSSet?
+    @NSManaged public var collection: String?
 
 }
 
