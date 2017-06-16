@@ -18,7 +18,9 @@ class ShopTableViewController: UITableViewController {
     var restaurants = [Restaurant]()
     var target: String = "#nothing"
     let user = CurrentUser()
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,10 @@ class ShopTableViewController: UITableViewController {
             loadSearchedShops()
         }else {
             loadMyCollection()
+        }
+        
+        if user.getIfFormal() {
+            user.setRestaurantCollection()
         }
     }
 

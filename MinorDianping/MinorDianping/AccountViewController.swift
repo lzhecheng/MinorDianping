@@ -11,9 +11,7 @@ import UIKit
 class AccountViewController: UIViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
-    
-    let user = CurrentUser()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +24,8 @@ class AccountViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        let user = CurrentUser()
+        
         userNameLabel.text = user.getUserName()
         print(user.getUserName())
     }

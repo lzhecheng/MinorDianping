@@ -19,6 +19,9 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var commentsList = [String]()
     var userNameList = [String]()
     let user = CurrentUser()
+    let mySQLOps = MySQLOps()
+    var collectionInString: String?
+    var restaurantInCollection = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +45,7 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
             
+            // display restaurant comments
             if let comment = restaurant.comments {
                 print(comment)
             }
@@ -62,11 +66,14 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-        if user.getUserName() != "游客" {
+        // determine LIKE status
+        if user.getIfFormal() == true {
             if user.ifRestaurantInCollection(name: (restaurant?.name)!) {
                 collection.image = UIImage(named: "filledLike")
+                restaurantInCollection = true
             } else {
-                collection.image = UIImage(named: "like")
+                self.collection.image = UIImage(named: "like")
+                restaurantInCollection = false
             }
         }
     }
@@ -110,8 +117,8 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     @IBAction func collectionButton(_ sender: UIBarButtonItem) {
-        if user.getUserName() != "游客" {
-            if !user.ifRestaurantInCollection(name: (restaurant?.name)!) {
+        if user.getIfFormal() {
+            if !restaurantInCollection {
                 user.addRestaurantCollection(name: (restaurant?.name)!)
                 alert(title: "收藏", message: "收藏成功！", succeed: true)
                 collection.image = UIImage(named: "filledLike")
@@ -120,6 +127,8 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 alert(title: "取消收藏", message: "取消收藏成功!", succeed: true)
                 collection.image = UIImage(named: "like")
             }
+        } else {
+            alert(title: "收藏失败", message: "抱歉，只有用户才可以收藏", succeed: true)
         }
     }
     

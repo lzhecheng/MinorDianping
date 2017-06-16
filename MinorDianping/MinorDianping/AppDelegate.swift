@@ -14,9 +14,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if(!UserDefaults.standard.bool(forKey: "launched")){
+            UserDefaults.standard.set(true, forKey: "launched")
+            UserDefaults.standard.set(true, forKey: "first")
+            let WHETHER_CLEAR = true
+            let WHETHER_INIT = true
+            let restaurantDBCon = RestaurantDatabaseController()
+            if(WHETHER_CLEAR){
+                guard restaurantDBCon.deleteAllObjectsInCoreData(type: Restaurant.self) else{
+                    print("Database init: Failed to delete past database")
+                    return false
+                }
+            }
+            if(WHETHER_INIT){
+                // MARK: CSV File Operations
+                let csvHelper = CSVHelper()
+                let file:String = csvHelper.readDataFromFile(file: "mexico", type: "csv")
+                
+                guard let contents:[[String:String]] = csvHelper.convertCSV(file: file)else {
+                    print("Database init: Failed to parse successfully")
+                    return false
+                }
+                
+                let numOfRestaurants = contents.count
+                
+                // MARK: - Core Data Operations
+                
+                for i in 1 ..< numOfRestaurants{
+                    _ = restaurantDBCon.createNewRestaurant(name: contents[i]["name"]!, address: contents[i]["address"]!, cityName: contents[i]["city"]!, latitude: Double(contents[i]["latitude"]!)!, longitude: Double(contents[i]["longitude"]!)!, is_save: false)
+                }
+                DatabaseController.saveContext()
+                print("Database init: Save database successfully")
+            }
+        }else{
+            UserDefaults.standard.set(false, forKey: "first")
+            print("unfirst")
+        }
         return true
     }
 
