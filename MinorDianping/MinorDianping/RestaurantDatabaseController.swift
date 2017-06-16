@@ -11,42 +11,40 @@ import CoreData
 import UIKit
 
 class RestaurantDatabaseController : DatabaseController{
-    init(filename: String){
-        super.init()
-        let WHETHER_CLEAR = false
-        let WHETHER_INIT = false
-        
-        if(WHETHER_CLEAR){
-            guard self.deleteAllObjectsInCoreData(type: Restaurant.self) else{
-                print("Database init: Failed to delete past database")
-                return
-            }
-        }
-        if(WHETHER_INIT){
-            // MARK: CSV File Operations
-            let csvHelper = CSVHelper()
-            let file:String = csvHelper.readDataFromFile(file: filename, type: "csv")
-            
-            guard let contents:[[String:String]] = csvHelper.convertCSV(file: file)else {
-                print("Database init: Failed to parse successfully")
-                return
-            }
-            
-            let numOfRestaurants = contents.count
-            
-            // MARK: - Core Data Operations
-            
-            for i in 1 ..< numOfRestaurants{
-                _ = createNewRestaurant(name: contents[i]["name"]!, address: contents[i]["address"]!, cityName: contents[i]["city"]!, latitude: Double(contents[i]["latitude"]!)!, longitude: Double(contents[i]["longitude"]!)!, is_save: false)
-            }
-            DatabaseController.saveContext()
-            print("Database init: Save database successfully")
-        }
-    }
+//        super.init()
+//        let WHETHER_CLEAR = true
+//        let WHETHER_INIT = true
+//        
+//        if(WHETHER_CLEAR){
+//            guard self.deleteAllObjectsInCoreData(type: Restaurant.self) else{
+//                print("Database init: Failed to delete past database")
+//                return
+//            }
+//        }
+//        if(WHETHER_INIT){
+//            // MARK: CSV File Operations
+//            let csvHelper = CSVHelper()
+//            let file:String = csvHelper.readDataFromFile(file: filename, type: "csv")
+//            
+//            guard let contents:[[String:String]] = csvHelper.convertCSV(file: file)else {
+//                print("Database init: Failed to parse successfully")
+//                return
+//            }
+//            
+//            let numOfRestaurants = contents.count
+//            
+//            // MARK: - Core Data Operations
+//            
+//            for i in 1 ..< numOfRestaurants{
+//                _ = createNewRestaurant(name: contents[i]["name"]!, address: contents[i]["address"]!, cityName: contents[i]["city"]!, latitude: Double(contents[i]["latitude"]!)!, longitude: Double(contents[i]["longitude"]!)!, is_save: false)
+//            }
+//            DatabaseController.saveContext()
+//            print("Database init: Save database successfully")
+//        }
     
-    convenience override init(){
-        self.init(filename: "mexico")
-    }
+//    convenience override init(){
+//        self.init(filename: "mexico")
+//    }
 
 //    deinit{
 //        guard self.deleteAllObjectsInCoreData(type: Restaurant.self) && self.deleteAllObjectsInCoreData(type: City.self) else{
@@ -204,7 +202,6 @@ extension UIImageView {
             DispatchQueue.main.async(execute: { () -> Void in
                 let image = UIImage(data: data!)
                 handler(image!)
-
             })
             
         }).resume()
