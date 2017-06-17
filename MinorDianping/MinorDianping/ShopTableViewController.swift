@@ -22,7 +22,7 @@ class ShopTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set colors in button
+        //set colors of navigation bar
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 99/255, green: 6/255, blue: 95/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -49,7 +49,7 @@ class ShopTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return restaurants.count - 50
+        return restaurants.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,7 +74,6 @@ class ShopTableViewController: UITableViewController {
             }
         }
 
-        
         //set name, evaluation, other information
         cell.nameLabel.text = restaurant.name
         cell.ratingControl.rating = Int(restaurant.evaluation)

@@ -10,7 +10,8 @@ import UIKit
 import Foundation
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     // user name and pwd
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
@@ -40,6 +41,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         userNameTextField.resignFirstResponder()
         pwdTextField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        scrollView.setContentOffset(CGPoint(x: 0,y: 250), animated: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0,y: -70), animated: true)
     }
     
     // try to sign up

@@ -42,17 +42,17 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     //MARK: UITextField
     //move keyboard to avoid covering textfield
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        scrollView.setContentOffset(CGPoint(x: 0,y: 250), animated: true)
-//        
-//        saveButton.isEnabled = false
-//    }
-//    
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        scrollView.setContentOffset(CGPoint(x: 0,y: 0), animated: true)
-//        
-//        updateSaveButtonState()
-//    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        //scrollView.setContentOffset(CGPoint(x: 0,y: 250), animated: true)
+        
+        saveButton.isEnabled = false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //scrollView.setContentOffset(CGPoint(x: 0,y: 0), animated: true)
+        
+        updateSaveButtonState()
+    }
     
     //hide keyboard when pressing somewhere outside the keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -159,15 +159,11 @@ class CommentShopViewController: UIViewController, UITextFieldDelegate, UIImageP
         mySQLOps.updateRestaurantToMySQL(name: nameForSQL, attributeName: "comments", attributeValue: (restaurant?.comments)!) {success in}
         mySQLOps.updateRestaurantToMySQL(name: nameForSQL, attributeName: "evaluation", attributeValue: evaluationInString) {success in}
         mySQLOps.updateRestaurantToMySQL(name: nameForSQL, attributeName: "evaluationNum", attributeValue: evaluationNumInString) {success in}
-        
     }
     
     private func updateSaveButtonState() {
-        // Disable the Save button if the comment field is empty and rating is empty.
-        if commentTextField.text != "" {
-            saveButton.isEnabled = true
-        }else {
-            saveButton.isEnabled = false
-        }
+        // Disable the Save button if the comment field is empty and rating is empty.        
+        let text = commentTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
 }
