@@ -71,4 +71,23 @@ class searchBrain{
         
         return returnRestaurants
     }
+    
+//    public func searchWords2(words: String) -> [Restaurant] {
+//        //get all words in the input
+//        let wordsSplited: [String] = words.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).components(separatedBy: " ")
+//        var allSets: [Set<Int>] = []
+//        
+//        //get restaurants' names of each word
+//        for word in wordsSplited{
+//            var result = Set<Int>()
+//            if let val = restaurantDictionary[word] {
+//                for each in val{
+//                    result.insert(each)
+//                }
+//            }
+//            allSets += [result]
+//        }
+//        
+//        
+//    }
 }

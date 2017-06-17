@@ -50,15 +50,15 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print(comment)
             }
             if let everythingInComments = target?.comments{
-                // use <c> to split commetns
-                let CommentsAndNamesList = everythingInComments.components(separatedBy: "<c>")
+                // use [c] to split commetns
+                let CommentsAndNamesList = everythingInComments.components(separatedBy: "[c]")
                 
                 commentsList = []
                 
-                // use <n> to split name and its comment
+                // use [n] to split name and its comment
                 for CommentsAndName in CommentsAndNamesList {
                     if CommentsAndName != "" {
-                        let can = CommentsAndName.components(separatedBy: "<n>")
+                        let can = CommentsAndName.components(separatedBy: "[n]")
                         commentsList += [can[0]]
                         userNameList += [can[1]]
                     }

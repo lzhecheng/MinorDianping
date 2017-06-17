@@ -18,9 +18,7 @@ class ShopTableViewController: UITableViewController {
     var restaurants = [Restaurant]()
     var target: String = "#nothing"
     let user = CurrentUser()
-    
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +49,7 @@ class ShopTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return restaurants.count
+        return restaurants.count - 50
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,24 +65,21 @@ class ShopTableViewController: UITableViewController {
         
         //image
         let mySQLOps = MySQLOps()
-        mySQLOps.fetchRestaurantInfoFromMySQL(name: "Restaurant Familiar El Chino", attributeName: "imagePath"){
+
+        mySQLOps.fetchRestaurantInfoFromMySQL(name: restaurant.name!, attributeName: "imagePath"){
             imagePath in
             UIImageView.imageFromServerURL(urlString: imagePath){
                 image in
                 cell.photoImageView.image = image
             }
         }
+
         
         //set name, evaluation, other information
         cell.nameLabel.text = restaurant.name
         cell.ratingControl.rating = Int(restaurant.evaluation)
         let evaluation2digit = String(format: "%.2f", restaurant.evaluation)
-        cell.otherInfo.text = "详细评分：\(evaluation2digit) 评分人数：\(Int(restaurant.evaluationNum))"
-        
-        //let restaurantDatabaseController = RestaurantDatabaseController()
-        //restaurantDatabaseController.downloadEvaluation(resName: restaurant.name!)
-        //cell.ratingControl.rating = Int(restaurant.evaluation)
-        
+        cell.otherInfo.text = "详细评分：\(evaluation2digit) 评分人数：\(Int(restaurant.evaluationNum))"   
         return cell
     }
 
@@ -131,6 +126,31 @@ class ShopTableViewController: UITableViewController {
     private func loadCoreDataShops(){
         let databaseController = RestaurantDatabaseController()
         let DBrestaurants: [Restaurant] = databaseController.fetchAllObjectsFromCoreData()!
+        
+        // make core data same with data from server
+        let mySQLOps = MySQLOps()
+        for i in 0..<DBrestaurants.count {
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: DBrestaurants[i].name!, attributeName: "comments") {
+                success in
+                if success != ""{
+                    DBrestaurants[i].comments = String(success)
+                }
+            }
+            
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: DBrestaurants[i].name!, attributeName: "evaluation") {
+                success in
+                if success != ""{
+                    DBrestaurants[i].evaluation = Double(success)!
+                }
+            }
+            
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: DBrestaurants[i].name!, attributeName: "evaluationNum") {
+                success in
+                if success != ""{
+                    DBrestaurants[i].evaluationNum = Double(success)!
+                }
+            }
+        }
         restaurants += DBrestaurants
     }
     

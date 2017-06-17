@@ -147,34 +147,59 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-yB-X10">
                                 <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J9v-CT-E5H">
-                                        <rect key="frame" x="27.5" y="76.5" width="320" height="414.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J9v-CT-E5H">
+                                        <rect key="frame" x="61.5" y="76.5" width="252" height="344.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAc-Yd-CUc">
-                                                <rect key="frame" x="139" y="0.0" width="42" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="餐厅名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVq-Os-WNt">
+                                                <rect key="frame" x="100" y="0.0" width="52" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Vgd-1l-7od">
-                                                <rect key="frame" x="0.0" y="20.5" width="320" height="320"/>
-                                                <gestureRecognizers/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="320" id="Iw6-bM-LPj"/>
-                                                    <constraint firstAttribute="height" constant="320" id="myY-TL-YQT"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="bks-YQ-ZLj" appends="YES" id="tAm-0D-xhl"/>
-                                                </connections>
-                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAc-Yd-CUc">
+                                                <rect key="frame" x="105" y="30.5" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="美味程度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfJ-95-A06">
+                                                <rect key="frame" x="91.5" y="61" width="69.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="djE-Cj-VTh" customClass="RatingControl" customModule="MinorDianping" customModuleProvider="target">
-                                                <rect key="frame" x="34" y="340.5" width="252" height="44"/>
+                                                <rect key="frame" x="0.0" y="91.5" width="252" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="YR3-EO-L8h"/>
                                                 </constraints>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="服务质量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVZ-cS-8pz">
+                                                <rect key="frame" x="91.5" y="145.5" width="69.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mF4-NA-BYN" customClass="RatingControl" customModule="MinorDianping" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="176" width="252" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="cPq-gx-HKT"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="餐厅环境" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4f-7z-jdu">
+                                                <rect key="frame" x="91.5" y="230" width="69.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oB0-MQ-ZaN" customClass="RatingControl" customModule="MinorDianping" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="260.5" width="252" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="OSb-lq-csV"/>
+                                                </constraints>
+                                            </stackView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ndm-IQ-IOw">
-                                                <rect key="frame" x="0.0" y="384.5" width="320" height="30"/>
+                                                <rect key="frame" x="0.0" y="314.5" width="252" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -216,8 +241,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="commentTextField" destination="Ndm-IQ-IOw" id="abV-ga-c1m"/>
-                        <outlet property="photoImageView" destination="Vgd-1l-7od" id="QLq-R9-IZm"/>
                         <outlet property="ratingControl" destination="djE-Cj-VTh" id="391-Z0-GfF"/>
+                        <outlet property="ratingControl1" destination="mF4-NA-BYN" id="Wvr-hx-v03"/>
+                        <outlet property="ratingControl2" destination="oB0-MQ-ZaN" id="vfL-rW-Rxb"/>
                         <outlet property="saveButton" destination="ZsB-uW-dJi" id="5Vp-4w-IWA"/>
                         <outlet property="scrollView" destination="CNO-yB-X10" id="wvp-tk-ZnZ"/>
                         <outlet property="shopNameLabel" destination="oAc-Yd-CUc" id="a74-Tm-Qk8"/>
