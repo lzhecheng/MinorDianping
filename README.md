@@ -77,6 +77,8 @@ for i in 0 ..< 5
     * it was declared earlier as URLRequest instead of NSMutableURLRequest: ```var request = URLRequest(url:myUrl!)```
 * [Type 'Any' has no subscript members](https://stackoverflow.com/questions/39423367/correctly-parsing-json-in-swift-3)
 * [Returning data from async call in Swift function](https://stackoverflow.com/questions/25203556/returning-data-from-async-call-in-swift-function)
+* [Failed to chmod user/Library/Developer/CoreSimulator/Devices NO Such File Or directory](https://stackoverflow.com/questions/40485155/failed-to-chmod-user-library-developer-coresimulator-devices-no-such-file-or-dir)
+    * solve it by resetting the iOS Simulator: Simulator -> Reset Content and Settings...
 
 ## 其他笔记
 ### Git
