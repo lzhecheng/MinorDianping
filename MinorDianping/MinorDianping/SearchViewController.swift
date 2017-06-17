@@ -10,13 +10,19 @@ import UIKit
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var baseView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var boolSearch: UIButton!
+    @IBOutlet weak var fuzzySearch: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchTextField.delegate = self
+        baseView.backgroundColor = UIColor(patternImage: UIImage(named:"3")!)
+        boolSearch.backgroundColor = UIColor.white
+        fuzzySearch.backgroundColor = UIColor.white
         
         //set naviation bar color
         self.navigationController?.navigationBar.barTintColor =
@@ -52,6 +58,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
 
+            searchDetailViewController.switchType = 1
+            searchDetailViewController.target = searchTextField.text!
+            
+        case "Searching2":
+            guard let searchDetailViewController = segue.destination as? ShopTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            searchDetailViewController.switchType = 2
             searchDetailViewController.target = searchTextField.text!
             
         default:

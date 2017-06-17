@@ -17,6 +17,7 @@ class ShopTableViewController: UITableViewController {
     //MARK: Properties
     var restaurants = [Restaurant]()
     var target: String = "#nothing"
+    var switchType: Int = 0
     let user = CurrentUser()
 
     override func viewDidLoad() {
@@ -30,10 +31,11 @@ class ShopTableViewController: UITableViewController {
         // Load core data or load search results
         if target == "#nothing"{
             loadCoreDataShops()
-        }else if target != "myCollections"{
-            loadSearchedShops()
-        }else {
+        }else if target == "myCollections"{
             loadMyCollection()
+            
+        }else {
+            loadSearchedShops()
         }
         
         if user.getIfFormal() {
@@ -155,8 +157,18 @@ class ShopTableViewController: UITableViewController {
     
     private func loadSearchedShops() {
         let search = searchBrain()
-        let results = search.searchWords(words: target)
-        restaurants += results
+        var results: [Restaurant]?
+        if target != "" {
+            if switchType == 1 {
+                results = search.searchWords(words: target)
+            } else {
+                results = search.searchWords2(words: target)
+            }
+        } else {
+            results = []
+        }
+
+        restaurants += results!
     }
     
     private func loadMyCollection() {
@@ -176,40 +188,14 @@ class ShopTableViewController: UITableViewController {
         }
     }
     
-    //    private func loadSampleShops() {
-    //
-    //        //sameple shops
-    //
-    //        //shop1: KFC
-    //        let photo1 = UIImage(named: "shop1")
-    //        let latitude1 = 32.1025600000
-    //        let longitude1 = 118.9261600000
-    //        let comment1 = "This is KFC and it's better than M"
-    //
-    //        //shop2: M
-    //        let photo2 = UIImage(named: "shop2")
-    //        let latitude2 = 32.0942600000
-    //        let longitude2 = 118.9157500000
-    //        let comment2 = "This is M and it's better than Burger King"
-    //
-    //        //shop3: Burger King
-    //        let photo3 = UIImage(named: "shop3")
-    //        let latitude3 = 32.0389900000
-    //        let longitude3 = 118.7830500000
-    //        let comment3 = "This is Burger King and it's better than KFC"
-    //
-    //        guard let shop1 = Shop(name: "KFC", photo: photo1, latitude: latitude1, longitude: longitude1, comment: comment1) else {
-    //            fatalError("Unable to instantiate meal1")
-    //        }
-    //
-    //        guard let shop2 = Shop(name: "M", photo: photo2, latitude: latitude2, longitude: longitude2, comment: comment2) else {
-    //            fatalError("Unable to instantiate meal2")
-    //        }
-    //
-    //        guard let shop3 = Shop(name: "Burger King", photo: photo3, latitude: latitude3, longitude: longitude3, comment: comment3) else {
-    //            fatalError("Unable to instantiate meal3")
-    //        }
-    //        //shops += [shop1,shop2,shop3]
-    //        
-    //    }
+    // Alert message
+    func alert(title: String, message: String, succeed: Bool){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "好的", style: UIAlertActionStyle.default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }

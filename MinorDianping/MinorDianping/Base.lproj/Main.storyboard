@@ -90,9 +90,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q17-Kz-CdK">
-                                        <rect key="frame" x="118" y="109" width="138" height="30"/>
+                                        <rect key="frame" x="42" y="109" width="73" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="搜索！"/>
+                                        <state key="normal" title="布尔搜索">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <segue destination="B4c-BS-wTG" kind="show" identifier="Searching" id="H2t-iM-z8S"/>
                                         </connections>
@@ -107,10 +109,20 @@
                                             <outlet property="delegate" destination="8uy-Fy-oFA" id="Phr-6w-Kce"/>
                                         </connections>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-lf-KgM">
+                                        <rect key="frame" x="270" y="109" width="62" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="模糊搜索">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="B4c-BS-wTG" kind="show" identifier="Searching2" id="BHl-G6-cUD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cjz-0B-9wy" firstAttribute="centerX" secondItem="htt-3v-CsK" secondAttribute="centerX" id="7f5-fZ-zFk"/>
                             <constraint firstItem="cjz-0B-9wy" firstAttribute="leading" secondItem="htt-3v-CsK" secondAttribute="leading" id="CF9-Qv-nI1"/>
@@ -124,13 +136,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="搜索" id="d8J-32-kkc"/>
                     <connections>
+                        <outlet property="baseView" destination="htt-3v-CsK" id="VnE-Vb-aur"/>
+                        <outlet property="boolSearch" destination="Q17-Kz-CdK" id="mNr-Wh-Cfy"/>
+                        <outlet property="fuzzySearch" destination="wTo-lf-KgM" id="73z-lr-Knz"/>
                         <outlet property="scrollView" destination="cjz-0B-9wy" id="voT-T3-NE7"/>
                         <outlet property="searchTextField" destination="Gll-Xh-OT7" id="XNl-E4-1Wi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFm-dA-XuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2148" y="1693"/>
+            <point key="canvasLocation" x="2148" y="1692.5037481259371"/>
         </scene>
         <!--新点评-->
         <scene sceneID="5HY-k0-v2Y">
@@ -283,7 +298,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="dsfdsf" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xi-cc-fnm" userLabel="name">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="dsfdsf" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xi-cc-fnm" userLabel="name">
                                         <rect key="frame" x="146.5" y="30.5" width="82" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="fxz-SI-Ses"/>
@@ -472,7 +487,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="daK-b9-4hA">
-                                <rect key="frame" x="0.0" y="94" width="375" height="154.5"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="194.5"/>
                                 <subviews>
                                     <imageView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-DT-avV">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -483,11 +498,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nmj-gK-OkS">
-                                        <rect key="frame" x="0.0" y="86.5" width="375" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="HuM-hA-bwy">
+                                        <rect key="frame" x="0.0" y="86.5" width="375" height="50"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signIcon" translatesAutoresizingMaskIntoConstraints="NO" id="m22-WR-eGi">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="O5q-ON-V0W"/>
+                                                    <constraint firstAttribute="height" constant="50" id="fOs-sP-Cfe"/>
+                                                </constraints>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU3-DJ-h8B">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                                <rect key="frame" x="50" y="0.0" width="325" height="50"/>
                                                 <state key="normal" title="登陆／注册">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -495,25 +517,23 @@
                                                     <segue destination="rBL-fd-t17" kind="show" identifier="sign" id="GT0-yu-VcX"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDe-ME-PNd">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
-                                                <state key="normal" title="设置">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="m22-WR-eGi" firstAttribute="leading" secondItem="HuM-hA-bwy" secondAttribute="leading" constant="10" id="8Qx-ZV-jbi"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3am-ML-Smj">
-                                        <rect key="frame" x="0.0" y="124.5" width="375" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Ufb-5Q-6q9">
+                                        <rect key="frame" x="0.0" y="144.5" width="375" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icm-tG-q2s">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
-                                                <state key="normal" title="我的订单">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collection" translatesAutoresizingMaskIntoConstraints="NO" id="JbZ-AY-X0C">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="8DY-yn-cm9"/>
+                                                    <constraint firstAttribute="height" constant="50" id="NLT-eX-N6z"/>
+                                                </constraints>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1O-aL-59B">
-                                                <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                                <rect key="frame" x="50" y="0.0" width="325" height="50"/>
                                                 <state key="normal" title="我的收藏">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -521,13 +541,10 @@
                                                     <segue destination="B4c-BS-wTG" kind="show" identifier="myCollections" id="qNM-3R-XRF"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-k7-HfR">
-                                                <rect key="frame" x="250" y="0.0" width="125" height="30"/>
-                                                <state key="normal" title="历史纪录">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="JbZ-AY-X0C" firstAttribute="leading" secondItem="Ufb-5Q-6q9" secondAttribute="leading" constant="10" id="Mie-4r-6DH"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -540,11 +557,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="我的帐户" id="LiU-f1-4Qe">
-                        <barButtonItem key="rightBarButtonItem" image="message" id="h0o-Ia-aJe">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="我的帐户" id="LiU-f1-4Qe"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="userNameLabel" destination="d1K-1m-hYb" id="dUP-m7-bDG"/>
@@ -552,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfe-92-tGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="1722"/>
+            <point key="canvasLocation" x="332" y="1721.2893553223389"/>
         </scene>
         <!--注册/登录-->
         <scene sceneID="NNb-qb-XLd">
@@ -572,7 +585,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CaT-ne-zee">
                                         <rect key="frame" x="10" y="0.0" width="375" height="489"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="CpP-Oc-gAr">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="sign" translatesAutoresizingMaskIntoConstraints="NO" id="CpP-Oc-gAr">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="375" id="6V4-Xp-wSg"/>
@@ -616,16 +629,16 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ErH-e2-gkc">
                                                 <rect key="frame" x="0.0" y="459" width="375" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aF-aG-U4u">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aF-aG-U4u">
                                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
                                                         <state key="normal" title="注册">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="signUp:" destination="rBL-fd-t17" eventType="touchUpInside" id="hlJ-up-9g9"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mk2-x4-Qvn">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mk2-x4-Qvn">
                                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
                                                         <state key="normal" title="登录">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -778,21 +791,22 @@
     </scenes>
     <resources>
         <image name="Car" width="24" height="24"/>
+        <image name="collection" width="24" height="24"/>
         <image name="defaultPhoto" width="320" height="320"/>
-        <image name="icon" width="748" height="748"/>
         <image name="like" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
-        <image name="message" width="32" height="32"/>
         <image name="myAccount" width="25" height="25"/>
         <image name="portrait" width="50" height="50"/>
         <image name="recommendation" width="25" height="25"/>
         <image name="search" width="25" height="25"/>
+        <image name="sign" width="850" height="850"/>
+        <image name="signIcon" width="13" height="13"/>
         <image name="write" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="40j-Ft-rVb"/>
-        <segue reference="5l6-fh-nxH"/>
-        <segue reference="qNM-3R-XRF"/>
         <segue reference="Jgt-EC-wCG"/>
+        <segue reference="5l6-fh-nxH"/>
+        <segue reference="BHl-G6-cUD"/>
+        <segue reference="40j-Ft-rVb"/>
     </inferredMetricsTieBreakers>
 </document>

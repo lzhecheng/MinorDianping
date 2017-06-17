@@ -31,8 +31,10 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let restaurantDBC = RestaurantDatabaseController()
             let target = restaurantDBC.fetchOneRestaurantFromCoreData(with: restaurant.name!)
             
-            // name, rating
+            // name
             nameLabel.text = target?.name
+            
+            // rating
             ratingControl.rating = Int((target?.evaluation)!)
             
             // display image
