@@ -2,7 +2,7 @@
 //  City+CoreDataProperties.swift
 //  MinorDianping
 //
-//  Created by Apple on 2017/5/18.
+//  Created by Apple on 2017/6/8.
 //  Copyright © 2017年 NJU.EE. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ import CoreData
 extension City {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<City> {
-        return NSFetchRequest<City>(entityName: "City");
+        return NSFetchRequest<City>(entityName: "City")
     }
 
     @NSManaged public var cityName: String?

@@ -9,13 +9,18 @@
 import Foundation
 import CoreData
 
-class DatabaseController{
+class DatabaseController: NSObject{
     // MARK: - Core Data stack
-    
-    private init(){
-    
-    }
-    
+//    init(completionClosure: @escaping () -> ()) {
+//        persistentContainer = NSPersistentContainer(name: "DataModel")
+//        persistentContainer.loadPersistentStores() { (description, error) in
+//            if let error = error {
+//                fatalError("Failed to load Core Data stack: \(error)")
+//            }
+//            completionClosure()
+//        }
+//    }
+
     class func getContext() -> NSManagedObjectContext{
         return DatabaseController.persistentContainer.viewContext
     }
@@ -27,7 +32,7 @@ class DatabaseController{
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "MinorDianping")
+        let container = NSPersistentContainer(name: "MinorDianping") // 声明了core data的存放文件名
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -62,5 +67,37 @@ class DatabaseController{
             }
         }
     }
+    
+    // MARK: Core Data Fetch Functions
+    func fetchAllObjectsFromCoreData<T: NSManagedObject>() -> [T]?{
+        let fetchRequest:NSFetchRequest<T> = NSFetchRequest<T>(entityName: String(describing: T.self))
+        do{
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            return searchResults
+        }catch{
+            print("Error: \(error)")
+            
+        }
+        return nil
+    }
+    
+    // MARK: Core Data Deletion Functions
+    internal func deleteAllObjectsInCoreData<T: NSManagedObject>(type: T.Type) -> Bool{
+        let fetchRequest:NSFetchRequest<T> = NSFetchRequest<T>(entityName: String(describing: T.self))
+        let context = DatabaseController.getContext()
+        if let results = try? context.fetch(fetchRequest){
+            for result in results{
+                context.delete(result)
+            }
+            DatabaseController.saveContext()
+            return true
+        }
+        return false
+    }
+    
 
+    
+    // MARK: Modification Functions
+
+    
 }

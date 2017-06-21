@@ -10,43 +10,66 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
+    let FIRST_RUN = false
+    let WHETHER_CLEAR = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // MARK: - Core Data operation
-        let cityClassName:String = String(describing: City.self)
-        let restaurantClassName:String = String(describing: Restaurant.self)
-        
-        let restaurant:Restaurant = NSEntityDescription.insertNewObject(forEntityName: restaurantClassName, into: DatabaseController.getContext()) as! Restaurant
-        restaurant.location = "Xianlin"
-        restaurant.name = "KFC"
-        
-        let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
-        city.cityName = "Nanjing"
-        city.addToRestaurants(restaurant)
-        
 
-        DatabaseController.saveContext()
+        let databaseController = DatabaseController()
+
+        if(WHETHER_CLEAR){
+            if(databaseController.deleteAllObjectsInCoreData()){
+                print("Successfully Delete")
+            }
+        }
         
-        let fetchRequest:NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+        let restaurants = databaseController.fetchAllRestaurantsFromCoreData()!
+        for restaurant in restaurants{
+            print("\(restaurant.name!) is in \(restaurant.latitude), \(restaurant.longitude)")
+        }
         
-        do{
-            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
-            print("number of results: \(searchResults.count)")
+        if(FIRST_RUN){
+            // MARK: CSV File Operations
+            let csvHelper = CSVHelper()
+            let file:String = csvHelper.readDataFromFile(file: "mexico", type: "csv")
             
-            for result in searchResults as [Restaurant]{
-                print("\(result.name!) is in \(result.location!) of \(result.city!.cityName!).")
+            guard let contents:[[String:String]] = csvHelper.convertCSV(file: file)else {
+                print("Parse Successfully")
+                return
             }
             
+            let numOfRestaurants = contents.count
+            
+            // MARK: - Core Data Operations
+            let cityClassName:String = String(describing: City.self)
+            let restaurantClassName:String = String(describing: Restaurant.self)
+            let stateClassName:String = String(describing: State.self)
+            
+//            let city:City = NSEntityDescription.insertNewObject(forEntityName: cityClassName, into: DatabaseController.getContext()) as! City
+//            var cityNames:Set<String> = Set()
+//            for i in 0 ..< numOfRestaurants{
+//                cityNames.insert(contents[i]["city"]!)
+//            }
+//            for cityName in cityNames{
+//                city.cityName = cityName
+//            }
+            
+            for i in 0 ..< numOfRestaurants{
+                let restaurant:Restaurant = NSEntityDescription.insertNewObject(forEntityName: restaurantClassName, into: DatabaseController.getContext()) as! Restaurant
+                restaurant.name = contents[i]["name"]
+                restaurant.address = contents[i]["address"]
+//                restaurant.latitude = Double(contents[i]["latitude"]!)!
+//                restaurant.longitude = Double(contents[i]["longitude"]!)!
+//                restaurant.placeID = Int16(contents[i]["placeID"]!)!
+                //city.addToRestaurants(restaurant)
+            }
+            
+            DatabaseController.saveContext()
+            print("Saved!")
         }
-        catch{
-            print("Error: \(error)")
-        }
-        
-        DatabaseController.getContext().delete(city)
-        DatabaseController.getContext().delete(restaurant)
+
     }
 
     override func didReceiveMemoryWarning() {

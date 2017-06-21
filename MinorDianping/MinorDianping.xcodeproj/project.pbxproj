@@ -7,22 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180118741EEE2DA30097FBA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180118731EEE2DA30097FBA9 /* CurrentUser.swift */; };
+		180118761EEE71D20097FBA9 /* RestaurantDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180118751EEE71D20097FBA9 /* RestaurantDatabaseController.swift */; };
+		180118781EEE71DE0097FBA9 /* MySQLOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180118771EEE71DE0097FBA9 /* MySQLOps.swift */; };
+		1801187A1EEE84F80097FBA9 /* commentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180118791EEE84F80097FBA9 /* commentsTableViewCell.swift */; };
+		18294F741EE6DE1700815EDA /* MinorDianping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18294F6E1EE6DE1700815EDA /* MinorDianping.xcdatamodeld */; };
+		18294F881EE6E08200815EDA /* CityDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18294F871EE6E08200815EDA /* CityDatabaseController.swift */; };
+		183073E81ED4128800CA3558 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183073E71ED4128800CA3558 /* RatingControl.swift */; };
+		183073EA1ED41C6C00CA3558 /* CommentShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */; };
 		184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */; };
-		184CFCD41EAE1F0E002EC798 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD31EAE1F0E002EC798 /* ViewController.swift */; };
 		184CFCD71EAE1F0E002EC798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184CFCD51EAE1F0E002EC798 /* Main.storyboard */; };
-		184CFCDA1EAE1F0E002EC798 /* MinorDianping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCD81EAE1F0E002EC798 /* MinorDianping.xcdatamodeld */; };
 		184CFCDC1EAE1F0E002EC798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184CFCDB1EAE1F0E002EC798 /* Assets.xcassets */; };
 		184CFCDF1EAE1F0E002EC798 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184CFCDD1EAE1F0E002EC798 /* LaunchScreen.storyboard */; };
 		184CFCEA1EAE1F0F002EC798 /* MinorDianpingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCE91EAE1F0F002EC798 /* MinorDianpingTests.swift */; };
 		184CFCF51EAE1F0F002EC798 /* MinorDianpingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184CFCF41EAE1F0F002EC798 /* MinorDianpingUITests.swift */; };
+		185303EB1EE989190027B683 /* UserInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303E51EE989190027B683 /* UserInfo+CoreDataClass.swift */; };
+		185303EC1EE989190027B683 /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303E61EE989190027B683 /* UserInfo+CoreDataProperties.swift */; };
+		185303ED1EE989190027B683 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303E71EE989190027B683 /* City+CoreDataClass.swift */; };
+		185303EE1EE989190027B683 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303E81EE989190027B683 /* City+CoreDataProperties.swift */; };
+		185303EF1EE989190027B683 /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303E91EE989190027B683 /* Restaurant+CoreDataClass.swift */; };
+		185303F01EE989190027B683 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303EA1EE989190027B683 /* Restaurant+CoreDataProperties.swift */; };
+		185303F21EE98A180027B683 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303F11EE98A180027B683 /* DatabaseController.swift */; };
+		185303F41EE98A550027B683 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185303F31EE98A550027B683 /* Info.plist */; };
+		185303FA1EE98AD20027B683 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303F91EE98AD20027B683 /* SyncEngine.swift */; };
+		185303FC1EE98AF70027B683 /* UserInfoDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303FB1EE98AF70027B683 /* UserInfoDatabaseController.swift */; };
 		185E06561EC342670027929F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E06551EC342670027929F /* MapViewController.swift */; };
-		185E06581EC348060027929F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E06571EC348060027929F /* ShopViewController.swift */; };
-		1875D6E51ECB3BC00019A065 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875D6E41ECB3BC00019A065 /* DatabaseController.swift */; };
-		1893F0191ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F0161ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift */; };
-		1893F01D1ECDD513003993D6 /* Restaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F01C1ECDD513003993D6 /* Restaurant+CoreDataClass.swift */; };
-		1893F0201ECDD763003993D6 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F01E1ECDD763003993D6 /* City+CoreDataClass.swift */; };
-		1893F0211ECDD763003993D6 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893F01F1ECDD763003993D6 /* City+CoreDataProperties.swift */; };
+		185F355A1ED670F4007F94A8 /* searchBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F35591ED670F4007F94A8 /* searchBrain.swift */; };
+		186B41F31EFA706100BB7605 /* mexico.csv in Resources */ = {isa = PBXBuildFile; fileRef = 186B41F21EFA706100BB7605 /* mexico.csv */; };
+		18767B461ED0634500C8D6C2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18767B451ED0634500C8D6C2 /* ShopViewController.swift */; };
+		1877A5E51ED6F1E3007A4561 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */; };
+		1877A5E71ED713BA007A4561 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877A5E61ED713BA007A4561 /* AccountViewController.swift */; };
+		188E53AE1EECD7D900632111 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E53AD1EECD7D900632111 /* Shop.swift */; };
+		188E53B01EED2FF600632111 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E53AF1EED2FF600632111 /* SignInViewController.swift */; };
+		18967CD41ED5A04900687541 /* CSVHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18967CCF1ED5A04900687541 /* CSVHelper.swift */; };
+		18967CD61ED5A04900687541 /* Nanjing.csv in Resources */ = {isa = PBXBuildFile; fileRef = 18967CD11ED5A04900687541 /* Nanjing.csv */; };
+		18B2F71B1ECF201200086EC6 /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2F71A1ECF201200086EC6 /* ShopTableViewController.swift */; };
+		18B2F71D1ECF210300086EC6 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 18B2F71C1ECF210300086EC6 /* Images */; };
 		18B82E4E1EC9E5250086A531 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */; };
+		18FCF6EB1EE6A47300C547E5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FCF6EA1EE6A47300C547E5 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,28 +65,55 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180118731EEE2DA30097FBA9 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		180118751EEE71D20097FBA9 /* RestaurantDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDatabaseController.swift; sourceTree = "<group>"; };
+		180118771EEE71DE0097FBA9 /* MySQLOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySQLOps.swift; sourceTree = "<group>"; };
+		180118791EEE84F80097FBA9 /* commentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentsTableViewCell.swift; sourceTree = "<group>"; };
+		18294F6F1EE6DE1700815EDA /* MinorDianping v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v2.xcdatamodel"; sourceTree = "<group>"; };
+		18294F701EE6DE1700815EDA /* MinorDianping v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v3.xcdatamodel"; sourceTree = "<group>"; };
+		18294F711EE6DE1700815EDA /* MinorDianping v4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v4.xcdatamodel"; sourceTree = "<group>"; };
+		18294F721EE6DE1700815EDA /* MinorDianping v5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v5.xcdatamodel"; sourceTree = "<group>"; };
+		18294F731EE6DE1700815EDA /* MinorDianping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MinorDianping.xcdatamodel; sourceTree = "<group>"; };
+		18294F871EE6E08200815EDA /* CityDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDatabaseController.swift; sourceTree = "<group>"; };
+		183073E71ED4128800CA3558 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentShopViewController.swift; sourceTree = "<group>"; };
 		184CFCCE1EAE1F0E002EC798 /* MinorDianping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinorDianping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		184CFCD31EAE1F0E002EC798 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		184CFCD61EAE1F0E002EC798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		184CFCD91EAE1F0E002EC798 /* MinorDianping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MinorDianping.xcdatamodel; sourceTree = "<group>"; };
 		184CFCDB1EAE1F0E002EC798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184CFCDE1EAE1F0E002EC798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		184CFCE01EAE1F0E002EC798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		184CFCE51EAE1F0F002EC798 /* MinorDianpingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinorDianpingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		184CFCE91EAE1F0F002EC798 /* MinorDianpingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorDianpingTests.swift; sourceTree = "<group>"; };
 		184CFCEB1EAE1F0F002EC798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		184CFCF01EAE1F0F002EC798 /* MinorDianpingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinorDianpingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		184CFCF41EAE1F0F002EC798 /* MinorDianpingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorDianpingUITests.swift; sourceTree = "<group>"; };
 		184CFCF61EAE1F0F002EC798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		185303E41EE987E60027B683 /* MinorDianping v6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MinorDianping v6.xcdatamodel"; sourceTree = "<group>"; };
+		185303E51EE989190027B683 /* UserInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		185303E61EE989190027B683 /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		185303E71EE989190027B683 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		185303E81EE989190027B683 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		185303E91EE989190027B683 /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		185303EA1EE989190027B683 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		185303F11EE98A180027B683 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		185303F31EE98A550027B683 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		185303F91EE98AD20027B683 /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
+		185303FB1EE98AF70027B683 /* UserInfoDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoDatabaseController.swift; sourceTree = "<group>"; };
 		185E06551EC342670027929F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		185E06571EC348060027929F /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
-		1875D6E41ECB3BC00019A065 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
-		1893F0161ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1893F01C1ECDD513003993D6 /* Restaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1893F01E1ECDD763003993D6 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1893F01F1ECDD763003993D6 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		185F35591ED670F4007F94A8 /* searchBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchBrain.swift; sourceTree = "<group>"; };
+		186B41F21EFA706100BB7605 /* mexico.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mexico.csv; sourceTree = "<group>"; };
+		18767B451ED0634500C8D6C2 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1877A5E61ED713BA007A4561 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		188E53AD1EECD7D900632111 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		188E53AF1EED2FF600632111 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		18967CCF1ED5A04900687541 /* CSVHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVHelper.swift; sourceTree = "<group>"; };
+		18967CD11ED5A04900687541 /* Nanjing.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nanjing.csv; sourceTree = "<group>"; };
+		18B2F71A1ECF201200086EC6 /* ShopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewController.swift; sourceTree = "<group>"; };
+		18B2F71C1ECF210300086EC6 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
+		18FC02621EF3694C00AEE9D5 /* MinorDianping-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MinorDianping-Bridging-Header.h"; sourceTree = "<group>"; };
+		18FCF6EA1EE6A47300C547E5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FCF6EB1EE6A47300C547E5 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +142,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1801187B1EEE85020097FBA9 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */,
+				180118791EEE84F80097FBA9 /* commentsTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		18294F931EE6E2E700815EDA /* DatabaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				180118751EEE71D20097FBA9 /* RestaurantDatabaseController.swift */,
+				185303F11EE98A180027B683 /* DatabaseController.swift */,
+				185303FB1EE98AF70027B683 /* UserInfoDatabaseController.swift */,
+				18294F871EE6E08200815EDA /* CityDatabaseController.swift */,
+			);
+			name = DatabaseControllers;
+			sourceTree = "<group>";
+		};
+		183073E61ED3DF8000CA3558 /* ViewContorllers */ = {
+			isa = PBXGroup;
+			children = (
+				18B2F71A1ECF201200086EC6 /* ShopTableViewController.swift */,
+				18767B451ED0634500C8D6C2 /* ShopViewController.swift */,
+				183073E91ED41C6C00CA3558 /* CommentShopViewController.swift */,
+				185E06551EC342670027929F /* MapViewController.swift */,
+				1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */,
+				1877A5E61ED713BA007A4561 /* AccountViewController.swift */,
+				188E53AF1EED2FF600632111 /* SignInViewController.swift */,
+			);
+			name = ViewContorllers;
+			sourceTree = "<group>";
+		};
 		184CFCC51EAE1F0E002EC798 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +183,7 @@
 				184CFCE81EAE1F0F002EC798 /* MinorDianpingTests */,
 				184CFCF31EAE1F0F002EC798 /* MinorDianpingUITests */,
 				184CFCCF1EAE1F0E002EC798 /* Products */,
+				18FCF6E91EE6A47300C547E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,16 +200,23 @@
 		184CFCD01EAE1F0E002EC798 /* MinorDianping */ = {
 			isa = PBXGroup;
 			children = (
-				1875D6E41ECB3BC00019A065 /* DatabaseController.swift */,
-				184CFCD31EAE1F0E002EC798 /* ViewController.swift */,
-				1875D6EE1ECB3EBB0019A065 /* Models */,
+				18294F931EE6E2E700815EDA /* DatabaseControllers */,
+				18967CD91ED5A05800687541 /* Data */,
 				1885DDA81EB21C3B0098F7D9 /* Supporting files */,
+				1875D6EE1ECB3EBB0019A065 /* Models */,
+				1801187B1EEE85020097FBA9 /* TableViewCell */,
+				183073E61ED3DF8000CA3558 /* ViewContorllers */,
+				18B2F71C1ECF210300086EC6 /* Images */,
+				18294F6E1EE6DE1700815EDA /* MinorDianping.xcdatamodeld */,
 				184CFCD51EAE1F0E002EC798 /* Main.storyboard */,
-				184CFCE01EAE1F0E002EC798 /* Info.plist */,
-				184CFCD81EAE1F0E002EC798 /* MinorDianping.xcdatamodeld */,
-				185E06551EC342670027929F /* MapViewController.swift */,
-				185E06571EC348060027929F /* ShopViewController.swift */,
-				18B82E4D1EC9E5250086A531 /* ShopTableViewCell.swift */,
+				185303F91EE98AD20027B683 /* SyncEngine.swift */,
+				18967CCF1ED5A04900687541 /* CSVHelper.swift */,
+				180118771EEE71DE0097FBA9 /* MySQLOps.swift */,
+				188E53AD1EECD7D900632111 /* Shop.swift */,
+				183073E71ED4128800CA3558 /* RatingControl.swift */,
+				185F35591ED670F4007F94A8 /* searchBrain.swift */,
+				180118731EEE2DA30097FBA9 /* CurrentUser.swift */,
+				18FC02621EF3694C00AEE9D5 /* MinorDianping-Bridging-Header.h */,
 			);
 			path = MinorDianping;
 			sourceTree = "<group>";
@@ -150,10 +242,12 @@
 		1875D6EE1ECB3EBB0019A065 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1893F01E1ECDD763003993D6 /* City+CoreDataClass.swift */,
-				1893F01F1ECDD763003993D6 /* City+CoreDataProperties.swift */,
-				1893F01C1ECDD513003993D6 /* Restaurant+CoreDataClass.swift */,
-				1893F0161ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift */,
+				185303E61EE989190027B683 /* UserInfo+CoreDataProperties.swift */,
+				185303E71EE989190027B683 /* City+CoreDataClass.swift */,
+				185303E81EE989190027B683 /* City+CoreDataProperties.swift */,
+				185303E91EE989190027B683 /* Restaurant+CoreDataClass.swift */,
+				185303EA1EE989190027B683 /* Restaurant+CoreDataProperties.swift */,
+				185303E51EE989190027B683 /* UserInfo+CoreDataClass.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -161,11 +255,29 @@
 		1885DDA81EB21C3B0098F7D9 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				185303F31EE98A550027B683 /* Info.plist */,
+				184CFCDD1EAE1F0E002EC798 /* LaunchScreen.storyboard */,
 				184CFCD11EAE1F0E002EC798 /* AppDelegate.swift */,
 				184CFCDB1EAE1F0E002EC798 /* Assets.xcassets */,
-				184CFCDD1EAE1F0E002EC798 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		18967CD91ED5A05800687541 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				186B41F21EFA706100BB7605 /* mexico.csv */,
+				18967CD11ED5A04900687541 /* Nanjing.csv */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		18FCF6E91EE6A47300C547E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18FCF6EA1EE6A47300C547E5 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +348,7 @@
 				TargetAttributes = {
 					184CFCCD1EAE1F0E002EC798 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3F528M7TXJ;
 						ProvisioningStyle = Automatic;
 					};
 					184CFCE41EAE1F0F002EC798 = {
@@ -275,9 +388,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18967CD61ED5A04900687541 /* Nanjing.csv in Resources */,
+				18B2F71D1ECF210300086EC6 /* Images in Resources */,
 				184CFCDF1EAE1F0E002EC798 /* LaunchScreen.storyboard in Resources */,
 				184CFCDC1EAE1F0E002EC798 /* Assets.xcassets in Resources */,
 				184CFCD71EAE1F0E002EC798 /* Main.storyboard in Resources */,
+				185303F41EE98A550027B683 /* Info.plist in Resources */,
+				186B41F31EFA706100BB7605 /* mexico.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,17 +419,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1875D6E51ECB3BC00019A065 /* DatabaseController.swift in Sources */,
-				1893F01D1ECDD513003993D6 /* Restaurant+CoreDataClass.swift in Sources */,
-				184CFCD41EAE1F0E002EC798 /* ViewController.swift in Sources */,
-				184CFCDA1EAE1F0E002EC798 /* MinorDianping.xcdatamodeld in Sources */,
-				1893F0201ECDD763003993D6 /* City+CoreDataClass.swift in Sources */,
-				185E06581EC348060027929F /* ShopViewController.swift in Sources */,
-				1893F0211ECDD763003993D6 /* City+CoreDataProperties.swift in Sources */,
-				1893F0191ECDD4F0003993D6 /* Restaurant+CoreDataProperties.swift in Sources */,
+				185303EE1EE989190027B683 /* City+CoreDataProperties.swift in Sources */,
+				183073E81ED4128800CA3558 /* RatingControl.swift in Sources */,
+				18B2F71B1ECF201200086EC6 /* ShopTableViewController.swift in Sources */,
+				185303ED1EE989190027B683 /* City+CoreDataClass.swift in Sources */,
+				185303F21EE98A180027B683 /* DatabaseController.swift in Sources */,
+				185303FC1EE98AF70027B683 /* UserInfoDatabaseController.swift in Sources */,
+				18767B461ED0634500C8D6C2 /* ShopViewController.swift in Sources */,
+				1877A5E51ED6F1E3007A4561 /* SearchViewController.swift in Sources */,
+				185F355A1ED670F4007F94A8 /* searchBrain.swift in Sources */,
+				180118781EEE71DE0097FBA9 /* MySQLOps.swift in Sources */,
+				1877A5E71ED713BA007A4561 /* AccountViewController.swift in Sources */,
+				1801187A1EEE84F80097FBA9 /* commentsTableViewCell.swift in Sources */,
+				18967CD41ED5A04900687541 /* CSVHelper.swift in Sources */,
+				18294F741EE6DE1700815EDA /* MinorDianping.xcdatamodeld in Sources */,
+				185303FA1EE98AD20027B683 /* SyncEngine.swift in Sources */,
+				185303EB1EE989190027B683 /* UserInfo+CoreDataClass.swift in Sources */,
+				183073EA1ED41C6C00CA3558 /* CommentShopViewController.swift in Sources */,
+				180118741EEE2DA30097FBA9 /* CurrentUser.swift in Sources */,
+				185303F01EE989190027B683 /* Restaurant+CoreDataProperties.swift in Sources */,
+				188E53B01EED2FF600632111 /* SignInViewController.swift in Sources */,
+				188E53AE1EECD7D900632111 /* Shop.swift in Sources */,
+				185303EC1EE989190027B683 /* UserInfo+CoreDataProperties.swift in Sources */,
 				18B82E4E1EC9E5250086A531 /* ShopTableViewCell.swift in Sources */,
 				184CFCD21EAE1F0E002EC798 /* AppDelegate.swift in Sources */,
 				185E06561EC342670027929F /* MapViewController.swift in Sources */,
+				18294F881EE6E08200815EDA /* CityDatabaseController.swift in Sources */,
+				185303EF1EE989190027B683 /* Restaurant+CoreDataClass.swift in Sources */,
+				180118761EEE71D20097FBA9 /* RestaurantDatabaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,8 +544,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,7 +589,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -464,10 +602,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3F528M7TXJ;
 				INFOPLIST_FILE = MinorDianping/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianping;
+				PRODUCT_BUNDLE_IDENTIFIER = zhecheng.MinorDianping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -477,10 +616,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3F528M7TXJ;
 				INFOPLIST_FILE = MinorDianping/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianping;
+				PRODUCT_BUNDLE_IDENTIFIER = zhecheng.MinorDianping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -492,6 +632,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MinorDianpingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianpingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -506,6 +647,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MinorDianpingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianpingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -519,6 +661,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MinorDianpingUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianpingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,6 +675,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MinorDianpingUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.MinorDianpingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,12 +726,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		184CFCD81EAE1F0E002EC798 /* MinorDianping.xcdatamodeld */ = {
+		18294F6E1EE6DE1700815EDA /* MinorDianping.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				184CFCD91EAE1F0E002EC798 /* MinorDianping.xcdatamodel */,
+				185303E41EE987E60027B683 /* MinorDianping v6.xcdatamodel */,
+				18294F6F1EE6DE1700815EDA /* MinorDianping v2.xcdatamodel */,
+				18294F701EE6DE1700815EDA /* MinorDianping v3.xcdatamodel */,
+				18294F711EE6DE1700815EDA /* MinorDianping v4.xcdatamodel */,
+				18294F721EE6DE1700815EDA /* MinorDianping v5.xcdatamodel */,
+				18294F731EE6DE1700815EDA /* MinorDianping.xcdatamodel */,
 			);
-			currentVersion = 184CFCD91EAE1F0E002EC798 /* MinorDianping.xcdatamodel */;
+			currentVersion = 185303E41EE987E60027B683 /* MinorDianping v6.xcdatamodel */;
 			path = MinorDianping.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
