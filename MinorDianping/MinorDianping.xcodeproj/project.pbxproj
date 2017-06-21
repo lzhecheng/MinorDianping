@@ -31,9 +31,9 @@
 		185303F41EE98A550027B683 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185303F31EE98A550027B683 /* Info.plist */; };
 		185303FA1EE98AD20027B683 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303F91EE98AD20027B683 /* SyncEngine.swift */; };
 		185303FC1EE98AF70027B683 /* UserInfoDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185303FB1EE98AF70027B683 /* UserInfoDatabaseController.swift */; };
-		185B7B961EF41736002CB9B7 /* mexico.csv in Resources */ = {isa = PBXBuildFile; fileRef = 185B7B951EF41736002CB9B7 /* mexico.csv */; };
 		185E06561EC342670027929F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E06551EC342670027929F /* MapViewController.swift */; };
 		185F355A1ED670F4007F94A8 /* searchBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F35591ED670F4007F94A8 /* searchBrain.swift */; };
+		186B41F31EFA706100BB7605 /* mexico.csv in Resources */ = {isa = PBXBuildFile; fileRef = 186B41F21EFA706100BB7605 /* mexico.csv */; };
 		18767B461ED0634500C8D6C2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18767B451ED0634500C8D6C2 /* ShopViewController.swift */; };
 		1877A5E51ED6F1E3007A4561 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */; };
 		1877A5E71ED713BA007A4561 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877A5E61ED713BA007A4561 /* AccountViewController.swift */; };
@@ -99,9 +99,9 @@
 		185303F31EE98A550027B683 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185303F91EE98AD20027B683 /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
 		185303FB1EE98AF70027B683 /* UserInfoDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoDatabaseController.swift; sourceTree = "<group>"; };
-		185B7B951EF41736002CB9B7 /* mexico.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mexico.csv; sourceTree = "<group>"; };
 		185E06551EC342670027929F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		185F35591ED670F4007F94A8 /* searchBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchBrain.swift; sourceTree = "<group>"; };
+		186B41F21EFA706100BB7605 /* mexico.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mexico.csv; sourceTree = "<group>"; };
 		18767B451ED0634500C8D6C2 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		1877A5E41ED6F1E3007A4561 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1877A5E61ED713BA007A4561 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 		18967CD91ED5A05800687541 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				185B7B951EF41736002CB9B7 /* mexico.csv */,
+				186B41F21EFA706100BB7605 /* mexico.csv */,
 				18967CD11ED5A04900687541 /* Nanjing.csv */,
 			);
 			name = Data;
@@ -394,7 +394,7 @@
 				184CFCDC1EAE1F0E002EC798 /* Assets.xcassets in Resources */,
 				184CFCD71EAE1F0E002EC798 /* Main.storyboard in Resources */,
 				185303F41EE98A550027B683 /* Info.plist in Resources */,
-				185B7B961EF41736002CB9B7 /* mexico.csv in Resources */,
+				186B41F31EFA706100BB7605 /* mexico.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
