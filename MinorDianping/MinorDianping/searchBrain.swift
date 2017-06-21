@@ -80,6 +80,7 @@ class searchBrain{
         // search in restaurantDictionary
         for each in restaurants{
             if (each.name?.lowercased().contains(searchStr))! {
+                print(each.name!)
                 results += [each]
             }
         }

@@ -33,7 +33,6 @@ class ShopTableViewController: UITableViewController {
             loadCoreDataShops()
         }else if target == "myCollections"{
             loadMyCollection()
-            
         }else {
             loadSearchedShops()
         }
@@ -116,9 +115,8 @@ class ShopTableViewController: UITableViewController {
                 }
                 
                 let selectedRestaurants = restaurants[indexPath.row]
-                print(selectedRestaurants.evaluation)
                 shopDetailViewController.restaurant = selectedRestaurants
-            
+
             default:
                 fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
@@ -140,14 +138,14 @@ class ShopTableViewController: UITableViewController {
             
             mySQLOps.fetchRestaurantInfoFromMySQL(name: DBrestaurants[i].name!, attributeName: "evaluation") {
                 success in
-                if success != ""{
+                if success != "" {
                     DBrestaurants[i].evaluation = Double(success)!
                 }
             }
             
             mySQLOps.fetchRestaurantInfoFromMySQL(name: DBrestaurants[i].name!, attributeName: "evaluationNum") {
                 success in
-                if success != ""{
+                if success != "" {
                     DBrestaurants[i].evaluationNum = Double(success)!
                 }
             }

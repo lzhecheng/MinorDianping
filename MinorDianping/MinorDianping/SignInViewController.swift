@@ -111,7 +111,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             } else {
                 let title = "登录错误"
                 let message = "用户名或密码错误"
-                self.alert(title: title, message: message, succeed: false)
+                DispatchQueue.main.async {
+                    self.alert(title: title, message: message, succeed: false)
+                }
             }
         }
     }

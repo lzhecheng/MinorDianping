@@ -39,7 +39,7 @@ class ShopViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             // display image
             let mySQLOps = MySQLOps()
-            mySQLOps.fetchRestaurantInfoFromMySQL(name: "Restaurant Familiar El Chino", attributeName: "imagePath"){
+            mySQLOps.fetchRestaurantInfoFromMySQL(name: restaurant.name!, attributeName: "imagePath"){
                 imagePath in
                 UIImageView.imageFromServerURL(urlString: imagePath){
                     image in

@@ -9,22 +9,43 @@
 import Foundation
 import CoreData
 
+//class UserInfoDatabaseController : DatabaseController{
+//    public func validatePassword(username: String, password: String, handler: @escaping (_ success: Bool)-> ()){
+//        let mySQLOps = MySQLOps()
+//        mySQLOps.fetchUserInfoFromMySQL(username: username, attributeName: "password"){
+//            pass in
+//            let passToString = pass! as NSString
+//            let subPass = passToString.substring(to: 40)
+//            let inputPassToSha1 = password.sha1() as NSString
+//            let subInputPassToSha1 = inputPassToSha1.substring(to: 40)
+//            
+//            handler(subPass == subInputPassToSha1)
+//        }
+//    }
+//}
+
+
 class UserInfoDatabaseController : DatabaseController{
     public func validatePassword(username: String, password: String, handler: @escaping (_ success: Bool)-> ()){
         let mySQLOps = MySQLOps()
         mySQLOps.fetchUserInfoFromMySQL(username: username, attributeName: "password"){
             pass in
-            let passToString = pass! as NSString
-            let subPass = passToString.substring(to: 40)
-            let inputPassToSha1 = password.sha1() as NSString
-            let subInputPassToSha1 = inputPassToSha1.substring(to: 40)
-            
-            handler(subPass == subInputPassToSha1)
+            if let passUnWarpped = pass{
+                let passToString = passUnWarpped as NSString
+                let subPass = passToString.substring(to: 40)
+                let inputPassToSha1 = password.sha1() as NSString
+                let subInputPassToSha1 = inputPassToSha1.substring(to: 40)
+                
+                handler(subPass == subInputPassToSha1)
+            }
+            else{
+                print("user \(username) Yeah!")
+                handler(false)
+            }
         }
     }
 }
 
-    
 extension String {
     func sha1() -> String {
         let data = self.data(using: String.Encoding.utf8)!
