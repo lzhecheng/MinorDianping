@@ -11,3 +11,11 @@ MinorDianping是一款受大众点评启发的、美食推荐类App。该App有�
 * [Zhijian Jiang](https://github.com/ZhijianJiang)
 	* 使用Core Data实现持久化存储
 	* 部署远程服务器的，编写服务器端代码和服务器的swift接口
+	
+## Demo
+![](Main.PNG)
+![](Search.PNG)
+![](Login.PNG)
+![](Account.PNG)
+![](Comment2.PNG)
+![](Comment.PNG)
