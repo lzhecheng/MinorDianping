@@ -1,7 +1,7 @@
 # MinorDianping
 This the final project of NJU Mobile Application 2017 Spring by Zhijian Jiang and Zhecheng Li.
 
-## App介绍
+## App Introduction 介绍 
 MinorDianping is an iOS application inspired by DazhongDianping in China (or Yelp in U.S.), an application for restaurants recommendation. Our application has following functions: searching, recommending, grading, locating restaurants and navigating. Also, it allows users to log in and sign up.  
 MinorDianping是一款受大众点评启发的、美食推荐类App。该App有餐厅推荐、餐厅评分、餐厅定位与导航、餐厅搜索、用户登录等功能组成。
 
@@ -28,12 +28,12 @@ Search tab.
 You can search with one or more words with two searching types.
 
 ![](Login.PNG)
-Login tab.  
-You can login or see all your restaurants collections.
-
-![](Account.PNG)
 Account View.  
 You can login or signup.
+
+![](Account.PNG)
+Login tab.  
+You can login or see all your restaurants collections.
 
 ![](Comment2.PNG)
 After login, you can grade the restaurants for taste, service and environment.
